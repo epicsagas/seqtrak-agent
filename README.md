@@ -100,6 +100,8 @@ st serve        # http://127.0.0.1:8787, serves the built web GUI
 
 `st serve` looks for the GUI in this order: `$ST_GUI_DIR`, `./gui/dist` (source checkout), `gui/` next to the `st` binary (extracted release archive), then `~/.local/share/seqtrak-agent/gui` (installed by `install.sh` / `install.ps1`).
 
+The web GUI loads the Noto Sans KR font from Google Fonts at runtime (no font files are bundled). Offline, it falls back to system fonts.
+
 - **DEVICE view**: Hardware-accurate faceplate. Track knobs and `[ALL]` select patterns 1 to 6 via SysEx (`30:5p:0F`), drum keys toggle steps on a 2x8 grid, `[REC]` plus the 7 scale keys record live while playing, the `[FX]` knob switches effect types, `MASTER/SINGLE` is a latching slide switch, and `HIGH PASS` and `REPEATER` spring back to zero on release.
 - **MIXER view**: Per-track mixer strips (volume, pan, mute, solo, audition hit), drum pads, arpeggiator controls, transport, project loader (P1 to P8), and incoming MIDI log.
 - **Auto-reconnect**: Starts even when the unit is unplugged or powered off, polls for the USB port in the background, and calls `MIDIRestart` on macOS if a CoreMIDI client gets stuck after replugging.

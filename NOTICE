@@ -17,11 +17,12 @@ redistributed in this repository.
 
 Third-party components
 ----------------------
-The web GUI bundles the Noto Sans KR font (the web subset of Noto Sans CJK KR,
-https://github.com/notofonts/noto-cjk), distributed via the
-@fontsource/noto-sans-kr package and licensed under the SIL Open Font License,
-Version 1.1. Copyright Google Inc. and Adobe. Noto is a trademark of Google LLC.
-The full OFL-1.1 text is included in THIRD_PARTY_LICENSES_GUI.md.
+The web GUI does not bundle or redistribute any font files. At runtime the
+browser loads the Noto Sans KR font (the web subset of Noto Sans CJK KR,
+https://github.com/notofonts/noto-cjk) from Google Fonts
+(fonts.googleapis.com / fonts.gstatic.com). Noto Sans KR is licensed under the
+SIL Open Font License, Version 1.1. Copyright Google Inc. and Adobe. Noto is a
+trademark of Google LLC. When offline, the GUI falls back to system fonts.
 
 Release binaries statically link Rust crates under MIT, Apache-2.0, BSD-3-Clause,
 ISC, Unicode-3.0, BSL-1.0 and Unlicense terms. See THIRD_PARTY_LICENSES.md
