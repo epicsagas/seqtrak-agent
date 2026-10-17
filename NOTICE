@@ -1,0 +1,29 @@
+SEQTRAK Agent
+Copyright 2026 epicsagas
+
+This product is licensed under the Apache License, Version 2.0.
+See the LICENSE file for the full license text.
+
+Trademarks
+----------
+Yamaha and SEQTRAK are trademarks or registered trademarks of Yamaha
+Corporation. This project is an independent, unofficial open-source tool and
+is not affiliated with, endorsed by, or sponsored by Yamaha Corporation.
+
+Protocol information (MIDI CC numbers, SysEx addresses and parameter ranges)
+is implemented for interoperability based on the publicly available Yamaha
+SEQTRAK Data List for OS V2.00 (YJ-D0, 01/2026). No part of that manual is
+redistributed in this repository.
+
+Third-party components
+----------------------
+The web GUI bundles the Noto Sans KR font (the web subset of Noto Sans CJK KR,
+https://github.com/notofonts/noto-cjk), distributed via the
+@fontsource/noto-sans-kr package and licensed under the SIL Open Font License,
+Version 1.1. Copyright Google Inc. and Adobe. Noto is a trademark of Google LLC.
+The full OFL-1.1 text is included in THIRD_PARTY_LICENSES_GUI.md.
+
+Release binaries statically link Rust crates under MIT, Apache-2.0, BSD-3-Clause,
+ISC, Unicode-3.0, BSL-1.0 and Unlicense terms. See THIRD_PARTY_LICENSES.md
+(Rust crates) and THIRD_PARTY_LICENSES_GUI.md (web GUI bundle) for the full
+list and license texts.

@@ -1,0 +1,119 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build (${{ matrix.target }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-unknown-linux-gnu
+            os: ubuntu-latest
+            archive: tar.gz
+          - target: aarch64-unknown-linux-gnu
+            os: ubuntu-24.04-arm
+            archive: tar.gz
+          - target: aarch64-apple-darwin
+            os: macos-latest
+            archive: tar.gz
+          - target: x86_64-apple-darwin
+            os: macos-latest
+            archive: tar.gz
+          - target: x86_64-pc-windows-msvc
+            os: windows-latest
+            archive: zip
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux ALSA headers
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pkg-config libasound2-dev
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Build release binaries
+        run: cargo build --release --locked --target ${{ matrix.target }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: gui/package-lock.json
+
+      - name: Build web GUI
+        working-directory: gui
+        run: |
+          npm ci
+          npm run build
+          node scripts/third-party-licenses.mjs
+
+      - name: Package Unix archive
+        if: matrix.archive == 'tar.gz'
+        shell: bash
+        run: |
+          mkdir -p dist/.claude/skills
+          cp "target/${{ matrix.target }}/release/st" dist/
+          cp "target/${{ matrix.target }}/release/st-mcp" dist/
+          cp -r .claude/skills/seqtrak dist/.claude/skills/
+          cp -r gui/dist dist/gui
+          cp LICENSE NOTICE THIRD_PARTY_LICENSES.md THIRD_PARTY_LICENSES_GUI.md dist/
+          tar -C dist -czf "seqtrak-agent-${{ matrix.target }}.tar.gz" \
+            st st-mcp gui .claude LICENSE NOTICE THIRD_PARTY_LICENSES.md THIRD_PARTY_LICENSES_GUI.md
+
+      - name: Package Windows archive
+        if: matrix.archive == 'zip'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path "dist/.claude/skills" | Out-Null
+          Copy-Item "target/${{ matrix.target }}/release/st.exe" "dist/"
+          Copy-Item "target/${{ matrix.target }}/release/st-mcp.exe" "dist/"
+          Copy-Item -Recurse ".claude/skills/seqtrak" "dist/.claude/skills/"
+          Copy-Item -Recurse "gui/dist" "dist/gui"
+          Copy-Item "LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES_GUI.md" "dist/"
+          Compress-Archive -Path "dist/st.exe", "dist/st-mcp.exe", "dist/gui", "dist/.claude", "dist/LICENSE", "dist/NOTICE", "dist/THIRD_PARTY_LICENSES.md", "dist/THIRD_PARTY_LICENSES_GUI.md" -DestinationPath "seqtrak-agent-${{ matrix.target }}.zip"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: seqtrak-agent-${{ matrix.target }}
+          path: |
+            seqtrak-agent-${{ matrix.target }}.tar.gz
+            seqtrak-agent-${{ matrix.target }}.zip
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            artifacts/*
+            install.sh
+            install.ps1

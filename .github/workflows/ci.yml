@@ -1,0 +1,165 @@
+name: CI
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  rust:
+    name: Rust (cargo test & clippy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux ALSA headers
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pkg-config libasound2-dev
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+
+      - name: Run cargo clippy
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Run cargo test
+        run: cargo test --locked
+
+  gui:
+    name: Web GUI (check & build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check if gui/ changed
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            RANGE="origin/${{ github.base_ref }}...HEAD"
+          elif [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ] || [ -z "${{ github.event.before }}" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          else
+            RANGE="${{ github.event.before }}..${{ github.sha }}"
+          fi
+          if git diff --name-only "$RANGE" | grep -q '^gui/'; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Node.js
+        if: steps.changes.outputs.run == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: gui/package-lock.json
+
+      - name: Install GUI dependencies
+        if: steps.changes.outputs.run == 'true'
+        working-directory: gui
+        run: npm ci
+
+      - name: Run svelte-check and tsc
+        if: steps.changes.outputs.run == 'true'
+        working-directory: gui
+        run: npm run check
+
+      - name: Build GUI bundle
+        if: steps.changes.outputs.run == 'true'
+        working-directory: gui
+        run: npm run build
+
+  hygiene:
+    name: Hygiene (Conventional Commits & EN/KO docs sync)
+    runs-on: ubuntu-latest
+    env:
+      EVENT_NAME: ${{ github.event_name }}
+      PR_TITLE: ${{ github.event.pull_request.title }}
+      BASE_REF: ${{ github.base_ref }}
+      BEFORE_SHA: ${{ github.event.before }}
+      AFTER_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate Conventional Commits
+        run: |
+          PATTERN='^(feat|fix|docs|refactor|test|ci|chore|build|perf|style)(\([a-zA-Z0-9_./-]+\))?!?: .+'
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "Checking PR title: $PR_TITLE"
+            if ! printf '%s\n' "$PR_TITLE" | grep -Eq "$PATTERN"; then
+              echo "::error::PR title must follow Conventional Commits (e.g. 'feat: ...', 'fix(midi): ...'). Got: '$PR_TITLE'"
+              exit 1
+            fi
+            COMMITS="$(git log --format=%s "origin/${BASE_REF}..HEAD")"
+          elif [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ] || [ -z "$BEFORE_SHA" ]; then
+            COMMITS="$(git log -1 --format=%s "$AFTER_SHA")"
+          else
+            COMMITS="$(git log --format=%s "${BEFORE_SHA}..${AFTER_SHA}")"
+          fi
+
+          FAIL=0
+          while IFS= read -r SUBJECT; do
+            [ -z "$SUBJECT" ] && continue
+            case "$SUBJECT" in
+              Merge\ *) continue ;;
+            esac
+            if ! printf '%s\n' "$SUBJECT" | grep -Eq "$PATTERN"; then
+              echo "::error::Commit subject does not follow Conventional Commits: '$SUBJECT'"
+              FAIL=1
+            fi
+          done <<EOF
+          $COMMITS
+          EOF
+          exit "$FAIL"
+
+      - name: Validate bilingual (.md / .ko.md) documentation sync
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            CHANGED="$(git diff --name-only "origin/${BASE_REF}...HEAD")"
+          elif [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ] || [ -z "$BEFORE_SHA" ]; then
+            CHANGED="$(git diff-tree --no-commit-id --name-only -r "$AFTER_SHA")"
+          else
+            CHANGED="$(git diff --name-only "${BEFORE_SHA}..${AFTER_SHA}")"
+          fi
+          echo "Changed files:"
+          printf '%s\n' "$CHANGED"
+
+          FAIL=0
+          for FILE in $CHANGED; do
+            case "$FILE" in
+              .github/*|.claude/*|THIRD_PARTY_LICENSES*.md)
+                continue
+                ;;
+              *.ko.md)
+                COUNTERPART="${FILE%.ko.md}.md"
+                ;;
+              *.md)
+                COUNTERPART="${FILE%.md}.ko.md"
+                ;;
+              *)
+                continue
+                ;;
+            esac
+
+            if [ -f "$COUNTERPART" ] || [ -f "$FILE" ]; then
+              if ! printf '%s\n' "$CHANGED" | grep -Fxq "$COUNTERPART"; then
+                echo "::error::User-facing documentation '$FILE' was modified without updating its counterpart '$COUNTERPART'. Update both English (.md) and Korean (.ko.md) files together."
+                FAIL=1
+              fi
+            fi
+          done
+          exit "$FAIL"

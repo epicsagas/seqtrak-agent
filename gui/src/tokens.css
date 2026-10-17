@@ -1,0 +1,62 @@
+/* Design tokens for the SEQTRAK faceplate GUI. See docs/DESIGN.md. */
+:root {
+  --chassis: #23211e;
+  --chassis-deep: #1a1917;
+  --panel: #d8d5ce;
+  --panel-deep: #c7c4bc;
+  --panel-well: #bdbab1;
+  --ink: #211f1b;
+  --ink-soft: #6e6a62;
+  --orange: #e8590c;
+  --orange-deep: #b54408;
+  --led-yellow: #ffc400;
+  --led-yellow-dim: rgba(255, 196, 0, 0.22);
+  --led-cyan: #12c7d6;
+  --led-cyan-dim: rgba(18, 199, 214, 0.22);
+  --led-red: #e03a2f;
+  --radius: 2px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--chassis);
+  color: var(--panel);
+  font-family: 'Noto Sans KR', 'Noto Sans CJK KR', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:where(button, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

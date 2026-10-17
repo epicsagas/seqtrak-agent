@@ -1,0 +1,55 @@
+name: Bug Report
+description: Report a bug in the CLI (st), MCP server (st-mcp), skill, or web GUI
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue. Please fill out the details below so we can reproduce it.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - CLI (st)
+        - MCP server (st-mcp)
+        - Skill (.claude/skills/seqtrak)
+        - Web GUI (st serve / gui)
+        - Installer / Release binaries
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Clear description of the bug and the command, MCP tool, or GUI action you ran.
+      placeholder: |
+        Ran `st rec-steps kick --steps 1,5,9,13` and got...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen on the unit or in the output?
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: OS and SEQTRAK firmware version
+      description: Output of `uname -a` (or Windows version) and `st identity`
+      placeholder: "macOS 15.4 arm64, SEQTRAK OS 2.00"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Terminal output or MIDI monitor log
+      render: shell

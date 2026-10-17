@@ -1,0 +1,24 @@
+[package]
+name = "seqtrak-agent"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+repository = "https://github.com/epicsagas/seqtrak-agent"
+
+[dependencies]
+axum = "0.8.9"
+clap = { version = "4", features = ["derive"] }
+midir = "0.11"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1.53.3", features = ["full"] }
+tower-http = { version = "0.7.1", features = ["fs"] }
+
+[[bin]]
+name = "st"
+path = "src/main.rs"
+
+[[bin]]
+name = "st-mcp"
+path = "src/bin/st_mcp.rs"
+

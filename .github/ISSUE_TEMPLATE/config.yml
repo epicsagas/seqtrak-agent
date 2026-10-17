@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security Vulnerability Report
+    url: https://github.com/epicsagas/seqtrak-agent/security/advisories/new
+    about: Report a security issue privately instead of opening a public issue.

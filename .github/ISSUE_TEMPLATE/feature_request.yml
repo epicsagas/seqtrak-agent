@@ -1,0 +1,31 @@
+name: Feature Request
+description: Suggest a new CLI command, MCP tool, SysEx mapping, or GUI improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - CLI (st) / MCP server (st-mcp)
+        - SysEx parameter or dump support
+        - Pattern sequencing / recording
+        - Skill documentation
+        - Web GUI
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What capability or workflow would you like to add?
+    validations:
+      required: true
+
+  - type: textarea
+    id: sysex_reference
+    attributes:
+      label: SEQTRAK Data List / User Guide reference (optional)
+      description: Relevant CC number, SysEx address (`hh:mm:ll`), or page number from the Yamaha SEQTRAK Data List D0.

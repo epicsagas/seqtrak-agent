@@ -1,0 +1,6 @@
+/target
+*.hex
+docs/*.pdf
+gui/node_modules
+gui/dist
+docs/*_extracted.txt
