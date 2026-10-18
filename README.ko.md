@@ -76,6 +76,72 @@ command = "st-mcp"
 args = []
 ```
 
+## MCP 활용: 한 음에서 전체 편곡까지
+
+MCP 서버(`st-mcp`)는 `st` CLI와 동일한 14개 도구를 제공하므로, 에이전트는 한 줄 연결 테스트에서 시작해 대화를 벗어나지 않고 여러 마디·여러 트랙짜리 편곡까지 진행할 수 있습니다. 아래 예시는 모두 실제 도구 호출이며, 에이전트가 이를 계획으로 조합하면 장비가 그 결과를 녹음합니다.
+
+### 레벨 1: 장비 확인, 한 음 재생
+
+연결과 펌웨어를 확인하고 단일 노트를 트리거한 뒤 MIDI 스트림을 관찰합니다:
+
+```text
+st_identity    {}
+st_note        {"track": "kick", "note": 36, "vel": 110, "dur_ms": 150}
+st_monitor     {"seconds": 5}
+```
+
+### 레벨 2: 사운드와 믹서
+
+프로젝트를 로드하고, 트랙에 프리셋 사운드를 얹고, 믹싱합니다:
+
+```text
+st_load_project {"project": 4}
+st_pc           {"msb": 63, "lsb": 0, "prog": 5, "track": "synth1"}
+st_cc           {"track": "synth1", "cc": "volume", "val": 100}
+st_cc           {"track": "synth1", "cc": "reverb_send", "val": 90}
+```
+
+### 레벨 3: SysEx 딥 파라미터
+
+문서화된 모든 파라미터를 읽고 쓸 수 있습니다: 패턴 길이, 이펙트 타입, 센드 레벨, 아르페지에이터, 스케일. 킥 패턴을 48스텝으로 늘리고 확인:
+
+```text
+st_get         {"address": "30:50:16"}                  # 패턴 1 길이 읽기
+st_param       {"address": "30:50:16", "data": [0, 48]} # MSB+LSB = 48스텝 쓰기
+```
+
+### 레벨 4: 트랜스포트와 스텝 녹음
+
+본체 패널에서 REC를 무장합니다(이것만 SysEx가 없음). 그러면 에이전트가 장비 자체 클럭 그리드 위에 스텝을 녹음합니다:
+
+```text
+st_rec_steps   {"track": "kick", "steps": "1,7,9,13", "vel": 110, "keep_playing": true}
+st_rec_steps   {"track": "snare", "steps": "5,13", "vel": 100}
+st_transport   {"action": "start"}
+```
+
+재생 중 `st_monitor`로 녹음된 노트가 돌아오는 것을 보면 테이크 착지 여부를 검증할 수 있습니다.
+
+### 레벨 5: 통편곡
+
+실제 세션 사례: 프로젝트 5에 녹음한 3마디 7트랙 그루브(드럼, 크로매틱 베이스 라인, 코드 스탭, FM 리드)입니다. 드럼은 트랙마다 단일 피치이므로 호출 1번으로 끝납니다:
+
+```text
+st_rec_steps   {"track": "kick",   "bars": 3, "steps": "1,7,9,13,17,23,25,29,33,39,41,45", "vel": 110, "keep_playing": true}
+st_rec_steps   {"track": "snare",  "bars": 3, "steps": "5,13,21,29,37,45,46,47", "vel": 100, "keep_playing": true}
+st_rec_steps   {"track": "hat1",   "bars": 3, "steps": "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47", "vel": 70, "keep_playing": true}
+st_rec_steps   {"track": "dx",     "bars": 3, "steps": "33", "note": 73, "gate": 2, "vel": 90, "keep_playing": true}
+```
+
+멜로디 트랙은 여러 피치가 필요하므로, CLI가 한 줄 전체를 클럭 동기 스윕 한 번으로 쏩니다(멀티 피치 라인은 `st_rec_steps` 호출 하나로 표현할 수 없음):
+
+```bash
+st seq synth1 --bars 3 --gate 2 --follow --anchor-ch 10 --anchor-note 73 --anchor-step 33 --loop-steps 48 \
+  --events "1:42,3:42,5:47,7:47,9:46,11:46,13:45,15:44,17:42,19:42,21:40,23:40,25:42,27:42,29:44,31:42,33:49,35:49,37:47,39:47,41:46,43:46,45:44,47:42"
+```
+
+`--follow`는 장비가 스스로 재생하는 노트(여기서는 스텝 33의 DX C#5 하나뿐인 피치)에 스윕을 고정하므로, 녹음 중 에이전트가 트랜스포트를 건드리지 않습니다. 이후 플랜 대비 피치별 재생 이벤트 수를 세어 결과를 검증하고, 부족한 노트만 재발사합니다. 전체 워크플로우, 검증된 SysEx 주소 지도, 펌웨어 특이사항은 [`.claude/skills/seqtrak/SKILL.md`](.claude/skills/seqtrak/SKILL.md)에 있습니다.
+
 ## 장비 패턴 메모리에 작곡하기
 
 SEQTRAK은 SysEx로 스텝 노트를 직접 쓰는 명령을 제공하지 않습니다. 대신 본체 패널에서 `REC` 버튼을 켜 두면 USB MIDI로 들어오는 노트를 실시간 녹음기가 받아 해당 트랙 패턴에 기록합니다. 패널에서 `REC`를 켠 뒤 아래처럼 실행합니다:

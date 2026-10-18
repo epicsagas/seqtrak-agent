@@ -76,6 +76,72 @@ command = "st-mcp"
 args = []
 ```
 
+## What the MCP can do: from one note to a full arrangement
+
+The MCP server (`st-mcp`) exposes the same 14 tools as the `st` CLI, so an agent can start with a one-line smoke test and end with a multi-bar, multi-track arrangement without leaving the conversation. The examples below are real tool calls; the agent composes them into a plan and the unit records the result.
+
+### Level 1: see the device, hear one note
+
+Check the connection and firmware, trigger a single hit, and watch the MIDI stream:
+
+```text
+st_identity    {}
+st_note        {"track": "kick", "note": 36, "vel": 110, "dur_ms": 150}
+st_monitor     {"seconds": 5}
+```
+
+### Level 2: sounds and mixer
+
+Load a project, put a preset sound on a track, and mix it:
+
+```text
+st_load_project {"project": 4}
+st_pc           {"msb": 63, "lsb": 0, "prog": 5, "track": "synth1"}
+st_cc           {"track": "synth1", "cc": "volume", "val": 100}
+st_cc           {"track": "synth1", "cc": "reverb_send", "val": 90}
+```
+
+### Level 3: deep parameters over SysEx
+
+Any documented parameter is readable and writable: pattern lengths, effect types, send levels, arpeggiator, scale. Extend the kick pattern to 48 steps and check it stuck:
+
+```text
+st_get         {"address": "30:50:16"}                  # read pattern 1 length
+st_param       {"address": "30:50:16", "data": [0, 48]} # write MSB+LSB = 48 steps
+```
+
+### Level 4: transport and step recording
+
+Arm REC on the hardware panel (no SysEx exists for that), then the agent records steps onto the unit's own clock grid:
+
+```text
+st_rec_steps   {"track": "kick", "steps": "1,7,9,13", "vel": 110, "keep_playing": true}
+st_rec_steps   {"track": "snare", "steps": "5,13", "vel": 100}
+st_transport   {"action": "start"}
+```
+
+`st_monitor` during playback shows the recorded notes coming back, which is how the agent verifies a take landed.
+
+### Level 5: a whole arrangement
+
+A real session: a 3-bar, 7-track groove (drums, chromatic bass line, chord stabs, an FM lead) recorded into project 5. Drums are one call per track because a drum track fires one pitch everywhere:
+
+```text
+st_rec_steps   {"track": "kick",   "bars": 3, "steps": "1,7,9,13,17,23,25,29,33,39,41,45", "vel": 110, "keep_playing": true}
+st_rec_steps   {"track": "snare",  "bars": 3, "steps": "5,13,21,29,37,45,46,47", "vel": 100, "keep_playing": true}
+st_rec_steps   {"track": "hat1",   "bars": 3, "steps": "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47", "vel": 70, "keep_playing": true}
+st_rec_steps   {"track": "dx",     "bars": 3, "steps": "33", "note": 73, "gate": 2, "vel": 90, "keep_playing": true}
+```
+
+Melodic tracks need many pitches, so the CLI sweeps the whole line in one clock-synced pass (multi-pitch lines cannot be expressed in a single `st_rec_steps` call):
+
+```bash
+st seq synth1 --bars 3 --gate 2 --follow --anchor-ch 10 --anchor-note 73 --anchor-step 33 --loop-steps 48 \
+  --events "1:42,3:42,5:47,7:47,9:46,11:46,13:45,15:44,17:42,19:42,21:40,23:40,25:42,27:42,29:44,31:42,33:49,35:49,37:47,39:47,41:46,43:46,45:44,47:42"
+```
+
+`--follow` anchors the sweep on a note the unit itself plays back (here the one-off DX C#5 on step 33), so the agent never touches the transport while recording. The agent then verifies the result by counting playback events per pitch against the plan and refires only what is missing. The full workflow, verified SysEx address map, and firmware quirks live in [`.claude/skills/seqtrak/SKILL.md`](.claude/skills/seqtrak/SKILL.md).
+
 ## Record patterns into the unit
 
 The SEQTRAK does not expose a SysEx message for writing step notes directly. Instead, its real-time recorder captures incoming USB MIDI notes whenever REC is armed on the hardware panel. Run `st rec-steps` while REC is armed:
