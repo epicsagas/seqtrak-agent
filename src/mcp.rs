@@ -100,7 +100,7 @@ fn tools() -> Vec<Tool> {
     },
     Tool {
         name: "st_rec_steps",
-        description: "Compose into the unit: fire notes on the unit's clock on the given 1-based 16th steps so its real-time recorder captures them into the track's pattern. Arm REC on the unit first. steps like '1,5,9,13'.",
+        description: "Compose into the unit: fire notes on the unit's clock on the given 1-based 16th steps so its real-time recorder captures them into the track's pattern. Arm REC on the unit first. steps like '1,5,9,13'. Optionally select a pattern slot (1-6) on the track first; each track holds 6 slots and the recorder writes the currently selected one.",
         schema: json!({"type": "object", "required": ["track", "steps"], "properties": {
             "track": {"type": "string", "enum": ["kick","snare","clap","hat1","hat2","perc1","perc2","synth1","synth2","dx","sampler"]},
             "steps": {"type": "string"},
@@ -108,7 +108,9 @@ fn tools() -> Vec<Tool> {
             "vel": {"type": "integer", "minimum": 1, "maximum": 127, "default": 100},
             "bars": {"type": "integer", "minimum": 1, "maximum": 8, "default": 1},
             "gate": {"type": "integer", "minimum": 1, "maximum": 16, "default": 1},
-            "keep_playing": {"type": "boolean", "default": false}}}),
+            "keep_playing": {"type": "boolean", "default": false},
+            "pattern": {"type": "integer", "minimum": 1, "maximum": 6,
+                "description": "Pattern slot 1-6 to select on the track before recording (each track holds 6 slots; the recorder writes the currently selected one)"}}}),
     },
     ]
 }
@@ -184,6 +186,7 @@ fn run_tool(name: &str, args: &Value) -> Result<Value, String> {
             bars: args.get("bars").and_then(Value::as_u64).unwrap_or(1) as u8,
             gate: args.get("gate").and_then(Value::as_u64).unwrap_or(1) as u8,
             keep_playing: args.get("keep_playing").and_then(Value::as_bool).unwrap_or(false),
+            pattern: args.get("pattern").and_then(Value::as_u64).map(|p| p as usize),
         }),
         other => Err(format!("unknown tool {other}")),
     }

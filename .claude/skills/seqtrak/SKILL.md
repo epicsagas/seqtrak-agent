@@ -42,6 +42,16 @@ grid, and stops at the end of the window.
 - The unit records per MIDI channel: notes land on the track owning that channel (kick = ch1), so no track selection needed on the panel.
 - Verify a take by watching st monitor while it plays back: the unit replays recorded notes as note_on on the same channel.
 
+## Track patterns: 6 slots per track
+
+Every one of the 11 tracks holds 6 independent pattern slots. The panel exposes 3 of them as pattern keys; slots 4-6 are reachable only over SysEx (or the official app). Key facts for composing:
+
+- Pattern Select per track: `st param 30:5p:0F <0-5>` selects the slot the track plays AND the slot its recorder writes into. Example: `st param 30:50:0F 01` puts the kick on pattern 2.
+- Per-slot lengths: `st param 30:5p:<16,18,1A,1C,1E,20> <MSB> <LSB>` sets the length of pattern 1-6 independently (1-128 steps). One track can run a 16-step pattern while another runs 48.
+- There is no song mode: pattern flow is whatever the player switches to live. An arrangement = record each slot, then switch slots on the panel or over SysEx while playing.
+- The recorder always writes the CURRENTLY selected pattern, so select the slot before firing takes. `st rec-steps --pattern N` (and `st seq --pattern N`) does the select automatically, and the selection stays afterwards.
+- Selecting a slot is a live-buffer edit: switching slots mid-session does not lose other slots' content, and the usual auto-save rules apply.
+
 ## Command map
 ```
 st list                                  # enumerate MIDI ports
@@ -84,7 +94,7 @@ st transport start|stop                  # sequencer (unit sync = External/Auto)
 - Send Reverb 30 41 00, Send Delay 30 42 00
 - Master Effect 1-4: 30 43 / 30 44 / 30 45 / 30 46 (offset 00 = type MSB, 01 = type LSB), Master EQ 30 47 00
 - A/D: insertion A 30 49 00, insertion B 30 4A 00, general 30 4B 00; USB audio input 30 4C 00; Scale 30 4D 00
-- Project Track (p = part): general 30 5p 00 (00 volume, 01 pan, 0F Pattern Select 0-5 = pattern 1-6, 16/1A/1C/1E/20 = pattern 1/3/4/5/6 length MSB+LSB, 1-128 steps), chord notes 30 6p 00 (synth parts only)
+- Project Track (p = part): general 30 5p 00 (00 volume, 01 pan, 0F Pattern Select 0-5 = pattern 1-6, 16,18,1A,1C,1E,20 = pattern 1-6 length MSB+LSB, 1-128 steps), chord notes 30 6p 00 (synth parts only)
 - Sound (p = part): name 31 0p 00, general 31 1p 00, insertion A 31 2p 00, insertion B 31 3p 00, sound common 31 4p 00
 - Arpeggiator 31 5p 00 (synth parts 7-9 only; 06 ARP Loop, 07 ARP Hold, 0D Key Mode, 10 Quantize, 16 Swing Offset MSB+LSB)
 - AWM elements: 41 ep 00 oscillator/amplitude/pitch, 42 ep 00 filter/EQ/LFO (p part, e element 0-7)

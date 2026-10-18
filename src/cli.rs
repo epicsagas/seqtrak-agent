@@ -182,6 +182,9 @@ pub enum Command {
         /// Leave the transport running after the window
         #[arg(long)]
         keep_playing: bool,
+        /// Record into this pattern slot (1-6) by selecting it on the track first
+        #[arg(long)]
+        pattern: Option<usize>,
     },
     /// Fire many notes in ONE clock-synced sweep from a stopped transport
     /// (single Start, no mid-sweep restarts). Arm REC on the unit first.
@@ -222,6 +225,9 @@ pub enum Command {
         /// Unit loop length in steps (for follow step conversion)
         #[arg(long, default_value_t = 48)]
         loop_steps: usize,
+        /// Record into this pattern slot (1-6) by selecting it on the track first
+        #[arg(long)]
+        pattern: Option<usize>,
     },
 }
 
@@ -423,7 +429,7 @@ pub fn run(cli: &Cli) -> Result<String, String> {
             }
             Ok(format!("snapshot: {sysex_count} sysex, {} params\n{}", pairs.len(), pairs.join("\n")))
         }
-        Command::RecSteps { track, steps, note, vel, bars, gate, keep_playing } => {
+        Command::RecSteps { track, steps, note, vel, bars, gate, keep_playing, pattern } => {
             let parsed: Result<Vec<usize>, _> = steps
                 .split(',')
                 .map(|s| s.trim().parse::<usize>().map(|n| n.saturating_sub(1)))
@@ -437,9 +443,10 @@ pub fn run(cli: &Cli) -> Result<String, String> {
                 *bars as usize,
                 *gate as usize,
                 *keep_playing,
+                *pattern,
             )
         }
-        Command::Seq { track, events, vel, bars, gate, keep_playing, follow, clock_offset, anchor_ch, anchor_note, anchor_step, loop_steps } => {
+        Command::Seq { track, events, vel, bars, gate, keep_playing, follow, clock_offset, anchor_ch, anchor_note, anchor_step, loop_steps, pattern } => {
             let parsed: Result<Vec<(usize, u8)>, String> = events
                 .split(',')
                 .map(|s| {
@@ -470,6 +477,7 @@ pub fn run(cli: &Cli) -> Result<String, String> {
                 *anchor_note,
                 *anchor_step,
                 *loop_steps,
+                *pattern,
             )
         }
     }

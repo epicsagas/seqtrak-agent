@@ -32,10 +32,11 @@ pub fn record_steps(
     bars: usize,
     gate: usize,
     keep_playing: bool,
+    pattern: Option<usize>,
 ) -> Result<String, String> {
     let notes: Vec<(usize, u8, u8)> =
         steps.iter().copied().filter(|s| *s < bars * 16).map(|s| (s, note, vel)).collect();
-    seq(ch, notes, bars, gate, keep_playing, false, 0, 1, 60, 1, 48)
+    seq(ch, notes, bars, gate, keep_playing, false, 0, 1, 60, 1, 48, pattern)
 }
 
 /// Fire arbitrary (step, note, velocity) events in ONE clock-synced sweep.
@@ -62,6 +63,7 @@ pub fn seq(
     anchor_note: u8,
     anchor_step: usize,
     loop_steps: usize,
+    pattern: Option<usize>,
 ) -> Result<String, String> {
     let total = bars * 16;
     // Follow mode rides the user's running transport; it must never stop it.
@@ -84,6 +86,17 @@ pub fn seq(
     }
 
     let mut out = midi::open_out()?;
+    // Each track holds 6 pattern slots and the recorder writes whichever one
+    // the track currently plays (Pattern Select 30:5p:0F). Select the target
+    // slot first so the take lands in it; the selection stays afterwards.
+    if let Some(p) = pattern {
+        if !(1..=6).contains(&p) {
+            return Err("pattern must be 1-6".into());
+        }
+        let addr = [0x30, 0x50 + ch, 0x0F];
+        let msg = crate::sysex::parameter_change(0, addr, &[(p - 1) as u8]).to_bytes();
+        out.send(&msg).map_err(|e| e.to_string())?;
+    }
     // Start mode: send Start only after the clock input is connected; opening
     // the port after Start loses the first clocks and notes land early.
     let start_out = if follow { None } else { Some(midi::open_out()?) };
