@@ -80,6 +80,37 @@ args = []
 
 The MCP server (`st-mcp`) exposes the same 14 tools as the `st` CLI, so an agent can start with a one-line smoke test and end with a multi-bar, multi-track arrangement without leaving the conversation. The examples below are real tool calls; the agent composes them into a plan and the unit records the result.
 
+### You talk, the agent plays
+
+In practice you never call the tools yourself. You describe an outcome in your own language, and the agent picks the tools, plans the takes, drives the hardware, and verifies what actually landed:
+
+- "트랙 재생해줘" or "hit the kick": a single `st_note`
+- "키트 바꿔줘", "put a warmer pad on synth2": `st_pc` and maybe `st_cc`
+- "리버브 좀 줄여줘": one `st_cc` with `reverb_send`
+- "비트 하나 만들어줘": project load, pattern length, `st_rec_steps` takes, playback verification
+- "Thriller 느낌으로 3마디 작곡해줘": a full session like Level 5 below. The agent plans each track, records, counts playback events per pitch, and refires only what is missing
+
+The [seqtrak skill](.claude/skills/seqtrak/SKILL.md) teaches the agent the device model, the verified SysEx address map, and the firmware quirks, so the natural-language path stays safe: the agent plans, you listen, and you keep what you like.
+
+### The 14 tools
+
+| Tool | What it does |
+|------|--------------|
+| `st_list_ports` | List MIDI ports; SEQTRAK ports contain `SEQTRAK` |
+| `st_identity` | Query device family and firmware version |
+| `st_note` | Play one note on a track |
+| `st_cc` | Control change by name or number: volume, pan, mute, solo, filter, EG, FX sends, drum pitch, arpeggiator |
+| `st_pc` | Bank select + program change: project, preset and user sounds, drum kits, sampler elements |
+| `st_load_project` | Load project 1 to 8 |
+| `st_get` | Read one SysEx parameter |
+| `st_param` | Write one SysEx parameter, checksum automatic |
+| `st_sysex` | Send a raw SysEx hex string |
+| `st_dump` | Bulk dump a memory block |
+| `st_snapshot` | Load a project and capture its full parameter echo as TSV |
+| `st_monitor` | Listen to incoming MIDI for N seconds, clock flood filtered |
+| `st_transport` | Start or stop the sequencer |
+| `st_rec_steps` | Record steps into the track's pattern through the real-time recorder |
+
 ### Level 1: see the device, hear one note
 
 Check the connection and firmware, trigger a single hit, and watch the MIDI stream:
