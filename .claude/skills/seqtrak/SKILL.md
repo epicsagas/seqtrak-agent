@@ -42,6 +42,17 @@ grid, and stops at the end of the window.
 - The unit records per MIDI channel: notes land on the track owning that channel (kick = ch1), so no track selection needed on the panel.
 - Verify a take by watching st monitor while it plays back: the unit replays recorded notes as note_on on the same channel.
 
+## Sound catalog: 2421 preset sounds
+
+`docs/sound-library.tsv` (shipped in this repo, extracted from the Data List Sound List) indexes every built-in sound: `type` (drum/synth/dx/sampler), `no` (global list number), `name`, `category`, and for synth/dx the `lsb`/`pc` for loading. Counts: drum 855, synth 1077, dx 100, sampler 389.
+
+- Loading a synth or DX sound onto a track: `st pc -m 63 -l <lsb> -p <pc> -c <track>`. Example: Acid3 (no 858) = `st pc -m 63 -l 8 -p 25 -c synth1`. MSB is always 63 for sounds.
+- Preset banks: LSB 2-31 = Preset 1-30 (LSB 0-1 = User slots). Formula from the list number: `lsb = (no-1)//128 + 2`, `pc = (no-1)%128`. Verified against the panel display.
+- Drum kits use a different target (MSB 32+p, LSB 2p per the bank table below); the drum entries in the TSV carry the list numbers and names but the kit-slot mapping is not verified yet.
+- SAMPLER sounds are factory samples; the SAMPLER track's 7 element slots are normally loaded with user WAVs through the official app, not bank/PC.
+- Natural-language flow: user asks for a character ("warm pad", "acid bass", "punchy kick") → grep the TSV by category/name keywords → pick candidates → load with `st pc` → confirm. Sound names cannot be read back over SysEx; the panel display or the user's ear is the only verification.
+- Loading a sound is a live-buffer edit on that track; the usual auto-save rules apply.
+
 ## Track patterns: 6 slots per track
 
 Every one of the 11 tracks holds 6 independent pattern slots. The panel exposes 3 of them as pattern keys; slots 4-6 are reachable only over SysEx (or the official app). Key facts for composing:

@@ -1,0 +1,2422 @@
+type	no	name	category	lsb	pc
+drum	1	Tight Punchy Kick 1	Kick		
+drum	2	Tight Punchy Kick 2	Kick		
+drum	3	Tight Punchy Kick 3	Kick		
+drum	4	Tight Punchy Kick 4	Kick		
+drum	5	Tight Punchy Kick 5	Kick		
+drum	6	Tight Punchy Kick 6	Kick		
+drum	7	Tight Punchy Kick 7	Kick		
+drum	8	Tight Punchy Kick 8	Kick		
+drum	9	Soft Kick 1	Kick		
+drum	10	Tight Soft Kick 1	Kick		
+drum	11	Tight Soft Kick 2	Kick		
+drum	12	Tight Soft Kick 3	Kick		
+drum	13	Tight Soft Kick 4	Kick		
+drum	14	Tight Soft Kick 5	Kick		
+drum	15	Tight Soft Kick 6	Kick		
+drum	16	Tight Soft Kick 7	Kick		
+drum	17	Punchy Fat Kick 1	Kick		
+drum	18	Punchy Fat Kick 2	Kick		
+drum	19	Punchy Fat Kick 3	Kick		
+drum	20	Punchy Fat Kick 4	Kick		
+drum	21	Punchy Fat Kick 5	Kick		
+drum	22	Bitcrushed Punchy Kick 1	Kick		
+drum	23	Punchy Fat Kick 6	Kick		
+drum	24	Punchy Fat Kick 7	Kick		
+drum	25	Distorted Kick 1	Kick		
+drum	26	Distorted Kick 2	Kick		
+drum	27	Distorted Kick 3	Kick		
+drum	28	Distorted Kick 4	Kick		
+drum	29	Distorted Kick 5	Kick		
+drum	30	Distorted Kick 6	Kick		
+drum	31	Distorted Kick 7	Kick		
+drum	32	Distorted Kick 8	Kick		
+drum	33	Saturated Tight Kick 1	Kick		
+drum	34	Saturated Fat Kick 1	Kick		
+drum	35	Saturated Tight Kick 2	Kick		
+drum	36	Saturated Fat Kick 2	Kick		
+drum	37	Saturated Fat Kick 3	Kick		
+drum	38	Saturated Fat Kick 4	Kick		
+drum	39	Saturated Fat Kick 5	Kick		
+drum	40	Saturated Fat Kick 6	Kick		
+drum	41	Saturated Fat Kick 7	Kick		
+drum	42	Punchy Saturated Kick 1	Kick		
+drum	43	Saturated Fat Kick 8	Kick		
+drum	44	Saturated Fat Kick 9	Kick		
+drum	45	Bitcrushed Kick 1	Kick		
+drum	46	Bitcrushed Kick 2	Kick		
+drum	47	Bitcrushed Kick 3	Kick		
+drum	48	Bitcrushed Kick 4	Kick		
+drum	49	Rumble Kick 1	Kick		
+drum	50	Rumble Kick 2	Kick		
+drum	51	Rumble Kick 3	Kick		
+drum	52	Rumble Kick 4	Kick		
+drum	53	Rumble Kick 5	Kick		
+drum	54	Punchy Kick + Reverb 1	Kick		
+drum	55	Punchy Kick + Reverb 2	Kick		
+drum	56	Punchy Kick + Reverb 3	Kick		
+drum	57	Muffled Kick 1	Kick		
+drum	58	Muffled Kick 2	Kick		
+drum	59	Muffled Kick 3	Kick		
+drum	60	Muffled Kick 4	Kick		
+drum	61	Muffled Kick 5	Kick		
+drum	62	Muffled Kick 6	Kick		
+drum	63	Lo-Fi Kick 1	Kick		
+drum	64	Lo-Fi Kick 2	Kick		
+drum	65	RX7 Kick 1	Kick		
+drum	66	RX5 Kick 1	Kick		
+drum	67	RX15 Kick 1	Kick		
+drum	68	RX7 Kick 2	Kick		
+drum	69	RX5 Kick 2	Kick		
+drum	70	RX7 Kick 3	Kick		
+drum	71	RX7 Kick 4	Kick		
+drum	72	RX7 Kick 5	Kick		
+drum	73	Acoustic Kick - Standard 1	Kick		
+drum	74	Acoustic Kick - Standard 2	Kick		
+drum	75	Acoustic Kick - Standard 3	Kick		
+drum	76	Acoustic Kick - Standard 4	Kick		
+drum	77	Acoustic Kick - Rock 1	Kick		
+drum	78	Acoustic Kick - Modern Rock 1	Kick		
+drum	79	Acoustic Kick - Jazz 1	Kick		
+drum	80	Acoustic Kick - Maple 1	Kick		
+drum	81	Modulated Kick 1	Kick		
+drum	82	Modulated Kick 2	Kick		
+drum	83	Punchy Kick + Electronic Ping 1	Kick		
+drum	84	Muffled Kick + Bell 1	Kick		
+drum	85	Punchy Kick + Perc 1	Kick		
+drum	86	Kick + Shaker 1	Kick		
+drum	87	Kick + Open Hat 1	Kick		
+drum	88	Kick + Open Hat 2	Kick		
+drum	89	Tonal Kick C	Kick		
+drum	90	Tonal Kick C#	Kick		
+drum	91	Tonal Kick D	Kick		
+drum	92	Tonal Kick D#	Kick		
+drum	93	Tonal Kick E	Kick		
+drum	94	Tonal Kick F	Kick		
+drum	95	Tonal Kick F#	Kick		
+drum	96	Tonal Kick G	Kick		
+drum	97	Tonal Kick G#	Kick		
+drum	98	Tonal Kick A	Kick		
+drum	99	Tonal Kick A#	Kick		
+drum	100	Tonal Kick B	Kick		
+drum	101	Distorted Tonal Kick C	Kick		
+drum	102	Distorted Tonal Kick C#	Kick		
+drum	103	Distorted Tonal Kick D	Kick		
+drum	104	Distorted Tonal Kick D#	Kick		
+drum	105	Distorted Tonal Kick E	Kick		
+drum	106	Distorted Tonal Kick F	Kick		
+drum	107	Distorted Tonal Kick F#	Kick		
+drum	108	Distorted Tonal Kick G	Kick		
+drum	109	Distorted Tonal Kick G#	Kick		
+drum	110	Distorted Tonal Kick A	Kick		
+drum	111	Distorted Tonal Kick A#	Kick		
+drum	112	Distorted Tonal Kick B	Kick		
+drum	113	Tight Snare 1	Snare		
+drum	114	Tight Snare 2	Snare		
+drum	115	Tight Snare 3	Snare		
+drum	116	Short Pitched Snare 1	Snare		
+drum	117	Tight Snare 4	Snare		
+drum	118	Tight Snare + Reverb 1	Snare		
+drum	119	Tight Punchy Snare + Reverb 1	Snare		
+drum	120	Tight Snare 5	Snare		
+drum	121	Pitched Snare 1	Snare		
+drum	122	Tight Snare 6	Snare		
+drum	123	Tight Snare + Reverb 2	Snare		
+drum	124	Tight Snare + Reverb 3	Snare		
+drum	125	Tight Snare + Reverb 4	Snare		
+drum	126	Tight Snare + Reverb 5	Snare		
+drum	127	Tight Punchy Snare 1	Snare		
+drum	128	Punchy Fat Snare 1	Snare		
+drum	129	Distorted Pitched Snare 1	Snare		
+drum	130	Distorted Punchy Snare 1	Snare		
+drum	131	Punchy Fat Snare 2	Snare		
+drum	132	Distorted Fat Snare 1	Snare		
+drum	133	Distorted Fat Snare 2	Snare		
+drum	134	Punchy Fat Snare 3	Snare		
+drum	135	Punchy Fat Snare 4	Snare		
+drum	136	Punchy Fat Snare 5	Snare		
+drum	137	Distorted Low Snare 1	Snare		
+drum	138	Distorted Low Snare 2	Snare		
+drum	139	Punchy Long Snare 1	Snare		
+drum	140	Punchy Long Snare 2	Snare		
+drum	141	Click Wood Snare 1	Snare		
+drum	142	Double Click Snare 1	Snare		
+drum	143	Short Slow Snare 1	Snare		
+drum	144	Lo-Fi Snare 1	Snare		
+drum	145	Lo-Fi Snare 2	Snare		
+drum	146	Lo-Fi Snare 3	Snare		
+drum	147	Lo-Fi Snare 4	Snare		
+drum	148	Lo-Fi Snare 5	Snare		
+drum	149	Short Can Snare 1	Snare		
+drum	150	Muffled Snare 1	Snare		
+drum	151	Tight Snare + Reverb 6	Snare		
+drum	152	Tight Snare + Reverb 7	Snare		
+drum	153	Snare + Reverb 1	Snare		
+drum	154	Snare + Reverb 2	Snare		
+drum	155	Muffled Snare + Reverb 1	Snare		
+drum	156	Muffled Snare + Reverb 2	Snare		
+drum	157	Pitched Snare + Reverb 1	Snare		
+drum	158	Muffled Snare + Reverb 3	Snare		
+drum	159	Muffled Snare + Reverb 4	Snare		
+drum	160	Fat Snare + Reverb 1	Snare		
+drum	161	Punchy Snare + Reverb 1	Snare		
+drum	162	Distorted Snare + Reverb 1	Snare		
+drum	163	Gated Reverb Snare 1	Snare		
+drum	164	Gated Reverb Snare 2	Snare		
+drum	165	Spring Snare 1	Snare		
+drum	166	Trash Snare + Reverb 1	Snare		
+drum	167	Trash Snare + Reverb 2	Snare		
+drum	168	Trash Snare + Reverb 3	Snare		
+drum	169	Rx5 Snare 1	Snare		
+drum	170	Rx5 Snare 2	Snare		
+drum	171	RX7 Snare 1	Snare		
+drum	172	RX7 Snare 2	Snare		
+drum	173	RX7 Snare 3	Snare		
+drum	174	RX7 Snare 4	Snare		
+drum	175	RX7 Snare 5	Snare		
+drum	176	RX7 Snare 6	Snare		
+drum	177	Acoustic Snare - Standard 1	Snare		
+drum	178	Acoustic Snare - Standard 2	Snare		
+drum	179	Acoustic Snare - Soul 1	Snare		
+drum	180	Acoustic Snare - Standard 3	Snare		
+drum	181	Acoustic Snare - Standard 4	Snare		
+drum	182	Acoustic Snare - Punchy 1	Snare		
+drum	183	Acoustic Snare - Punchy 2	Snare		
+drum	184	Acoustic Snare - Metallic 1	Snare		
+drum	185	Acoustic Snare - Punchy 3	Snare		
+drum	186	Acoustic Snare - Tight 1	Snare		
+drum	187	Acoustic Snare - Tight 2	Snare		
+drum	188	Acoustic Snare + Reverb 1	Snare		
+drum	189	Acoustic Snare - Punchy 4	Snare		
+drum	190	Acoustic Snare - Punchy 5	Snare		
+drum	191	Acoustic Snare - Brush 1	Snare		
+drum	192	Acoustic Snare - Brush Tap 1	Snare		
+drum	193	Acoustic Snare - Flam 1	Snare		
+drum	194	Glitch Snare 1	Snare		
+drum	195	Glitch Snare 2	Snare		
+drum	196	Glitch Snare 3	Snare		
+drum	197	Hardcore Snare 1	Snare		
+drum	198	Hardcore Snare 2	Snare		
+drum	199	Hardcore Snare 3	Snare		
+drum	200	Hardcore Snare 4	Snare		
+drum	201	Hardcore Snare 5	Snare		
+drum	202	Snare + Wood Block 1	Snare		
+drum	203	Snare + Wood Block 2	Snare		
+drum	204	Wood Snare 1	Snare		
+drum	205	Factory Snare + Reverb 1	Snare		
+drum	206	Metallic Snare 1	Snare		
+drum	207	Metallic Snare 2	Snare		
+drum	208	Metallic Snare 3	Snare		
+drum	209	Metallic Snare 4	Snare		
+drum	210	Metallic Snare 5	Snare		
+drum	211	Glass Broken Snare 1	Snare		
+drum	212	Glass Broken Snare 2	Snare		
+drum	213	SFX Snare 1	Snare		
+drum	214	SFX Snare 2	Snare		
+drum	215	Acoustic Rim - Jazz 1	Rim		
+drum	216	Acoustic Rim - Oak 1	Rim		
+drum	217	Acoustic Rim - Fat 1	Rim		
+drum	218	Acoustic Rim - Rock 1	Rim		
+drum	219	Acoustic Rim - Standard 1	Rim		
+drum	220	Acoustic Rim - High 1	Rim		
+drum	221	RX11 Rim 1	Rim		
+drum	222	RX5 Rim 1	Rim		
+drum	223	Acoustic Rim - Short 1	Rim		
+drum	224	Analog Rim 1	Rim		
+drum	225	Analog Rim 2	Rim		
+drum	226	Pitched Rim 1	Rim		
+drum	227	Lo-Fi Rim 1	Rim		
+drum	228	Lo-Fi Rim 2	Rim		
+drum	229	Lo-Fi Rim 3	Rim		
+drum	230	Stick Rim 1	Rim		
+drum	231	Acoustic Rim - Short 2	Rim		
+drum	232	High Pitched Rim 1	Rim		
+drum	233	Double Click Rim 1	Rim		
+drum	234	Acoustic Rim + Reverb 1	Rim		
+drum	235	Lo-Fi Rim + Reverb 1	Rim		
+drum	236	Acoustic Rim + Reverb 2	Rim		
+drum	237	Acoustic Rim + Reverb 3	Rim		
+drum	238	Noisy Rim 1	Rim		
+drum	239	Noisy Rim 2	Rim		
+drum	240	Noisy Rim 3	Rim		
+drum	241	Noisy Rim 4	Rim		
+drum	242	Noisy Rim 5	Rim		
+drum	243	Noisy Rim 6	Rim		
+drum	244	Noisy Rim 7	Rim		
+drum	245	Metallic Rim 1	Rim		
+drum	246	Double Click Rim 2	Rim		
+drum	247	Rim + Low 1	Rim		
+drum	248	Click Rim + Low 1	Rim		
+drum	249	Hand Clap 1	Clap		
+drum	250	Hand Clap 2	Clap		
+drum	251	Hand Clap 3	Clap		
+drum	252	Hand Clap 4	Clap		
+drum	253	Group Clap 1	Clap		
+drum	254	Group Clap 2	Clap		
+drum	255	Group Clap 3	Clap		
+drum	256	Group Clap 4	Clap		
+drum	257	Hand Clap 5	Clap		
+drum	258	Bright Clap 1	Clap		
+drum	259	Bright Clap 2	Clap		
+drum	260	Lo-Fi Thin Clap 1	Clap		
+drum	261	Wide Thin Clap 1	Clap		
+drum	262	Bright Clap 3	Clap		
+drum	263	RX11 Clap 1	Clap		
+drum	264	Bitcrushed Clap 1	Clap		
+drum	265	Lo-Fi Clap 1	Clap		
+drum	266	Lo-Fi Clap + Reverb 1	Clap		
+drum	267	Slow Clap 1	Clap		
+drum	268	Short Clap 1	Clap		
+drum	269	Short Clap 2	Clap		
+drum	270	Short Double Clap 1	Clap		
+drum	271	Double Clap + Reverb 1	Clap		
+drum	272	Double Clap + Reverb 2	Clap		
+drum	273	Bright Clap 4	Clap		
+drum	274	Clicky Clap 1	Clap		
+drum	275	Long Clap + Reverb 1	Clap		
+drum	276	Long Clap + Reverb 2	Clap		
+drum	277	Hand Clap + Reverb 1	Clap		
+drum	278	Thin Clap + Reverb 1	Clap		
+drum	279	Thin Clap + Reverb 2	Clap		
+drum	280	Click Clap + Reverb 1	Clap		
+drum	281	Hand Clap + Reverb 2	Clap		
+drum	282	Hand Clap + Reverb 3	Clap		
+drum	283	Short Delay Clap 1	Clap		
+drum	284	Hand Clap + Reverb 4	Clap		
+drum	285	Hand Clap + Reverb 5	Clap		
+drum	286	Noise Clap 1	Clap		
+drum	287	Noise Clap 2	Clap		
+drum	288	Glitch Clap 1	Clap		
+drum	289	Glitch Clap 2	Clap		
+drum	290	Glitch Clap 3	Clap		
+drum	291	Glitch Clap 4	Clap		
+drum	292	Glitch Clap 5	Clap		
+drum	293	Modulated Hand Clap 1	Clap		
+drum	294	Woody Clap 1	Clap		
+drum	295	Arabic Hand Clap 1	Clap		
+drum	296	Woody Clap + Reverb 1	Clap		
+drum	297	Finger Snap 1	Snap		
+drum	298	Finger Snap 2	Snap		
+drum	299	Finger Snap 3	Snap		
+drum	300	Finger Snap 4	Snap		
+drum	301	Finger Snap 5	Snap		
+drum	302	Finger Snap 6	Snap		
+drum	303	Wide Snap 1	Snap		
+drum	304	Wide Snap 2	Snap		
+drum	305	Fat Snap 1	Snap		
+drum	306	Fat Snap 2	Snap		
+drum	307	Woody Snap 1	Snap		
+drum	308	Snap + Reverb 1	Snap		
+drum	309	Snap + Reverb 2	Snap		
+drum	310	Click Snap 1	Snap		
+drum	311	Click Snap 2	Snap		
+drum	312	Tight Closed Hat 1	Closed HiHat		
+drum	313	Tight Closed Hat 2	Closed HiHat		
+drum	314	Tight Closed Hat 3	Closed HiHat		
+drum	315	Tight Closed Hat 4	Closed HiHat		
+drum	316	Tight Closed Hat 5	Closed HiHat		
+drum	317	Tight Closed Hat 6	Closed HiHat		
+drum	318	Tight Closed Hat 7	Closed HiHat		
+drum	319	Tight Closed Hat 8	Closed HiHat		
+drum	320	Tight Closed Hat 9	Closed HiHat		
+drum	321	Tight Closed Hat 10	Closed HiHat		
+drum	322	Tight Closed Hat 11	Closed HiHat		
+drum	323	Tight Closed Hat 12	Closed HiHat		
+drum	324	Closed Hat 1	Closed HiHat		
+drum	325	Closed Hat 2	Closed HiHat		
+drum	326	Closed Hat 3	Closed HiHat		
+drum	327	Closed Hat 4	Closed HiHat		
+drum	328	Closed Hat 5	Closed HiHat		
+drum	329	Closed Hat 6	Closed HiHat		
+drum	330	Acoustic Closed Hat 1	Closed HiHat		
+drum	331	Closed Hat 7	Closed HiHat		
+drum	332	Closed Hat 8	Closed HiHat		
+drum	333	Closed Hat 9	Closed HiHat		
+drum	334	Acoustic Closed Hat 2	Closed HiHat		
+drum	335	Closed Hat 10	Closed HiHat		
+drum	336	Noise Closed Hat 1	Closed HiHat		
+drum	337	Noise Closed Hat 2	Closed HiHat		
+drum	338	Noise Closed Hat + Low 1	Closed HiHat		
+drum	339	Low Closed Hat 1	Closed HiHat		
+drum	340	Closed Hat + High Tone 1	Closed HiHat		
+drum	341	Acoustic Closed Hat 3	Closed HiHat		
+drum	342	Acoustic Closed Hat 4	Closed HiHat		
+drum	343	Acoustic Closed Hat 5	Closed HiHat		
+drum	344	Acoustic Closed Hat 6	Closed HiHat		
+drum	345	Acoustic Closed Hat 7	Closed HiHat		
+drum	346	Acoustic Closed Hat 8	Closed HiHat		
+drum	347	Acoustic Closed Hat 9	Closed HiHat		
+drum	348	Acoustic Closed Hat 10	Closed HiHat		
+drum	349	Acoustic Hat Pedal 1	Closed HiHat		
+drum	350	Acoustic Hat Pedal 2	Closed HiHat		
+drum	351	Acoustic Hat Pedal 3	Closed HiHat		
+drum	352	Acoustic Hat Pedal 4	Closed HiHat		
+drum	353	Acoustic Hat Pedal 5	Closed HiHat		
+drum	354	Acoustic Hat Pedal 6	Closed HiHat		
+drum	355	Click Closed Hat 1	Closed HiHat		
+drum	356	Lo-Fi Short Closed Hat 1	Closed HiHat		
+drum	357	Click Closed Hat 2	Closed HiHat		
+drum	358	Lo-Fi Short Closed Hat 2	Closed HiHat		
+drum	359	Lo-Fi Short Closed Hat 3	Closed HiHat		
+drum	360	Lo-Fi Short Closed Hat 4	Closed HiHat		
+drum	361	Lo-Fi Short Closed Hat 5	Closed HiHat		
+drum	362	Lo-Fi Short Closed Hat 6	Closed HiHat		
+drum	363	Lo-Fi Short Closed Hat 7	Closed HiHat		
+drum	364	Lo-Fi Short Closed Hat 8	Closed HiHat		
+drum	365	Lo-Fi Short Closed Hat 9	Closed HiHat		
+drum	366	Bitcrushed Hat 1	Closed HiHat		
+drum	367	Lo-Fi Closed Hat 1	Closed HiHat		
+drum	368	Lo-Fi Closed Hat 2	Closed HiHat		
+drum	369	Lo-Fi Closed Hat 3	Closed HiHat		
+drum	370	Lo-Fi Closed Hat 4	Closed HiHat		
+drum	371	Lo-Fi Closed Hat 5	Closed HiHat		
+drum	372	Lo-Fi Closed Hat 6	Closed HiHat		
+drum	373	Lo-Fi Closed Hat 7	Closed HiHat		
+drum	374	Lo-Fi Closed Hat 8	Closed HiHat		
+drum	375	Lo-Fi Closed Hat 9	Closed HiHat		
+drum	376	Closed Hat + Reverb 1	Closed HiHat		
+drum	377	Lo-Fi Closed Hat + Reverb 1	Closed HiHat		
+drum	378	Closed Hat + Reverb 2	Closed HiHat		
+drum	379	Closed Hat + Reverb 3	Closed HiHat		
+drum	380	Closed Hat + Reverb 4	Closed HiHat		
+drum	381	Closed Hat + Reverb 5	Closed HiHat		
+drum	382	Glitch Hat 1	Closed HiHat		
+drum	383	Glitch Hat 2	Closed HiHat		
+drum	384	Glitch Hat 3	Closed HiHat		
+drum	385	Bright Open Hat 1	Open HiHat		
+drum	386	Bright Open Hat 2	Open HiHat		
+drum	387	Bright Open Hat 3	Open HiHat		
+drum	388	Bright Open Hat 4	Open HiHat		
+drum	389	Bright Open Hat 5	Open HiHat		
+drum	390	Noise Open Hat 1	Open HiHat		
+drum	391	Noise Open Hat 2	Open HiHat		
+drum	392	Noise Open Hat 3	Open HiHat		
+drum	393	Noise Open Hat 4	Open HiHat		
+drum	394	Noise Open Hat 5	Open HiHat		
+drum	395	Noise Open Hat 6	Open HiHat		
+drum	396	Noise Open Hat 7	Open HiHat		
+drum	397	Noise Open Hat 8	Open HiHat		
+drum	398	Noise Open Hat 9	Open HiHat		
+drum	399	Noise Open Hat 10	Open HiHat		
+drum	400	Noise Open Hat 11	Open HiHat		
+drum	401	Noise Open Hat 12	Open HiHat		
+drum	402	Noise Open Hat 13	Open HiHat		
+drum	403	Noise Open Hat 14	Open HiHat		
+drum	404	Noise Open Hat 15	Open HiHat		
+drum	405	Bright Open Hat 6	Open HiHat		
+drum	406	Acoustic Open Hat 1	Open HiHat		
+drum	407	Acoustic Open Hat 2	Open HiHat		
+drum	408	Acoustic Open Hat 3	Open HiHat		
+drum	409	Acoustic Open Hat 4	Open HiHat		
+drum	410	Acoustic Open Hat 5	Open HiHat		
+drum	411	Acoustic Open Hat 6	Open HiHat		
+drum	412	Acoustic Open Hat 7	Open HiHat		
+drum	413	Crash Open Hat 1	Open HiHat		
+drum	414	Crash Open Hat 2	Open HiHat		
+drum	415	Crash Open Hat 3	Open HiHat		
+drum	416	Bitcrushed Open Hat 1	Open HiHat		
+drum	417	Bitcrushed Open Hat 2	Open HiHat		
+drum	418	Bitcrushed Open Hat 3	Open HiHat		
+drum	419	Bitcrushed Open Hat 4	Open HiHat		
+drum	420	Distorted Open Hat 1	Open HiHat		
+drum	421	Distorted Open Hat 2	Open HiHat		
+drum	422	Distorted Open Hat 3	Open HiHat		
+drum	423	Distorted Open Hat 4	Open HiHat		
+drum	424	Distorted Open Hat 5	Open HiHat		
+drum	425	Lo-Fi Open Hat 1	Open HiHat		
+drum	426	Lo-Fi Open Hat 2	Open HiHat		
+drum	427	Lo-Fi Open Hat 3	Open HiHat		
+drum	428	Lo-Fi Open Hat 4	Open HiHat		
+drum	429	Lo-Fi Open Hat 5	Open HiHat		
+drum	430	Gated Open Hat 1	Open HiHat		
+drum	431	Gated Open Hat 2	Open HiHat		
+drum	432	Gated Open Hat 3	Open HiHat		
+drum	433	Gated Open Hat 4	Open HiHat		
+drum	434	Gated Open Hat 5	Open HiHat		
+drum	435	Slow Attack Open Hat 1	Open HiHat		
+drum	436	Slow Attack Open Hat 2	Open HiHat		
+drum	437	Slow Attack Open Hat 3	Open HiHat		
+drum	438	Slow Attack Open Hat 4	Open HiHat		
+drum	439	Slow Attack Open Hat 5	Open HiHat		
+drum	440	Slow Attack Open Hat 6	Open HiHat		
+drum	441	Slow Attack Open Hat 7	Open HiHat		
+drum	442	Open Hat with Bell 1	Open HiHat		
+drum	443	Open Hat with Bell 2	Open HiHat		
+drum	444	Open Hat with Bell 3	Open HiHat		
+drum	445	Bell Open Hat 1	Open HiHat		
+drum	446	Splash Open Hat 1	Open HiHat		
+drum	447	Open Hat + Delay 1	Open HiHat		
+drum	448	Open Hat + Reverb 1	Open HiHat		
+drum	449	Open Hat + Reverb 2	Open HiHat		
+drum	450	Panning Open Hat 1	Open HiHat		
+drum	451	Panning Distorted Open Hat 1	Open HiHat		
+drum	452	Modulated Open Hat 1	Open HiHat		
+drum	453	Modulated Open Hat 2	Open HiHat		
+drum	454	Modulated Open Hat 3	Open HiHat		
+drum	455	Reversed Floor Hat 1	Open HiHat		
+drum	456	Reversed Hat 1	Open HiHat		
+drum	457	Shaker 1	Shaker / Tambourine		
+drum	458	Shaker 2	Shaker / Tambourine		
+drum	459	Shaker 3	Shaker / Tambourine		
+drum	460	Shaker 4	Shaker / Tambourine		
+drum	461	Shaker 5	Shaker / Tambourine		
+drum	462	Shaker 6	Shaker / Tambourine		
+drum	463	Shaker 7	Shaker / Tambourine		
+drum	464	Shaker 8	Shaker / Tambourine		
+drum	465	Shaker 9	Shaker / Tambourine		
+drum	466	Shaker 10	Shaker / Tambourine		
+drum	467	Shaker 11	Shaker / Tambourine		
+drum	468	Short Shaker Accent 1	Shaker / Tambourine		
+drum	469	Short Shaker Accent 2	Shaker / Tambourine		
+drum	470	Short Shaker Accent 3	Shaker / Tambourine		
+drum	471	Shaker + Reverb 1	Shaker / Tambourine		
+drum	472	Shaker + Reverb 2	Shaker / Tambourine		
+drum	473	Short Shaker Accent 4	Shaker / Tambourine		
+drum	474	Shaker 12	Shaker / Tambourine		
+drum	475	Shaker 13	Shaker / Tambourine		
+drum	476	Shaker 14	Shaker / Tambourine		
+drum	477	Shaker 15	Shaker / Tambourine		
+drum	478	Arabic Maracas 1	Shaker / Tambourine		
+drum	479	Caxixi 1	Shaker / Tambourine		
+drum	480	Afoxe Open 1	Shaker / Tambourine		
+drum	481	Muffled Shaker 1	Shaker / Tambourine		
+drum	482	Tambourine 1	Shaker / Tambourine		
+drum	483	Tambourine 2	Shaker / Tambourine		
+drum	484	Tambourine 3	Shaker / Tambourine		
+drum	485	Tambourine 4	Shaker / Tambourine		
+drum	486	Tambourine 5	Shaker / Tambourine		
+drum	487	Tambourine 6	Shaker / Tambourine		
+drum	488	Tambourine 7	Shaker / Tambourine		
+drum	489	Short Tambourine 1	Shaker / Tambourine		
+drum	490	Tambourine 8	Shaker / Tambourine		
+drum	491	RX5 Tambourine 1	Shaker / Tambourine		
+drum	492	Long Tambourine 1	Shaker / Tambourine		
+drum	493	Long Tambourine 2	Shaker / Tambourine		
+drum	494	Long Tambourine 3	Shaker / Tambourine		
+drum	495	Long Tambourine 4	Shaker / Tambourine		
+drum	496	Long Tambourine 5	Shaker / Tambourine		
+drum	497	Tambourine + Reverb 1	Shaker / Tambourine		
+drum	498	Sharp Ride 1	Ride		
+drum	499	Sharp Ride 2	Ride		
+drum	500	Noise Ride 1	Ride		
+drum	501	Sharp Ride 3	Ride		
+drum	502	Acoustic Ride 1	Ride		
+drum	503	Acoustic Ride - Brush 1	Ride		
+drum	504	Acoustic Ride 2	Ride		
+drum	505	Acoustic Ride 3	Ride		
+drum	506	RX7 Ride 1	Ride		
+drum	507	Ride Cup 1	Ride		
+drum	508	Ride Cup 2	Ride		
+drum	509	RX5 Ride Cup 1	Ride		
+drum	510	Color Ride 1	Ride		
+drum	511	Color Ride 2	Ride		
+drum	512	Color Ride 3	Ride		
+drum	513	Color Ride 4	Ride		
+drum	514	Color Ride 5	Ride		
+drum	515	Gate Ride 1	Ride		
+drum	516	Crash Ride 1	Ride		
+drum	517	Crash Ride 2	Ride		
+drum	518	Crash Ride 3	Ride		
+drum	519	Noise Ride 2	Ride		
+drum	520	Noise Long Ride 1	Ride		
+drum	521	High Noise Ride 1	Ride		
+drum	522	Synth Ride 1	Ride		
+drum	523	Synth Long Ride 1	Ride		
+drum	524	Dark Ride 1	Ride		
+drum	525	Slow Ride 1	Ride		
+drum	526	Noise Ride 3	Ride		
+drum	527	Bitcrushed Ride 1	Ride		
+drum	528	RX5 Crash 1	Crash		
+drum	529	Acoustic Crash 1	Crash		
+drum	530	Acoustic Crash 2	Crash		
+drum	531	Acoustic Crash + Reverb 1	Crash		
+drum	532	Acoustic Crash 3	Crash		
+drum	533	Slow Acoustic Crash 1	Crash		
+drum	534	Acoustic Crash 4	Crash		
+drum	535	Acoustic Crash 5	Crash		
+drum	536	Splash Cymbal 1	Crash		
+drum	537	Splash Cymbal 2	Crash		
+drum	538	Splash Cymbal + Reverb 1	Crash		
+drum	539	Big Cymbal 1	Crash		
+drum	540	Big Cymbal 2	Crash		
+drum	541	Big Cymbal 3	Crash		
+drum	542	Cymbal Hammer 1	Crash		
+drum	543	China Cymbal 1	Crash		
+drum	544	4th Delay Crash 1	Crash		
+drum	545	Long Crash + Reverb 1	Crash		
+drum	546	Noise Crash 1	Crash		
+drum	547	Noise Crash 2	Crash		
+drum	548	Noise Crash 3	Crash		
+drum	549	Acoustic High Tom 1	Tom		
+drum	550	Acoustic High Tom 2	Tom		
+drum	551	Acoustic Mid Tom 1	Tom		
+drum	552	Acoustic Mid Tom 2	Tom		
+drum	553	Acoustic Mid Tom 3	Tom		
+drum	554	Acoustic Mid Tom 4	Tom		
+drum	555	Acoustic Low Tom 1	Tom		
+drum	556	Acoustic Low Tom 2	Tom		
+drum	557	Punchy High Tom 1	Tom		
+drum	558	Punchy High Tom 2	Tom		
+drum	559	Punchy High Tom 3	Tom		
+drum	560	Punchy Mid Tom 1	Tom		
+drum	561	Punchy Mid Tom 2	Tom		
+drum	562	Punchy Mid Tom 3	Tom		
+drum	563	Punchy Mid Tom 4	Tom		
+drum	564	Punchy Mid Tom 5	Tom		
+drum	565	Punchy Mid Tom 6	Tom		
+drum	566	Punchy Low Tom 1	Tom		
+drum	567	Punchy Low Tom 2	Tom		
+drum	568	Punchy Low Tom 3	Tom		
+drum	569	Electronic High Tom 1	Tom		
+drum	570	Electronic High Tom 2	Tom		
+drum	571	Electronic High Tom 3	Tom		
+drum	572	Electronic High Tom 4	Tom		
+drum	573	Electronic High Tom 5	Tom		
+drum	574	Electronic Mid Tom 1	Tom		
+drum	575	Electronic Mid Tom 2	Tom		
+drum	576	Electronic Low Tom 1	Tom		
+drum	577	Electronic Low Tom 2	Tom		
+drum	578	RX5 High Tom 1	Tom		
+drum	579	RX5 Mid Tom 1	Tom		
+drum	580	RX5 Mid Tom 2	Tom		
+drum	581	RX5 Low Tom 1	Tom		
+drum	582	Acoustic High Tom - Oak 1	Tom		
+drum	583	Acoustic Mid Tom - Oak 1	Tom		
+drum	584	Acoustic Low Tom - Oak 1	Tom		
+drum	585	Acoustic High Tom - Jazz 1	Tom		
+drum	586	Acoustic Mid Tom - Jazz 1	Tom		
+drum	587	Acoustic Low Tom - Jazz 1	Tom		
+drum	588	Acoustic High Tom - Rock 1	Tom		
+drum	589	Acoustic Mid Tom - Rock 1	Tom		
+drum	590	Acoustic Low Tom - Rock 1	Tom		
+drum	591	Acoustic High Tom - Maple 1	Tom		
+drum	592	Acoustic Mid Tom - Maple 1	Tom		
+drum	593	Acoustic Low Tom - Maple 1	Tom		
+drum	594	Electronic High Tom + Reverb 1	Tom		
+drum	595	Muffled Mid Tom + Reverb 1	Tom		
+drum	596	Acoustic Mid Tom + Reverb 1	Tom		
+drum	597	Modulated Tom 1	Tom		
+drum	598	Modulated Tom 2	Tom		
+drum	599	Modulated Tom 3	Tom		
+drum	600	RX5 High Tom 2	Tom		
+drum	601	RX5 Mid Tom 3	Tom		
+drum	602	RX5 Mid Tom 4	Tom		
+drum	603	RX5 Low Tom 2	Tom		
+drum	604	Distorted Tom 1	Tom		
+drum	605	Distorted Tom 2	Tom		
+drum	606	Distorted Tom 3	Tom		
+drum	607	Distorted Tom 4	Tom		
+drum	608	Distorted Tom 5	Tom		
+drum	609	Distorted Tom 6	Tom		
+drum	610	Distorted Tom 7	Tom		
+drum	611	Bitcrushed Tom 1	Tom		
+drum	612	Bitcrushed Tom 2	Tom		
+drum	613	Bass Tom 1	Tom		
+drum	614	Bass Tom 2	Tom		
+drum	615	Tonal Bass Tom 1	Tom		
+drum	616	Bass Tom 3	Tom		
+drum	617	Bass Tom 4	Tom		
+drum	618	Bass Tom 5	Tom		
+drum	619	Analog Cowbell 1	Bell		
+drum	620	Analog Cowbell Accent 1	Bell		
+drum	621	Tonal Cowbell 1	Bell		
+drum	622	Tonal Cowbell 2	Bell		
+drum	623	Metallic Cowbell 1	Bell		
+drum	624	Metallic Cowbell 2	Bell		
+drum	625	Metallic Cowbell 3	Bell		
+drum	626	Cowbell High 1	Bell		
+drum	627	Cowbell 1	Bell		
+drum	628	Cowbell Mid 1	Bell		
+drum	629	Cowbell Mid 2	Bell		
+drum	630	Agogo High 1	Bell		
+drum	631	Agogo Low 1	Bell		
+drum	632	Small Bell 1	Bell		
+drum	633	Short Bell 1	Bell		
+drum	634	Short Bell 2	Bell		
+drum	635	Tingsha Bell 1	Bell		
+drum	636	Ringing Bell 1	Bell		
+drum	637	Muted Finger Cymbal 1	Bell		
+drum	638	Muted Finger Cymbal 2	Bell		
+drum	639	Sagat1 Open 1	Bell		
+drum	640	Sagat1 Close 1	Bell		
+drum	641	Sagat2 Open 1	Bell		
+drum	642	Sagat2 Close 1	Bell		
+drum	643	Sagat3 Open 1	Bell		
+drum	644	Sagat3 Close 1	Bell		
+drum	645	Atarigane 1	Bell		
+drum	646	High Bell 1	Bell		
+drum	647	Mind Bell 1	Bell		
+drum	648	Sci-Fi Bell 1	Bell		
+drum	649	Bell and Noise 1	Bell		
+drum	650	Modulated Bell 1	Bell		
+drum	651	RX5 Conga High Open 1	Conga / Bongo		
+drum	652	RX5 Conga High Mute 1	Conga / Bongo		
+drum	653	RX5 Conga Low Open 1	Conga / Bongo		
+drum	654	Conga1 High Slap 1	Conga / Bongo		
+drum	655	Conga1 High Slap Open 1	Conga / Bongo		
+drum	656	Conga1 High Open 1	Conga / Bongo		
+drum	657	Conga1 Low Open 1	Conga / Bongo		
+drum	658	Conga2 High 1	Conga / Bongo		
+drum	659	Conga2 Mid 1	Conga / Bongo		
+drum	660	Conga2 Mid Mute 1	Conga / Bongo		
+drum	661	Conga3 High Mute 1	Conga / Bongo		
+drum	662	Conga3 Mid Slap Open 1	Conga / Bongo		
+drum	663	Khalg Conga Low	Conga / Bongo		
+drum	664	Analog Conga High 1	Conga / Bongo		
+drum	665	Analog Conga Mid 1	Conga / Bongo		
+drum	666	Analog Conga Low 1	Conga / Bongo		
+drum	667	RX5 Bongo High 1	Conga / Bongo		
+drum	668	RX5 Bongo Low 1	Conga / Bongo		
+drum	669	Bongo1 High Open 1	Conga / Bongo		
+drum	670	Bongo1 Low Open 1	Conga / Bongo		
+drum	671	Bongo2 High 1	Conga / Bongo		
+drum	672	Bongo3 High 1	Conga / Bongo		
+drum	673	Bongo3 High 2	Conga / Bongo		
+drum	674	Bongo4 High 1	Conga / Bongo		
+drum	675	Bongo4 Low 1	Conga / Bongo		
+drum	676	Bongo4 Low 2	Conga / Bongo		
+drum	677	Djembe 1	World		
+drum	678	Djembe 2	World		
+drum	679	Djembe 3	World		
+drum	680	Djembe 4	World		
+drum	681	Talking Drum 1	World		
+drum	682	Talking Drum 2	World		
+drum	683	Talking Drum 3	World		
+drum	684	Talking Drum 4	World		
+drum	685	Tamborim Up 1	World		
+drum	686	Tamborim Down 1	World		
+drum	687	Tamborim Finger Back 1	World		
+drum	688	Tamborim Open 1	World		
+drum	689	Pandeiro Open 1	World		
+drum	690	Pandeiro Close 1	World		
+drum	691	Reco-reco 1	World		
+drum	692	Surdo Mute 1	World		
+drum	693	Surdo Stop 1	World		
+drum	694	Surdo Open 1	World		
+drum	695	Surdo Mute 2	World		
+drum	696	Surdo Stick 1	World		
+drum	697	Caixa Rim 1	World		
+drum	698	Vibraslap 1	World		
+drum	699	Darbuka Dum 1	World		
+drum	700	Darbuka Dom & Tak 1	World		
+drum	701	Darbuka Tak Finger 1	World		
+drum	702	Darbuka Tak Close 1	World		
+drum	703	Darbuka Slap 1	World		
+drum	704	Darbuka Sak 1	World		
+drum	705	Darbuka Rak 1	World		
+drum	706	Darbuka Flam 1	World		
+drum	707	Darbuka Noise 1	World		
+drum	708	Tunisian Bendir Dom 1	World		
+drum	709	Tunisian Bendir Tak 1	World		
+drum	710	Tunisian Bendir Tak 2	World		
+drum	711	Moroccan Bendir Dom 1	World		
+drum	712	Moroccan Bendir Dom 2	World		
+drum	713	Moroccan Bendir Dom 3	World		
+drum	714	Moroccan Bendir Edge 1	World		
+drum	715	Moroccan Tamtam 1	World		
+drum	716	Algerian Bendir Deza 1	World		
+drum	717	Algerian Bendir Kaf 1	World		
+drum	718	Algerian Galal Daza 1	World		
+drum	719	Riq Dum Open 1	World		
+drum	720	Riq Tek Open 1	World		
+drum	721	Riq Teke Open 1	World		
+drum	722	Riq Sak 1	World		
+drum	723	Riq Snouj Close 1	World		
+drum	724	Hollo Finger 1	World		
+drum	725	Bass Darbuka Dum 1	World		
+drum	726	Bass Darbuka Tek 1	World		
+drum	727	Bendir Tek 1	World		
+drum	728	Bendir Slap 1	World		
+drum	729	Bendir Large 1	World		
+drum	730	Merjaf Group Dom 1	World		
+drum	731	Merjaf Group Sak 1	World		
+drum	732	Zeer Dom 1	World		
+drum	733	Zeer Tak 1	World		
+drum	734	Merwas Group Dom 1	World		
+drum	735	Merwas Group Tak 1	World		
+drum	736	Medando Dom 1	World		
+drum	737	Medando Sak 1	World		
+drum	738	Sigal Marad Dom 1	World		
+drum	739	Sigal Marad Tak 1	World		
+drum	740	Doholla Dom 1	World		
+drum	741	Doholla Sak 1	World		
+drum	742	Katem Med Dom Open 1	World		
+drum	743	Katem Med Tak 1	World		
+drum	744	Katem Med Sak 1	World		
+drum	745	Taar Barashim Dom 1	World		
+drum	746	Taar Barashim Shake 1	World		
+drum	747	Req Sak 1	World		
+drum	748	Req Dom 1	World		
+drum	749	Req Open 1	World		
+drum	750	Req Sajat 1	World		
+drum	751	Udho Back 1	World		
+drum	752	Udho Chap Body 1	World		
+drum	753	Jahla Group Dom 1	World		
+drum	754	Iranian Bendir Tom 1	World		
+drum	755	Iranian Bendir Chap 1	World		
+drum	756	Iranian Bendir Back 1	World		
+drum	757	Tombak Tom 1	World		
+drum	758	Tombak Slap 1	World		
+drum	759	Tombak Chap 1	World		
+drum	760	Tombak Flam & Back 1	World		
+drum	761	Tempo Chap 1	World		
+drum	762	Tabla Dom 1	World		
+drum	763	Tabla Tak 1	World		
+drum	764	Tabla Sak 1	World		
+drum	765	Tabla 1	World		
+drum	766	Tabla 2	World		
+drum	767	Tabla 3	World		
+drum	768	Tabla 4	World		
+drum	769	Tabla 5	World		
+drum	770	Mridangam 1	World		
+drum	771	Mridangam 2	World		
+drum	772	Japanese Wa Taiko 1	World		
+drum	773	Japanese Oo Taiko 1	World		
+drum	774	Japanese Yagura Taiko 1	World		
+drum	775	Japanese Shime Taiko 1	World		
+drum	776	Japanese Tsuzumi 1	World		
+drum	777	Timbale 1	World		
+drum	778	Timbale 2	World		
+drum	779	Cajon 1	World		
+drum	780	Cajon 2	World		
+drum	781	Claves 1	World		
+drum	782	Wood Block 1	World		
+drum	783	Bones 1	World		
+drum	784	Bones 2	World		
+drum	785	Bones 3	World		
+drum	786	Bones Triplet 1	World		
+drum	787	Spoons 1	World		
+drum	788	Laser - Falling 1	SFX		
+drum	789	Sci-Fi - Detected 1	SFX		
+drum	790	Sci-Fi - Drip 1	SFX		
+drum	791	Sci-Fi - Buzzed 1	SFX		
+drum	792	Laser - Falling 2	SFX		
+drum	793	Sci-Fi - Repeated 1	SFX		
+drum	794	Laser - Blast 1	SFX		
+drum	795	Laser - Scratch 1	SFX		
+drum	796	Fade In Noise 1	SFX		
+drum	797	Low Noise 1	SFX		
+drum	798	Gritty Noise 1	SFX		
+drum	799	Ambient Noise 1	SFX		
+drum	800	Ambient Percussion 1	SFX		
+drum	801	Ambient Percussion 2	SFX		
+drum	802	Ambient Percussion 3	SFX		
+drum	803	Ambient Percussion 4	SFX		
+drum	804	Ambient Percussion 5	SFX		
+drum	805	Ambient Percussion 6	SFX		
+drum	806	Percussion + Water 1	SFX		
+drum	807	Percussion + Water 2	SFX		
+drum	808	Percussion + Water 3	SFX		
+drum	809	Glass Crash 1	SFX		
+drum	810	Glass Broken 1	SFX		
+drum	811	Percussion + Glass Broken 1	SFX		
+drum	812	Glass Broken + Reverb 1	SFX		
+drum	813	Percussion + Glass Broken 2	SFX		
+drum	814	Foley Sound 1	SFX		
+drum	815	Foley Sound 2	SFX		
+drum	816	Foley Sound 3	SFX		
+drum	817	Foley Sound 4	SFX		
+drum	818	Foley Sound 5	SFX		
+drum	819	Foley Sound 6	SFX		
+drum	820	Foley Sound 7	SFX		
+drum	821	Foley Sound 8	SFX		
+drum	822	Camera Shutter 1	SFX		
+drum	823	Camera Shutter 2	SFX		
+drum	824	Camera Shutter 3	SFX		
+drum	825	Old Clock Tick 1	SFX		
+drum	826	Telephone 1	SFX		
+drum	827	Gunshot 1	SFX		
+drum	828	Bomb 1	SFX		
+drum	829	Scanning 1	SFX		
+drum	830	SFX High Bell 1	SFX		
+drum	831	SFX Pitched Tone 1	SFX		
+drum	832	Muffled Pitched Percussion 1	SFX		
+drum	833	Sine Percussion 1	SFX		
+drum	834	Water Tone 1	SFX		
+drum	835	Mid Resonated Tone 1	SFX		
+drum	836	Mid Resonated Tone 2	SFX		
+drum	837	Wood + Reverb 1	SFX		
+drum	838	Pitched SFX 1	SFX		
+drum	839	Trash Can 1	SFX		
+drum	840	Distorted Pitched Noise 1	SFX		
+drum	841	Dark Hit 1	SFX		
+drum	842	Percussion Hit 1	SFX		
+drum	843	Percussion Hit 2	SFX		
+drum	844	Percussion Hit 3	SFX		
+drum	845	Percussion Hit 4	SFX		
+drum	846	Gritty Hit 1	SFX		
+drum	847	Gritty Hit 2	SFX		
+drum	848	Panning Gritty Hit 1	SFX		
+drum	849	Punchy Gritty Hit 1	SFX		
+drum	850	Industrial Hit 1	SFX		
+drum	851	Industrial Hit 2	SFX		
+drum	852	Industrial Hit 3	SFX		
+drum	853	Industrial Hit 4	SFX		
+drum	854	Industrial Hit 5	SFX		
+drum	855	Industrial Hit 6	SFX		
+synth	856	Rn Bass	Bass	8	87
+synth	857	Buzz Bass	Bass	8	88
+synth	858	Acid3	Bass	8	89
+synth	859	Bass Morpher	Bass	8	90
+synth	860	3	VCOs Bass	8	91
+synth	861	Brain Bass	Bass	8	92
+synth	862	Lo Boy	Bass	8	93
+synth	863	Dark Bass	Bass	8	94
+synth	864	Fundamental	Bass	8	95
+synth	865	Fat Sine Resonance	Bass	8	96
+synth	866	Moon Bass	Bass	8	97
+synth	867	More Fatty	Bass	8	98
+synth	868	Chill Out Bass	Bass	8	99
+synth	869	Growler	Bass	8	100
+synth	870	Smacked	Bass	8	101
+synth	871	boooooooooom	Bass	8	102
+synth	872	Biting	Bass	8	103
+synth	873	Boogie A Legato	Bass	8	104
+synth	874	Uni Punch	Bass	8	105
+synth	875	Noise Bass	Bass	8	106
+synth	876	Single Oscillator	Bass	8	107
+synth	877	Unison	Bass	8	108
+synth	878	Long Spit	Bass	8	109
+synth	879	Big Bass	Bass	8	110
+synth	880	Bass & Comp!	Bass	8	111
+synth	881	Rave Blade	Bass	8	112
+synth	882	Plastic Bass	Bass	8	113
+synth	883	Funky Resonance	Bass	8	114
+synth	884	Phat Three	Bass	8	115
+synth	885	Needle Bass	Bass	8	116
+synth	886	Acidd	Bass	8	117
+synth	887	Boom Bass	Bass	8	118
+synth	888	West Coast	Bass	8	119
+synth	889	Wazzo	Bass	8	120
+synth	890	Fast PWM Bass	Bass	8	121
+synth	891	Bass Pedal	Bass	8	122
+synth	892	Oxide	Bass	8	123
+synth	893	Bowngo	Bass	8	124
+synth	894	Wide Synth Bass	Bass	8	125
+synth	895	Dry Synth Bass	Bass	8	126
+synth	896	Kick Bass Legato	Bass	8	127
+synth	897	Keep Dancin'	Bass	9	0
+synth	898	Velo Master	Bass	9	1
+synth	899	Wah Bass	Bass	9	2
+synth	900	Pulse Step	Bass	9	3
+synth	901	Phat Step	Bass	9	4
+synth	902	Octave Analog	Bass	9	5
+synth	903	Sync Bass	Bass	9	6
+synth	904	Sync Big	Bass	9	7
+synth	905	Puncher	Bass	9	8
+synth	906	Dark Comp	Bass	9	9
+synth	907	Simple Bass	Bass	9	10
+synth	908	Fat Sine	Bass	9	11
+synth	909	Kompressor	Bass	9	12
+synth	910	Dark Uni	Bass	9	13
+synth	911	Fight Bass	Bass	9	14
+synth	912	Byon Bass	Bass	9	15
+synth	913	One Voice	Bass	9	16
+synth	914	Pro-Attack	Bass	9	17
+synth	915	Bobby Bass	Bass	9	18
+synth	916	Trance Bass	Bass	9	19
+synth	917	Short SequenceBass	Bass	9	20
+synth	918	Lately	Bass	9	21
+synth	919	Faaat Pulse	Bass	9	22
+synth	920	Short PWM Bass	Bass	9	23
+synth	921	Hyper Velocity	Bass	9	24
+synth	922	Deep Point	Bass	9	25
+synth	923	Pulse Stop	Bass	9	26
+synth	924	Oh Bee Bass	Bass	9	27
+synth	925	Booming Bass	Bass	9	28
+synth	926	Army Bass	Bass	9	29
+synth	927	Punchy Drone	Bass	9	30
+synth	928	Dee Tune	Bass	9	31
+synth	929	Chorus Pulse	Bass	9	32
+synth	930	Sweeper	Bass	9	33
+synth	931	Synth Bass 1	Bass	9	34
+synth	932	Synth Bass 2	Bass	9	35
+synth	933	Universal	Bass	9	36
+synth	934	Analog Bullet Bass	Bass	9	37
+synth	935	Analog Perc Bass	Bass	9	38
+synth	936	Analog Step Bass	Bass	9	39
+synth	937	Upright	Bass	9	40
+synth	938	Prec Flat Wound	Bass	9	41
+synth	939	Round Wound	Bass	9	42
+synth	940	Mid Range Finger	Bass	9	43
+synth	941	Pick Open	Bass	9	44
+synth	942	Pick Mute	Bass	9	45
+synth	943	Slap Switch	Bass	9	46
+synth	944	Fretless Dry	Bass	9	47
+synth	945	Fretless Solo	Bass	9	48
+synth	946	Dist Tama Bass	Bass	9	49
+synth	947	5th Fuzz Bass	Bass	9	50
+synth	948	Hybrid Bass 1	Bass	9	51
+synth	949	Hybrid Bass 2	Bass	9	52
+synth	950	House Organ Bass	Bass	9	53
+synth	951	Slow Saw Lead	Synth Lead	9	54
+synth	952	Darker Things Drone	Synth Lead	9	55
+synth	953	Analog Saw Dub	Synth Lead	9	56
+synth	954	Percussive Dance 1	Synth Lead	9	57
+synth	955	Multi Saw DA	Synth Lead	9	58
+synth	956	Dance Synth DA	Synth Lead	9	59
+synth	957	Percussive Dance 2	Synth Lead	9	60
+synth	958	Percussive Dance 2 [Chord]	Synth Lead	9	61
+synth	959	Power Hook	Synth Lead	9	62
+synth	960	Dance Survivor	Synth Lead	9	63
+synth	961	P5 Resonance Comp	Synth Lead	9	64
+synth	962	P5 Analog Punch	Synth Lead	9	65
+synth	963	P5 Analog Punch [Chord]	Synth Lead	9	66
+synth	964	Saw Lead	Synth Lead	9	67
+synth	965	Cool Trance	Synth Lead	9	68
+synth	966	>Attack<	Synth Lead	9	69
+synth	967	Club Finger	Synth Lead	9	70
+synth	968	Wobbly	Synth Lead	9	71
+synth	969	Wobbly [Chord]	Synth Lead	9	72
+synth	970	Ana Dayz	Synth Lead	9	73
+synth	971	Airy Nylon	Synth Lead	9	74
+synth	972	Progressive Attack	Synth Lead	9	75
+synth	973	Oracle	Synth Lead	9	76
+synth	974	Big Comp	Synth Lead	9	77
+synth	975	Big Comp [Chord]	Synth Lead	9	78
+synth	976	Rezz Punch	Synth Lead	9	79
+synth	977	Resonant Clavi	Synth Lead	9	80
+synth	978	Straight	Synth Lead	9	81
+synth	979	Straight [Chord]	Synth Lead	9	82
+synth	980	Psych Noise	Synth Lead	9	83
+synth	981	SquiffyMisbehaving	Synth Lead	9	84
+synth	982	Lektro Codes	Synth Lead	9	85
+synth	983	Lektro Codes [Chord]	Synth Lead	9	86
+synth	984	Hard FM Keyboard	Synth Lead	9	87
+synth	985	W Phaser	Synth Lead	9	88
+synth	986	DPCM Attack	Synth Lead	9	89
+synth	987	Talk	Synth Lead	9	90
+synth	988	Digy SEQ	Synth Lead	9	91
+synth	989	Nerve Nasty	Synth Lead	9	92
+synth	990	Ring Zplus	Synth Lead	9	93
+synth	991	Trance Attack	Synth Lead	9	94
+synth	992	Trance Attack [Chord]	Synth Lead	9	95
+synth	993	Tekno Attack	Synth Lead	9	96
+synth	994	PWM Percussion	Synth Lead	9	97
+synth	995	Stabby	Synth Lead	9	98
+synth	996	Detroit Stab	Synth Lead	9	99
+synth	997	Corrado	Synth Lead	9	100
+synth	998	Synthetique	Synth Lead	9	101
+synth	999	Noiz Rezz	Synth Lead	9	102
+synth	1000	Tuxedo	Synth Lead	9	103
+synth	1001	Queens	Synth Lead	9	104
+synth	1002	Hip Voice	Synth Lead	9	105
+synth	1003	GX1	Synth Lead	9	106
+synth	1004	GX1 [Chord]	Synth Lead	9	107
+synth	1005	Night Watch	Synth Lead	9	108
+synth	1006	Pluck Bells	Synth Lead	9	109
+synth	1007	Power Dance Chords	Synth Lead	9	110
+synth	1008	Hyper Trance	Synth Lead	9	111
+synth	1009	Cosmic Psyche	Synth Lead	9	112
+synth	1010	Brightness	Synth Lead	9	113
+synth	1011	Brightness [Chord]	Synth Lead	9	114
+synth	1012	Calliope Lead	Synth Lead	9	115
+synth	1013	Voice Lead	Synth Lead	9	116
+synth	1014	Chiff Lead	Synth Lead	9	117
+synth	1015	Charan Lead	Synth Lead	9	118
+synth	1016	Fifth Lead	Synth Lead	9	119
+synth	1017	Bass & Lead	Synth Lead	9	120
+synth	1018	PWM Stabs	Synth Lead	9	121
+synth	1019	Queen of Pop	Synth Lead	9	122
+synth	1020	EDM Talker	Synth Lead	9	123
+synth	1021	Huge Lead	Synth Lead	9	124
+synth	1022	Bleep Lead	Synth Lead	9	125
+synth	1023	Detuned Vintage	Synth Lead	9	126
+synth	1024	Space Lead	Synth Lead	9	127
+synth	1025	Square Lead	Synth Lead	10	0
+synth	1026	Dual Square Lead	Synth Lead	10	1
+synth	1027	Dual Square Lead [Chord]	Synth Lead	10	2
+synth	1028	Vintage Sync	Synth Lead	10	3
+synth	1029	Dirty Hook	Synth Lead	10	4
+synth	1030	Nu Mini	Synth Lead	10	5
+synth	1031	ProgressiveRk Lead	Synth Lead	10	6
+synth	1032	Lucky	Synth Lead	10	7
+synth	1033	Opening	Synth Lead	10	8
+synth	1034	Rap Lead 1	Synth Lead	10	9
+synth	1035	Mini Soft	Synth Lead	10	10
+synth	1036	Feeling	Synth Lead	10	11
+synth	1037	Early Lead	Synth Lead	10	12
+synth	1038	Funky Pulse	Synth Lead	10	13
+synth	1039	Mr. Finger	Synth Lead	10	14
+synth	1040	Singleline	Synth Lead	10	15
+synth	1041	Soft RnB	Synth Lead	10	16
+synth	1042	Wind Synth	Synth Lead	10	17
+synth	1043	Broken Sine	Synth Lead	10	18
+synth	1044	Broken Sine [Chord]	Synth Lead	10	19
+synth	1045	Duck Lead	Synth Lead	10	20
+synth	1046	In da Night	Synth Lead	10	21
+synth	1047	Mayday	Synth Lead	10	22
+synth	1048	On D Line	Synth Lead	10	23
+synth	1049	Early Soloist	Synth Lead	10	24
+synth	1050	Heterodyne	Synth Lead	10	25
+synth	1051	Classic 5th	Synth Lead	10	26
+synth	1052	Vintage Saw	Synth Lead	10	27
+synth	1053	Mini Three	Synth Lead	10	28
+synth	1054	Phat Dino	Synth Lead	10	29
+synth	1055	Dynamic Mini	Synth Lead	10	30
+synth	1056	PWM Lead	Synth Lead	10	31
+synth	1057	PWM Lead [Chord]	Synth Lead	10	32
+synth	1058	Pulse Wound	Synth Lead	10	33
+synth	1059	Think Sync	Synth Lead	10	34
+synth	1060	Punch Lead	Synth Lead	10	35
+synth	1061	Bright Saw	Synth Lead	10	36
+synth	1062	Troy	Synth Lead	10	37
+synth	1063	Wood Panel	Synth Lead	10	38
+synth	1064	Push Ahead	Synth Lead	10	39
+synth	1065	Eight	Synth Lead	10	40
+synth	1066	Sync Power	Synth Lead	10	41
+synth	1067	Glisten Lead	Synth Lead	10	42
+synth	1068	Big Drone	Synth Lead	10	43
+synth	1069	Screameemy	Synth Lead	10	44
+synth	1070	Flange Filter	Synth Lead	10	45
+synth	1071	Sutra	Synth Lead	10	46
+synth	1072	Free LFO	Synth Lead	10	47
+synth	1073	Rap Lead 2	Synth Lead	10	48
+synth	1074	Space Power Lead	Synth Lead	10	49
+synth	1075	Nyquist	Synth Lead	10	50
+synth	1076	Digimetal	Synth Lead	10	51
+synth	1077	Saw Destroy	Synth Lead	10	52
+synth	1078	Vinalog Saw	Synth Lead	10	53
+synth	1079	Mady SQU	Synth Lead	10	54
+synth	1080	Low Undulation	Synth Lead	10	55
+synth	1081	Impact	Synth Lead	10	56
+synth	1082	Talk Mod	Synth Lead	10	57
+synth	1083	Digital Gangsta	Synth Lead	10	58
+synth	1084	Plastic Squeeze	Synth Lead	10	59
+synth	1085	Pinz Lead	Synth Lead	10	60
+synth	1086	Dancy Saw Lead	Synth Lead	10	61
+synth	1087	Buzz Around	Synth Lead	10	62
+synth	1088	Xtreme Wheel	Synth Lead	10	63
+synth	1089	Supertrance	Synth Lead	10	64
+synth	1090	Supertrance [Chord]	Synth Lead	10	65
+synth	1091	Poly Hook	Synth Lead	10	66
+synth	1092	HPF Dance	Synth Lead	10	67
+synth	1093	Tekk Glide	Synth Lead	10	68
+synth	1094	Growl Tekk	Synth Lead	10	69
+synth	1095	Plucked Chordz	Synth Lead	10	70
+synth	1096	Chordz	Synth Lead	10	71
+synth	1097	Cool Body	Synth Lead	10	72
+synth	1098	Twist Sync	Synth Lead	10	73
+synth	1099	TEKIE	Synth Lead	10	74
+synth	1100	Sonix	Synth Lead	10	75
+synth	1101	Big SkidHookLead 1	Synth Lead	10	76
+synth	1102	Big SkidHookLead 2	Synth Lead	10	77
+synth	1103	Full Concert Grand	Piano	10	78
+synth	1104	Concert GrandPiano	Piano	10	79
+synth	1105	Rock Grand Piano	Piano	10	80
+synth	1106	Rock Grand Piano [Chord]	Piano	10	81
+synth	1107	Rock Brite Piano	Piano	10	82
+synth	1108	Mellow Grand Piano	Piano	10	83
+synth	1109	Hall Mellow Grand	Piano	10	84
+synth	1110	Hall Mellow Grand [Chord]	Piano	10	85
+synth	1111	Glasgow	Piano	10	86
+synth	1112	Romantic Piano	Piano	10	87
+synth	1113	Aggressive Grand	Piano	10	88
+synth	1114	Tacky	Piano	10	89
+synth	1115	House Piano	Piano	10	90
+synth	1116	CP80 Layer	Piano	10	91
+synth	1117	CP80	Piano	10	92
+synth	1118	CP80 [Chord]	Piano	10	93
+synth	1119	CP80 Amp	Piano	10	94
+synth	1120	CP80 Chorus	Piano	10	95
+synth	1121	CP 1979	Piano	10	96
+synth	1122	CP70 Chorus	Piano	10	97
+synth	1123	Journey	Piano	10	98
+synth	1124	CP 2007	Piano	10	99
+synth	1125	Old and Squashed	Piano	10	100
+synth	1126	Ballad Key	Piano	10	101
+synth	1127	80s Layer	Piano	10	102
+synth	1128	Ballad Stack	Piano	10	103
+synth	1129	Piano Back	Piano	10	104
+synth	1130	Monaural Grand	Piano	10	105
+synth	1131	Old Blues	Piano	10	106
+synth	1132	Old Blues [Chord]	Piano	10	107
+synth	1133	1968	Piano	10	108
+synth	1134	Honkytonk	Piano	10	109
+synth	1135	E.Piano 1	Keyboard	10	110
+synth	1136	Soft Case	Keyboard	10	111
+synth	1137	Soft Case [Chord]	Keyboard	10	112
+synth	1138	74 Phase	Keyboard	10	113
+synth	1139	Vintage'74	Keyboard	10	114
+synth	1140	R&B Soft	Keyboard	10	115
+synth	1141	Early 70's	Keyboard	10	116
+synth	1142	Crunchy Comp	Keyboard	10	117
+synth	1143	Vintage Case	Keyboard	10	118
+synth	1144	Hard Vintage	Keyboard	10	119
+synth	1145	Sweetness	Keyboard	10	120
+synth	1146	Phaser Vintage	Keyboard	10	121
+synth	1147	Vintage Phase	Keyboard	10	122
+synth	1148	Early Fusion	Keyboard	10	123
+synth	1149	Neo Soul	Keyboard	10	124
+synth	1150	1983	Keyboard	10	125
+synth	1151	1983 [Chord]	Keyboard	10	126
+synth	1152	Contempo	Keyboard	10	127
+synth	1153	Clicky Dyno	Keyboard	11	0
+synth	1154	Dyno Straight	Keyboard	11	1
+synth	1155	Dyno Chorus	Keyboard	11	2
+synth	1156	80s Boosted	Keyboard	11	3
+synth	1157	80s Boosted [Chord]	Keyboard	11	4
+synth	1158	Chorus Hard	Keyboard	11	5
+synth	1159	Max Tine	Keyboard	11	6
+synth	1160	Bell Chorus	Keyboard	11	7
+synth	1161	Drive EP	Keyboard	11	8
+synth	1162	Vinyl EP	Keyboard	11	9
+synth	1163	Natural Wr	Keyboard	11	10
+synth	1164	Natural Wr [Chord]	Keyboard	11	11
+synth	1165	Wr EP Bright	Keyboard	11	12
+synth	1166	Wr Distortion	Keyboard	11	13
+synth	1167	Phaze Wr	Keyboard	11	14
+synth	1168	E.Piano 2	Keyboard	11	15
+synth	1169	DX Legend	Keyboard	11	16
+synth	1170	Bell DX	Keyboard	11	17
+synth	1171	DX Woody	Keyboard	11	18
+synth	1172	DX Woody [Chord]	Keyboard	11	19
+synth	1173	Full Tine	Keyboard	11	20
+synth	1174	DX Mellow	Keyboard	11	21
+synth	1175	DX Crisp	Keyboard	11	22
+synth	1176	DX Celesta EP	Keyboard	11	23
+synth	1177	DX Pluck EP	Keyboard	11	24
+synth	1178	DX-7 II	Keyboard	11	25
+synth	1179	GS Tines	Keyboard	11	26
+synth	1180	Galaxy DX	Keyboard	11	27
+synth	1181	TX816 Bell Piano	Keyboard	11	28
+synth	1182	Marimba DX	Keyboard	11	29
+synth	1183	DX5-Zero	Keyboard	11	30
+synth	1184	Hybrid EP	Keyboard	11	31
+synth	1185	Mixed Up	Keyboard	11	32
+synth	1186	Dyno Wr	Keyboard	11	33
+synth	1187	Analog Piano	Keyboard	11	34
+synth	1188	AhrAmI	Keyboard	11	35
+synth	1189	Electro Piano	Keyboard	11	36
+synth	1190	Transistor Piano	Keyboard	11	37
+synth	1191	EP Pad	Keyboard	11	38
+synth	1192	DX Pad	Keyboard	11	39
+synth	1193	Grace EP	Keyboard	11	40
+synth	1194	Nu Touch Clavi	Keyboard	11	41
+synth	1195	Super Clavi 1	Keyboard	11	42
+synth	1196	PhaserClavi Mt	Keyboard	11	43
+synth	1197	Vintage Clavi	Keyboard	11	44
+synth	1198	Super Clavi 2	Keyboard	11	45
+synth	1199	Stereo Clavi	Keyboard	11	46
+synth	1200	Hollow Clavi	Keyboard	11	47
+synth	1201	Nu Phasing	Keyboard	11	48
+synth	1202	Touch Clavi	Keyboard	11	49
+synth	1203	Wah Clavi	Keyboard	11	50
+synth	1204	Pulse Clavi	Keyboard	11	51
+synth	1205	Brite Clavi	Keyboard	11	52
+synth	1206	Clavi Bril Treble	Keyboard	11	53
+synth	1207	Clavi Bril Treble [Chord]	Keyboard	11	54
+synth	1208	Clavi Amped	Keyboard	11	55
+synth	1209	Clavi Phaser	Keyboard	11	56
+synth	1210	Clavi Wah	Keyboard	11	57
+synth	1211	Harpsichord	Keyboard	11	58
+synth	1212	NaturalHarpsichord	Keyboard	11	59
+synth	1213	Octave Harpsichord	Keyboard	11	60
+synth	1214	E.Harpsichord	Keyboard	11	61
+synth	1215	16 + 8 + 5&1/3	Organ	11	62
+synth	1216	First 3 w/Perc	Organ	11	63
+synth	1217	Slow Jam	Organ	11	64
+synth	1218	Cool Cat	Organ	11	65
+synth	1219	Jazzy 1	Organ	11	66
+synth	1220	Jazzy 1 [Chord]	Organ	11	67
+synth	1221	Jazzy 2	Organ	11	68
+synth	1222	Jazzy Chorus	Organ	11	69
+synth	1223	Draw Organ	Organ	11	70
+synth	1224	Percussive Organ	Organ	11	71
+synth	1225	Rock Organ	Organ	11	72
+synth	1226	On Road	Organ	11	73
+synth	1227	Progressy	Organ	11	74
+synth	1228	Rocky	Organ	11	75
+synth	1229	Crunchy	Organ	11	76
+synth	1230	Glassy	Organ	11	77
+synth	1231	Clean	Organ	11	78
+synth	1232	Vib Chorus	Organ	11	79
+synth	1233	Soulemn	Organ	11	80
+synth	1234	Mellow	Organ	11	81
+synth	1235	Fully	Organ	11	82
+synth	1236	FullDraw/CVibrato	Organ	11	83
+synth	1237	Even Out	Organ	11	84
+synth	1238	A Few Wheels	Organ	11	85
+synth	1239	A Few Wheels [Chord]	Organ	11	86
+synth	1240	Left Manual	Organ	11	87
+synth	1241	Draw Control	Organ	11	88
+synth	1242	Clean Noise	Organ	11	89
+synth	1243	Walking Bass	Organ	11	90
+synth	1244	Greasy	Organ	11	91
+synth	1245	Swishie	Organ	11	92
+synth	1246	Solo Percussion	Organ	11	93
+synth	1247	Percussion Vibrato	Organ	11	94
+synth	1248	Tiny Combo Bars 1	Organ	11	95
+synth	1249	Tiny Combo Bars 1 [Chord]	Organ	11	96
+synth	1250	Tiny Combo Bars 2	Organ	11	97
+synth	1251	Panther	Organ	11	98
+synth	1252	1967 Keyboard	Organ	11	99
+synth	1253	YD-45C	Organ	11	100
+synth	1254	Surf Rock	Organ	11	101
+synth	1255	Early Bird	Organ	11	102
+synth	1256	Vx Full Bars	Organ	11	103
+synth	1257	Vx Dark Bars	Organ	11	104
+synth	1258	Fr All Tabs	Organ	11	105
+synth	1259	Fr String Tabs	Organ	11	106
+synth	1260	Vx Full Bars Amped	Organ	11	107
+synth	1261	Vx Surf Organ	Organ	11	108
+synth	1262	Moet	Organ	11	109
+synth	1263	Bollinger	Organ	11	110
+synth	1264	Vinyl Organ	Organ	11	111
+synth	1265	Alternator	Organ	11	112
+synth	1266	Tradi	Organ	11	113
+synth	1267	Petit	Organ	11	114
+synth	1268	Petit [Chord]	Organ	11	115
+synth	1269	Fluty	Organ	11	116
+synth	1270	Fluty Pipe	Organ	11	117
+synth	1271	St. Peter	Organ	11	118
+synth	1272	St. Paul	Organ	11	119
+synth	1273	Impromptu	Organ	11	120
+synth	1274	Mixture	Organ	11	121
+synth	1275	Reed Split	Organ	11	122
+synth	1276	Medieval	Organ	11	123
+synth	1277	Medieval [Chord]	Organ	11	124
+synth	1278	Breath Pipe	Organ	11	125
+synth	1279	Reedy Pipe	Organ	11	126
+synth	1280	Sunday	Organ	11	127
+synth	1281	Church Organ	Organ	12	0
+synth	1282	Church Organ [Chord]	Organ	12	1
+synth	1283	Reed Organ	Organ	12	2
+synth	1284	Accordion	Organ	12	3
+synth	1285	Accordions	Organ	12	4
+synth	1286	Accordions [Chord]	Organ	12	5
+synth	1287	Tango Accordion 1	Organ	12	6
+synth	1288	Tango Accordion 2	Organ	12	7
+synth	1289	Master Accordion	Organ	12	8
+synth	1290	Round Saw Phase	Pad	12	9
+synth	1291	Ducker Cloud	Pad	12	10
+synth	1292	Multi Saw Pad	Pad	12	11
+synth	1293	Poly Synth Pad	Pad	12	12
+synth	1294	Poly Pad DA	Pad	12	13
+synth	1295	HyperTrance Stereo	Pad	12	14
+synth	1296	Ethereal	Pad	12	15
+synth	1297	Ethereal [Chord]	Pad	12	16
+synth	1298	Saw Pad	Pad	12	17
+synth	1299	Dark ModulationPad	Pad	12	18
+synth	1300	Dark Light	Pad	12	19
+synth	1301	Ambient Synth Pad	Pad	12	20
+synth	1302	5th Lite	Pad	12	21
+synth	1303	Smooth BPF Sweep	Pad	12	22
+synth	1304	Trance	Pad	12	23
+synth	1305	Xtreme Sweep	Pad	12	24
+synth	1306	Warm Pad	Pad	12	25
+synth	1307	Nu Warm Pad	Pad	12	26
+synth	1308	Nu Warm Pad [Chord]	Pad	12	27
+synth	1309	5th Atmosphere	Pad	12	28
+synth	1310	Dim	Pad	12	29
+synth	1311	Simple Air	Pad	12	30
+synth	1312	Nature Sine	Pad	12	31
+synth	1313	Nature Sine [Chord]	Pad	12	32
+synth	1314	Analog	Pad	12	33
+synth	1315	Perc Pad	Pad	12	34
+synth	1316	Dark Atmo Pad	Pad	12	35
+synth	1317	Dark Atmo Pad [Chord]	Pad	12	36
+synth	1318	Dark Organ Pad	Pad	12	37
+synth	1319	Soft Brassy	Pad	12	38
+synth	1320	Road to Nowhere	Pad	12	39
+synth	1321	Analog Sweep	Pad	12	40
+synth	1322	Sweep Pad	Pad	12	41
+synth	1323	Sweep Strings	Pad	12	42
+synth	1324	Brass Motion Pad	Pad	12	43
+synth	1325	Luminous	Pad	12	44
+synth	1326	Mother Ship	Pad	12	45
+synth	1327	Warm Backing Pad	Pad	12	46
+synth	1328	Feather	Pad	12	47
+synth	1329	Feather [Chord]	Pad	12	48
+synth	1330	Pan Sphere	Pad	12	49
+synth	1331	Square	Pad	12	50
+synth	1332	Shaper	Pad	12	51
+synth	1333	Early Digital	Pad	12	52
+synth	1334	Dramana	Pad	12	53
+synth	1335	Dream Shift	Pad	12	54
+synth	1336	Dream Shift [Chord]	Pad	12	55
+synth	1337	Sound Track	Pad	12	56
+synth	1338	Remote Space	Pad	12	57
+synth	1339	Fathoms	Pad	12	58
+synth	1340	Mother Earth	Pad	12	59
+synth	1341	Landing Pad	Pad	12	60
+synth	1342	The Breath	Pad	12	61
+synth	1343	Feather Pad	Pad	12	62
+synth	1344	Slow Attack Pad	Pad	12	63
+synth	1345	Hi Brite	Pad	12	64
+synth	1346	Pad & Syn	Pad	12	65
+synth	1347	Pad & Syn [Chord]	Pad	12	66
+synth	1348	Cosmic Swell Pad	Pad	12	67
+synth	1349	Sweet Flange	Pad	12	68
+synth	1350	Waterfall	Pad	12	69
+synth	1351	Phase Pad	Pad	12	70
+synth	1352	Pure Synth	Pad	12	71
+synth	1353	Pure Synth + Delay	Pad	12	72
+synth	1354	Pearls	Pad	12	73
+synth	1355	Flange Wall	Pad	12	74
+synth	1356	Tornado	Pad	12	75
+synth	1357	Ice Rink	Pad	12	76
+synth	1358	Bell Pad	Pad	12	77
+synth	1359	Bell Pad [Chord]	Pad	12	78
+synth	1360	New Age Pad	Pad	12	79
+synth	1361	Paradise	Pad	12	80
+synth	1362	Yellow River	Pad	12	81
+synth	1363	Love Me	Pad	12	82
+synth	1364	Frozen Pad	Pad	12	83
+synth	1365	Bowed Pad	Pad	12	84
+synth	1366	Metal Pad	Pad	12	85
+synth	1367	Pensive	Pad	12	86
+synth	1368	Sci-Fi	Pad	12	87
+synth	1369	Atmosphere	Pad	12	88
+synth	1370	Halo Pad	Pad	12	89
+synth	1371	Space Vocals	Pad	12	90
+synth	1372	Haah Pad	Pad	12	91
+synth	1373	Oooh Pad	Pad	12	92
+synth	1374	Oooh Pad [Chord]	Pad	12	93
+synth	1375	Back in Itopian	Pad	12	94
+synth	1376	Strings & Choir	Pad	12	95
+synth	1377	Angel Eyes	Pad	12	96
+synth	1378	Glass Choir	Pad	12	97
+synth	1379	Nativity	Pad	12	98
+synth	1380	Seraphim	Pad	12	99
+synth	1381	Aah Choir	Pad	12	100
+synth	1382	Ooh Choir	Pad	12	101
+synth	1383	Syn Voice	Pad	12	102
+synth	1384	Choir Pad	Pad	12	103
+synth	1385	Mellow Swell	Pad	12	104
+synth	1386	Frozen Glasspad	Pad	12	105
+synth	1387	Lunar Eclipse	Pad	12	106
+synth	1388	Prayer Call	Pad	12	107
+synth	1389	Granular Motion	Pad	12	108
+synth	1390	Mysterious Invention	Pad	12	109
+synth	1391	Gate of Eden	Pad	12	110
+synth	1392	Whispering Ghosts	Pad	12	111
+synth	1393	NighttrainToMunich	Pad	12	112
+synth	1394	Morning Dew	Pad	12	113
+synth	1395	Calling Mr. Reso	Pad	12	114
+synth	1396	2 SwitchesToHeaven	Pad	12	115
+synth	1397	SEKAI-ISAN	Pad	12	116
+synth	1398	Setsunai	Pad	12	117
+synth	1399	Week End	Pad	12	118
+synth	1400	TiRiPAD	Pad	12	119
+synth	1401	Cluster	Pad	12	120
+synth	1402	Xtreme Rezz	Pad	12	121
+synth	1403	My Reality	Pad	12	122
+synth	1404	Magnetics	Pad	12	123
+synth	1405	Sand	Pad	12	124
+synth	1406	Felicity	Pad	12	125
+synth	1407	Vibrancy	Pad	12	126
+synth	1408	Radio Venus	Pad	12	127
+synth	1409	Elec Blue	Pad	13	0
+synth	1410	Chyo Ethno	Pad	13	1
+synth	1411	konjoh BEAM	Pad	13	2
+synth	1412	Blizzard	Pad	13	3
+synth	1413	SINGING BOWL	Pad	13	4
+synth	1414	Metalvox Pad	Pad	13	5
+synth	1415	Refraction	Pad	13	6
+synth	1416	Philanger	Pad	13	7
+synth	1417	Ellipsotron	Pad	13	8
+synth	1418	Envelope	Pad	13	9
+synth	1419	Whatsis	Pad	13	10
+synth	1420	Pearl Collection	Pad	13	11
+synth	1421	Four Dimensions	Pad	13	12
+synth	1422	Hallucination	Pad	13	13
+synth	1423	Electraid	Pad	13	14
+synth	1424	Clearing	Pad	13	15
+synth	1425	Long HiPa	Pad	13	16
+synth	1426	Quad Swell	Pad	13	17
+synth	1427	New Stab	Pad	13	18
+synth	1428	Vinyl Hit	Pad	13	19
+synth	1429	Hit Me	Pad	13	20
+synth	1430	Ambient Bite	Pad	13	21
+synth	1431	Bollog Puls	Pad	13	22
+synth	1432	Orchestra Hit	Pad	13	23
+synth	1433	Rain Pad	Pad	13	24
+synth	1434	Goblin	Pad	13	25
+synth	1435	Echoes	Pad	13	26
+synth	1436	Dripping Quarks	Pad	13	27
+synth	1437	Metallic Airstabs	Pad	13	28
+synth	1438	Descendant	Pad	13	29
+synth	1439	Violin	Strings	13	30
+synth	1440	Violin Solo	Strings	13	31
+synth	1441	Viola	Strings	13	32
+synth	1442	Viola Solo 1	Strings	13	33
+synth	1443	Viola Solo 2	Strings	13	34
+synth	1444	Cello Solo	Strings	13	35
+synth	1445	Cello Duo	Strings	13	36
+synth	1446	ContrabassSolo1	Strings	13	37
+synth	1447	ContrabassSolo2	Strings	13	38
+synth	1448	Quartet	Strings	13	39
+synth	1449	Small Section	Strings	13	40
+synth	1450	Small Ensemble	Strings	13	41
+synth	1451	Small Ensemble [Chord]	Strings	13	42
+synth	1452	Almighty	Strings	13	43
+synth	1453	Medium Section	Strings	13	44
+synth	1454	Medium Hall	Strings	13	45
+synth	1455	Quick Bows	Strings	13	46
+synth	1456	Large Section	Strings	13	47
+synth	1457	Strings Section 1	Strings	13	48
+synth	1458	Strings Section 2	Strings	13	49
+synth	1459	Octave Ensemble	Strings	13	50
+synth	1460	Full Chamber	Strings	13	51
+synth	1461	Stryngs	Strings	13	52
+synth	1462	Stryngs [Chord]	Strings	13	53
+synth	1463	Dynamic Bow	Strings	13	54
+synth	1464	Pizzicato	Strings	13	55
+synth	1465	SymphonicPizzicato	Strings	13	56
+synth	1466	Plucky Pizzicato	Strings	13	57
+synth	1467	Octave Pizzes	Strings	13	58
+synth	1468	Tremolo Strings 1	Strings	13	59
+synth	1469	Tremolo Strings 2	Strings	13	60
+synth	1470	Tremolo Strs Small	Strings	13	61
+synth	1471	Spicato Large	Strings	13	62
+synth	1472	Spicato Large [Chord]	Strings	13	63
+synth	1473	Disco	Strings	13	64
+synth	1474	Lush	Strings	13	65
+synth	1475	Back Ground	Strings	13	66
+synth	1476	Warm Back	Strings	13	67
+synth	1477	Stringy	Strings	13	68
+synth	1478	Big Strings	Strings	13	69
+synth	1479	F.Horn + Strings	Strings	13	70
+synth	1480	Wood Winds+Strings	Strings	13	71
+synth	1481	Synth Strings 1	Strings	13	72
+synth	1482	Synth Strings 2	Strings	13	73
+synth	1483	Gleaming Pad	Strings	13	74
+synth	1484	Fat PWM Synth Vel	Strings	13	75
+synth	1485	VintagePolyStrings	Strings	13	76
+synth	1486	PWM Strings	Strings	13	77
+synth	1487	PWM Strings [Chord]	Strings	13	78
+synth	1488	Mourn Strings	Strings	13	79
+synth	1489	VP Soft	Strings	13	80
+synth	1490	PWM Simple	Strings	13	81
+synth	1491	Glassy Rezonant	Strings	13	82
+synth	1492	Superstrings	Strings	13	83
+synth	1493	Light Pad	Strings	13	84
+synth	1494	Noble Pad	Strings	13	85
+synth	1495	Warm Big	Strings	13	86
+synth	1496	Sentimental	Strings	13	87
+synth	1497	Analog Strings	Strings	13	88
+synth	1498	Analog Ensemble	Strings	13	89
+synth	1499	Phase Strings	Strings	13	90
+synth	1500	Octave Strings	Strings	13	91
+synth	1501	80s Clean Strings	Strings	13	92
+synth	1502	3 Oscillators Vin	Strings	13	93
+synth	1503	Silver Strings	Strings	13	94
+synth	1504	Silver Strings [Chord]	Strings	13	95
+synth	1505	String Machine	Strings	13	96
+synth	1506	3 Octave Strings	Strings	13	97
+synth	1507	TranceIntroduction	Strings	13	98
+synth	1508	Mystic Trance	Strings	13	99
+synth	1509	Electric Violin	Strings	13	100
+synth	1510	Tron Violin	Strings	13	101
+synth	1511	Tron Strings	Strings	13	102
+synth	1512	Tape Strings	Strings	13	103
+synth	1513	Orchestronic	Strings	13	104
+synth	1514	Vinyltron	Strings	13	105
+synth	1515	Beauty Harp	Strings	13	106
+synth	1516	Stereo Harp	Strings	13	107
+synth	1517	Trumpet	Brass	13	108
+synth	1518	Tp Romantic Legato	Brass	13	109
+synth	1519	Classical Trumpet	Brass	13	110
+synth	1520	Bright Trumpet	Brass	13	111
+synth	1521	Tp SoftJazz Legato	Brass	13	112
+synth	1522	SoftTrumpetLegato	Brass	13	113
+synth	1523	Trumpet Vibrato	Brass	13	114
+synth	1524	Trumpet Shake Vel	Brass	13	115
+synth	1525	Legend Mute	Brass	13	116
+synth	1526	Flugelhorn	Brass	13	117
+synth	1527	Jazzy Flugel	Brass	13	118
+synth	1528	Trumpet Section	Brass	13	119
+synth	1529	Trumpet Section [Chord]	Brass	13	120
+synth	1530	Trombone	Brass	13	121
+synth	1531	Blown Bone Legato	Brass	13	122
+synth	1532	Bright Trombone	Brass	13	123
+synth	1533	NewOrleansTrombone	Brass	13	124
+synth	1534	French Horn	Brass	13	125
+synth	1535	French Horn Solo	Brass	13	126
+synth	1536	Tuba	Brass	13	127
+synth	1537	BassTuba(Bb)	Brass	14	0
+synth	1538	Euphonium	Brass	14	1
+synth	1539	FrenchHornSection1	Brass	14	2
+synth	1540	FrenchHornSection2	Brass	14	3
+synth	1541	French Horns	Brass	14	4
+synth	1542	F.Horn + Trombone	Brass	14	5
+synth	1543	F.Hrn+Trombone+Trp	Brass	14	6
+synth	1544	Orchestra Brass	Brass	14	7
+synth	1545	Orchestra Brass [Chord]	Brass	14	8
+synth	1546	Movie Horns	Brass	14	9
+synth	1547	Symphonic	Brass	14	10
+synth	1548	Smooth Brass	Brass	14	11
+synth	1549	Soft Brass mp-mf	Brass	14	12
+synth	1550	Dynamic Brass	Brass	14	13
+synth	1551	Accent mf-fall	Brass	14	14
+synth	1552	Small BrassSection	Brass	14	15
+synth	1553	MediumBrassSection	Brass	14	16
+synth	1554	Lots O' Brass	Brass	14	17
+synth	1555	Bright Section	Brass	14	18
+synth	1556	Power Section	Brass	14	19
+synth	1557	Shiny Brass	Brass	14	20
+synth	1558	Big Brass	Brass	14	21
+synth	1559	Sforzando	Brass	14	22
+synth	1560	Soft Brass & Sax	Brass	14	23
+synth	1561	Big Band	Brass	14	24
+synth	1562	Sax Big Band	Brass	14	25
+synth	1563	Velo Falls	Brass	14	26
+synth	1564	Hybrid Section	Brass	14	27
+synth	1565	Hybrid Bright	Brass	14	28
+synth	1566	Hybrid Brass Swell	Brass	14	29
+synth	1567	The Synth Brass	Brass	14	30
+synth	1568	T Brass	Brass	14	31
+synth	1569	Lo-fi	Brass	14	32
+synth	1570	Quiet Brass	Brass	14	33
+synth	1571	Big Syn	Brass	14	34
+synth	1572	Thinth	Brass	14	35
+synth	1573	XP Brass Stereo	Brass	14	36
+synth	1574	Simple Saw Brass	Brass	14	37
+synth	1575	Brassy	Brass	14	38
+synth	1576	Kustom	Brass	14	39
+synth	1577	After 1984	Brass	14	40
+synth	1578	After 1984 [Chord]	Brass	14	41
+synth	1579	Finale	Brass	14	42
+synth	1580	Huge CS80	Brass	14	43
+synth	1581	CS-90	Brass	14	44
+synth	1582	Oh Bee Soft	Brass	14	45
+synth	1583	Oh Bee Horns	Brass	14	46
+synth	1584	Slow PWM Brass	Brass	14	47
+synth	1585	Soft 5th Brass	Brass	14	48
+synth	1586	Synth Brass 1	Brass	14	49
+synth	1587	Synth Brass 2	Brass	14	50
+synth	1588	Oh Bee Syncomp	Brass	14	51
+synth	1589	Tacky Brass	Brass	14	52
+synth	1590	Soprano Sax	Woodwind	14	53
+synth	1591	Soprano Legato	Woodwind	14	54
+synth	1592	Soprano Soft	Woodwind	14	55
+synth	1593	Mellow Soprano	Woodwind	14	56
+synth	1594	Alto Sax	Woodwind	14	57
+synth	1595	Alto Vib Legato	Woodwind	14	58
+synth	1596	Alto Legato	Woodwind	14	59
+synth	1597	Alto	Woodwind	14	60
+synth	1598	Alto Accent Legato	Woodwind	14	61
+synth	1599	Tenor Sax	Woodwind	14	62
+synth	1600	Tenor Dynamic	Woodwind	14	63
+synth	1601	Tenor Soft Legato	Woodwind	14	64
+synth	1602	Velo Growl Legato	Woodwind	14	65
+synth	1603	Tenor Max	Woodwind	14	66
+synth	1604	SoftTenorSaxLegato	Woodwind	14	67
+synth	1605	Baritone Sax	Woodwind	14	68
+synth	1606	Baritone	Woodwind	14	69
+synth	1607	Hip Bari	Woodwind	14	70
+synth	1608	Tenor Section	Woodwind	14	71
+synth	1609	Sax Octave Section	Woodwind	14	72
+synth	1610	Mixed Sax Section	Woodwind	14	73
+synth	1611	Piccolo	Woodwind	14	74
+synth	1612	Piccolo Legato	Woodwind	14	75
+synth	1613	Flute	Woodwind	14	76
+synth	1614	Flute Legato	Woodwind	14	77
+synth	1615	Sweet Flute	Woodwind	14	78
+synth	1616	Wood Flute	Woodwind	14	79
+synth	1617	Tron Flute	Woodwind	14	80
+synth	1618	Flootz	Woodwind	14	81
+synth	1619	2 Flutes	Woodwind	14	82
+synth	1620	Oboe	Woodwind	14	83
+synth	1621	Sweet Oboe Legato	Woodwind	14	84
+synth	1622	Oboe Soft Legato	Woodwind	14	85
+synth	1623	Clarinet	Woodwind	14	86
+synth	1624	Jazzy Cla Legato	Woodwind	14	87
+synth	1625	Bassoon 1	Woodwind	14	88
+synth	1626	Bassoon 2	Woodwind	14	89
+synth	1627	English Horn	Woodwind	14	90
+synth	1628	Flute & Clari	Woodwind	14	91
+synth	1629	2 Oboes & Bassoon	Woodwind	14	92
+synth	1630	Woodwindind Quartet	Woodwind	14	93
+synth	1631	Harmonica	Woodwind	14	94
+synth	1632	Gentle Harp	Woodwind	14	95
+synth	1633	Woody Harp	Woodwind	14	96
+synth	1634	Bluz Distort	Woodwind	14	97
+synth	1635	Campfire	Woodwind	14	98
+synth	1636	Irish Pipe Legato	Woodwind	14	99
+synth	1637	Recorder	Woodwind	14	100
+synth	1638	Pan Flute	Woodwind	14	101
+synth	1639	Shakuhachi	Woodwind	14	102
+synth	1640	Whistle	Woodwind	14	103
+synth	1641	Ocarina	Woodwind	14	104
+synth	1642	Bagpipe	Woodwind	14	105
+synth	1643	Classical	Guitar	14	106
+synth	1644	High Tension	Guitar	14	107
+synth	1645	Sao Paulo	Guitar	14	108
+synth	1646	Barcelona	Guitar	14	109
+synth	1647	Barcelona [Chord]	Guitar	14	110
+synth	1648	Nylon Slide Vel	Guitar	14	111
+synth	1649	NylonHarmonics Vel	Guitar	14	112
+synth	1650	Classical12Strings	Guitar	14	113
+synth	1651	Hip-HopNylonGuitar	Guitar	14	114
+synth	1652	Old Strings	Guitar	14	115
+synth	1653	Mute & Slide Vel	Guitar	14	116
+synth	1654	SteelHarmonics Vel	Guitar	14	117
+synth	1655	Hip-HopSteelGuitar	Guitar	14	118
+synth	1656	Hi Strings	Guitar	14	119
+synth	1657	Two Acoustics	Guitar	14	120
+synth	1658	2 Steel Strings	Guitar	14	121
+synth	1659	Airy 12	Guitar	14	122
+synth	1660	Airy 12 [Chord]	Guitar	14	123
+synth	1661	Wide 12 strings	Guitar	14	124
+synth	1662	12Strings Mono	Guitar	14	125
+synth	1663	Clean El & Ac	Guitar	14	126
+synth	1664	Jazzy Pick	Guitar	14	127
+synth	1665	Melodic Jazz	Guitar	15	0
+synth	1666	Touch Wah	Guitar	15	1
+synth	1667	Baby	Guitar	15	2
+synth	1668	Good Night	Guitar	15	3
+synth	1669	Dynamic Clean	Guitar	15	4
+synth	1670	Single Coil Chorus	Guitar	15	5
+synth	1671	Single Coil Chorus [Chord]	Guitar	15	6
+synth	1672	1coil Clean	Guitar	15	7
+synth	1673	1coil Amped Vel	Guitar	15	8
+synth	1674	Distant	Guitar	15	9
+synth	1675	Some Hair	Guitar	15	10
+synth	1676	Hit It Hard	Guitar	15	11
+synth	1677	Paddy Clean	Guitar	15	12
+synth	1678	Dual Coil '65	Guitar	15	13
+synth	1679	Dual Coil '65 [Chord]	Guitar	15	14
+synth	1680	Dual Coil Amp	Guitar	15	15
+synth	1681	Roto Guitar	Guitar	15	16
+synth	1682	Dual Coil SlideVel	Guitar	15	17
+synth	1683	Dual Coil Slap Vel	Guitar	15	18
+synth	1684	Dual Coil 80sClean	Guitar	15	19
+synth	1685	DualCoil80sCleanMt	Guitar	15	20
+synth	1686	DualCoil80sCleanMt [Chord]	Guitar	15	21
+synth	1687	Mute Guitar	Guitar	15	22
+synth	1688	HIP Mute	Guitar	15	23
+synth	1689	Dual Coil Rotary	Guitar	15	24
+synth	1690	Electric 12Strings	Guitar	15	25
+synth	1691	Rotator	Guitar	15	26
+synth	1692	Middy Tremolo	Guitar	15	27
+synth	1693	Retro Flanger	Guitar	15	28
+synth	1694	Vintage Strum	Guitar	15	29
+synth	1695	Vintage1coilChorus	Guitar	15	30
+synth	1696	Spanky	Guitar	15	31
+synth	1697	Rockabilly	Guitar	15	32
+synth	1698	Surfin' 60s 1coil	Guitar	15	33
+synth	1699	Pedal Steel	Guitar	15	34
+synth	1700	2 Electrics	Guitar	15	35
+synth	1701	Light Blues	Guitar	15	36
+synth	1702	DualCoil SemiClean	Guitar	15	37
+synth	1703	Breakback Mountain	Guitar	15	38
+synth	1704	Chorus Dist	Guitar	15	39
+synth	1705	Tex Boogie	Guitar	15	40
+synth	1706	Tex Boogie [Chord]	Guitar	15	41
+synth	1707	59 Combo	Guitar	15	42
+synth	1708	Alternative Rocker	Guitar	15	43
+synth	1709	Grunged Up	Guitar	15	44
+synth	1710	Overdrive Mt&Harmo	Guitar	15	45
+synth	1711	Crunched Up 376	Guitar	15	46
+synth	1712	Dynamic Amp	Guitar	15	47
+synth	1713	Chuggin' Guitar	Guitar	15	48
+synth	1714	Chugga	Guitar	15	49
+synth	1715	Small Amp	Guitar	15	50
+synth	1716	Small Amp [Chord]	Guitar	15	51
+synth	1717	Metal Mute	Guitar	15	52
+synth	1718	DistortionMt&Harmo	Guitar	15	53
+synth	1719	Cool Drive	Guitar	15	54
+synth	1720	Hard Drive	Guitar	15	55
+synth	1721	Hard Ramp	Guitar	15	56
+synth	1722	Heavy Drive	Guitar	15	57
+synth	1723	No.1 Guitar	Guitar	15	58
+synth	1724	No.1 Guitar [Chord]	Guitar	15	59
+synth	1725	Snake Finger	Guitar	15	60
+synth	1726	Dual Coil BlueLead	Guitar	15	61
+synth	1727	Voodooman	Guitar	15	62
+synth	1728	Killer Whammy	Guitar	15	63
+synth	1729	Latin Lover	Guitar	15	64
+synth	1730	Oct Fuzz Wah	Guitar	15	65
+synth	1731	Dual Coil Lead Wah	Guitar	15	66
+synth	1732	Crunchy Guitar	Guitar	15	67
+synth	1733	Beater	Guitar	15	68
+synth	1734	Mid Drive	Guitar	15	69
+synth	1735	Hard Rocker	Guitar	15	70
+synth	1736	Tough Tube	Guitar	15	71
+synth	1737	Drive Wah	Guitar	15	72
+synth	1738	Guitar Harmonics	Guitar	15	73
+synth	1739	Sitar 1	World	15	74
+synth	1740	Sitar 2	World	15	75
+synth	1741	Sitar 3	World	15	76
+synth	1742	Tambura	World	15	77
+synth	1743	Banjo 1	World	15	78
+synth	1744	Banjo 2	World	15	79
+synth	1745	Shamisen	World	15	80
+synth	1746	Koto	World	15	81
+synth	1747	Baglama	World	15	82
+synth	1748	Saz Feeze	World	15	83
+synth	1749	Kanun	World	15	84
+synth	1750	Kotoun	World	15	85
+synth	1751	Bouzuki	World	15	86
+synth	1752	Where Am I?	World	15	87
+synth	1753	Sakura	World	15	88
+synth	1754	Nomad	World	15	89
+synth	1755	Nomad [Chord]	World	15	90
+synth	1756	Pluk-o-dy	World	15	91
+synth	1757	Kalimba	World	15	92
+synth	1758	Mbira	World	15	93
+synth	1759	Glass Mbira	World	15	94
+synth	1760	Fiddle	World	15	95
+synth	1761	Kemence	World	15	96
+synth	1762	Kemen Wet	World	15	97
+synth	1763	Yayli	World	15	98
+synth	1764	Kawala	World	15	99
+synth	1765	Ney	World	15	100
+synth	1766	Zurna	World	15	101
+synth	1767	Pungi	World	15	102
+synth	1768	Snake Charmer	World	15	103
+synth	1769	Shehnai 1	World	15	104
+synth	1770	Shehnai 2	World	15	105
+synth	1771	Mythic Flute	World	15	106
+synth	1772	Didgeridoo	World	15	107
+synth	1773	Kodo	World	15	108
+synth	1774	Xylophone	Mallet	15	109
+synth	1775	Orch Xylophone	Mallet	15	110
+synth	1776	Marimba	Mallet	15	111
+synth	1777	Orch Marimba	Mallet	15	112
+synth	1778	Soft Marimba	Mallet	15	113
+synth	1779	Glocken	Mallet	15	114
+synth	1780	Orch Glockenspiel	Mallet	15	115
+synth	1781	Vibraphone	Mallet	15	116
+synth	1782	Vibraphone Soft	Mallet	15	117
+synth	1783	Vibes	Mallet	15	118
+synth	1784	Vibes [Chord]	Mallet	15	119
+synth	1785	Vibes Bow	Mallet	15	120
+synth	1786	Celesta	Mallet	15	121
+synth	1787	Ethnic Dream	Mallet	15	122
+synth	1788	Orc Percussion	Mallet	15	123
+synth	1789	Real Timpani	Mallet	15	124
+synth	1790	Timpani + Cymbal	Mallet	15	125
+synth	1791	Steel Drum	Mallet	15	126
+synth	1792	Synth Steel Drum	Mallet	15	127
+synth	1793	Dulcimer	Mallet	16	0
+synth	1794	Metallic Bell	Bell	16	1
+synth	1795	Twinkle	Bell	16	2
+synth	1796	Stick Bell	Bell	16	3
+synth	1797	Ice Bells	Bell	16	4
+synth	1798	Ice Bells [Chord]	Bell	16	5
+synth	1799	Bell Ice	Bell	16	6
+synth	1800	Stack Bell	Bell	16	7
+synth	1801	J-Pop	Bell	16	8
+synth	1802	Crystal	Bell	16	9
+synth	1803	Chorus Bell	Bell	16	10
+synth	1804	Handbell	Bell	16	11
+synth	1805	Bell Chiff	Bell	16	12
+synth	1806	Bell Chiff [Chord]	Bell	16	13
+synth	1807	Sako Bell	Bell	16	14
+synth	1808	Nice Bell	Bell	16	15
+synth	1809	Noisy Bell	Bell	16	16
+synth	1810	Pop Bells & Pad	Bell	16	17
+synth	1811	Pop Bells & Pad [Chord]	Bell	16	18
+synth	1812	Digibox	Bell	16	19
+synth	1813	Nibelungen	Bell	16	20
+synth	1814	Wood Bell	Bell	16	21
+synth	1815	Marimbell	Bell	16	22
+synth	1816	Gamelan	Bell	16	23
+synth	1817	Mystic Bowl	Bell	16	24
+synth	1818	Island Bell	Bell	16	25
+synth	1819	Tibetan	Bell	16	26
+synth	1820	Tibetan [Chord]	Bell	16	27
+synth	1821	Rimba Bells	Bell	16	28
+synth	1822	Lost in Asia	Bell	16	29
+synth	1823	Music Box	Bell	16	30
+synth	1824	Tinkle Bell	Bell	16	31
+synth	1825	Tubular Bells 1	Bell	16	32
+synth	1826	Tubular Bells 2	Bell	16	33
+synth	1827	Timp/Bell/Glocken	Bell	16	34
+synth	1828	Bass Morpher [Arp]	Rhythmic	16	35
+synth	1829	Fat Sine Resonance [Arp]	Rhythmic	16	36
+synth	1830	Boogie A Legato [Arp]	Rhythmic	16	37
+synth	1831	Long Spit [Arp]	Rhythmic	16	38
+synth	1832	Acidd [Arp]	Rhythmic	16	39
+synth	1833	West Coast [Arp]	Rhythmic	16	40
+synth	1834	Keep Dancin' [Arp]	Rhythmic	16	41
+synth	1835	Phat Step [Arp]	Rhythmic	16	42
+synth	1836	Short SequenceBass [Arp]	Rhythmic	16	43
+synth	1837	Upright [Arp]	Rhythmic	16	44
+synth	1838	Slap Switch [Arp]	Rhythmic	16	45
+synth	1839	Multi Saw DA [Arp]	Rhythmic	16	46
+synth	1840	Saw Lead [Arp]	Rhythmic	16	47
+synth	1841	Airy Nylon [Arp]	Rhythmic	16	48
+synth	1842	Rezz Punch [Arp]	Rhythmic	16	49
+synth	1843	W Phaser [Arp]	Rhythmic	16	50
+synth	1844	Noiz Rezz [Arp]	Rhythmic	16	51
+synth	1845	Hip Voice [Arp]	Rhythmic	16	52
+synth	1846	Hyper Trance [Arp]	Rhythmic	16	53
+synth	1847	EDM Talker [Arp]	Rhythmic	16	54
+synth	1848	Space Lead [Arp]	Rhythmic	16	55
+synth	1849	Square Lead [Arp]	Rhythmic	16	56
+synth	1850	ProgressiveRk Lead [Arp]	Rhythmic	16	57
+synth	1851	Opening [Arp]	Rhythmic	16	58
+synth	1852	Feeling [Arp]	Rhythmic	16	59
+synth	1853	Mini Three [Arp]	Rhythmic	16	60
+synth	1854	Nyquist [Arp]	Rhythmic	16	61
+synth	1855	HPF Dance [Arp]	Rhythmic	16	62
+synth	1856	Glasgow [Arp]	Rhythmic	16	63
+synth	1857	House Piano [Arp]	Rhythmic	16	64
+synth	1858	Vintage Case [Arp]	Rhythmic	16	65
+synth	1859	Bell Chorus [Arp]	Rhythmic	16	66
+synth	1860	PhaserClavi Mt [Arp]	Rhythmic	16	67
+synth	1861	Marimba DX [Arp]	Rhythmic	16	68
+synth	1862	Rocky [Arp]	Rhythmic	16	69
+synth	1863	Crunchy [Arp]	Rhythmic	16	70
+synth	1864	Walking Bass [Arp]	Rhythmic	16	71
+synth	1865	Accordion [Arp]	Rhythmic	16	72
+synth	1866	Perc Pad [Arp]	Rhythmic	16	73
+synth	1867	Almighty [Arp]	Rhythmic	16	74
+synth	1868	SymphonicPizzicato [Arp]	Rhythmic	16	75
+synth	1869	Noble Pad [Arp]	Rhythmic	16	76
+synth	1870	Trumpet [Arp]	Rhythmic	16	77
+synth	1871	MediumBrassSection [Arp]	Rhythmic	16	78
+synth	1872	Finale [Arp]	Rhythmic	16	79
+synth	1873	Alto [Arp]	Rhythmic	16	80
+synth	1874	Sao Paulo [Arp]	Rhythmic	16	81
+synth	1875	Hip-HopNylonGuitar [Arp]	Rhythmic	16	82
+synth	1876	Hip-HopSteelGuitar [Arp]	Rhythmic	16	83
+synth	1877	Wide 12 strings [Arp]	Rhythmic	16	84
+synth	1878	Baby [Arp]	Rhythmic	16	85
+synth	1879	Dual Coil Amp [Arp]	Rhythmic	16	86
+synth	1880	HIP Mute [Arp]	Rhythmic	16	87
+synth	1881	Chorus Dist [Arp]	Rhythmic	16	88
+synth	1882	Dynamic Amp [Arp]	Rhythmic	16	89
+synth	1883	DistortionMt&Harmo [Arp]	Rhythmic	16	90
+synth	1884	Heavy Drive [Arp]	Rhythmic	16	91
+synth	1885	Banjo 2 [Arp]	Rhythmic	16	92
+synth	1886	Sakura [Arp]	Rhythmic	16	93
+synth	1887	Orch Xylophone [Arp]	Rhythmic	16	94
+synth	1888	Celesta [Arp]	Rhythmic	16	95
+synth	1889	J-Pop [Arp]	Rhythmic	16	96
+synth	1890	Nibelungen [Arp]	Rhythmic	16	97
+synth	1891	Lost in Asia [Arp]	Rhythmic	16	98
+synth	1892	Blaster Beam	SFX	16	99
+synth	1893	InsideTheWormhole	SFX	16	100
+synth	1894	Men In Yellow	SFX	16	101
+synth	1895	Metamorphosis	SFX	16	102
+synth	1896	Perplex	SFX	16	103
+synth	1897	Outer Planet	SFX	16	104
+synth	1898	Industrial	SFX	16	105
+synth	1899	Space Walking	SFX	16	106
+synth	1900	Scraper	SFX	16	107
+synth	1901	SE 02 <Zero Two>	SFX	16	108
+synth	1902	Talking Machines	SFX	16	109
+synth	1903	Tobi Mage	SFX	16	110
+synth	1904	Bitzz	SFX	16	111
+synth	1905	Toda	SFX	16	112
+synth	1906	Auto Trapeze	SFX	16	113
+synth	1907	Harpist'sNightmare	SFX	16	114
+synth	1908	Find Newgt!	SFX	16	115
+synth	1909	Nile River	SFX	16	116
+synth	1910	New Age Atmo	SFX	16	117
+synth	1911	Wind Blows	SFX	16	118
+synth	1912	Fire!	SFX	16	119
+synth	1913	Scratching Machine	SFX	16	120
+synth	1914	Goa Psyche	SFX	16	121
+synth	1915	WaitForBadWeather	SFX	16	122
+synth	1916	Reverse The Audio	SFX	16	123
+synth	1917	Radio Static	SFX	16	124
+synth	1918	Surveillance	SFX	16	125
+synth	1919	Noise FX	SFX	16	126
+synth	1920	Sample&HoldVintage	SFX	16	127
+synth	1921	Lazerzz	SFX	17	0
+synth	1922	On The Fritz	SFX	17	1
+synth	1923	Argentina	SFX	17	2
+synth	1924	Reverse Cymbal	SFX	17	3
+synth	1925	Fret Noise	SFX	17	4
+synth	1926	Breath Noiz	SFX	17	5
+synth	1927	Seashore	SFX	17	6
+synth	1928	Tweet	SFX	17	7
+synth	1929	Telephone 2	SFX	17	8
+synth	1930	Helicopter 1	SFX	17	9
+synth	1931	Applause	SFX	17	10
+synth	1932	Gunshot 2	SFX	17	11
+dx	1933	FM Lo-Fi Bass	Bass	17	12
+dx	1934	FM Up Bass	Bass	17	13
+dx	1935	FM Ducking Bass	Bass	17	14
+dx	1936	FM Amp Sub	Bass	17	15
+dx	1937	FM Decay Bass	Bass	17	16
+dx	1938	Wobble Bass	Bass	17	17
+dx	1939	FM Dark Bass	Bass	17	18
+dx	1940	Beep Bass	Bass	17	19
+dx	1941	Feel It	Bass	17	20
+dx	1942	Attack Bass	Bass	17	21
+dx	1943	FM Jet Bass	Bass	17	22
+dx	1944	FM Bold Bass	Bass	17	23
+dx	1945	FM Metal Dissonant	Bass	17	24
+dx	1946	FM Metallic Lead	Synth Lead	17	25
+dx	1947	FM Square and 5th Saw	Synth Lead	17	26
+dx	1948	Dyna Lead	Synth Lead	17	27
+dx	1949	Mo Dem Lead	Synth Lead	17	28
+dx	1950	Bit Tune	Synth Lead	17	29
+dx	1951	Bleep Clv	Synth Lead	17	30
+dx	1952	Uni Lead	Synth Lead	17	31
+dx	1953	FM Chorus 5th Lead	Synth Lead	17	32
+dx	1954	FM Square Module	Synth Lead	17	33
+dx	1955	FM Lil Dist Airy	Synth Lead	17	34
+dx	1956	FM Ring Lead	Synth Lead	17	35
+dx	1957	FM Pan Trem Lead	Synth Lead	17	36
+dx	1958	FM Saw Bright	Synth Lead	17	37
+dx	1959	FM Crush Computer	Synth Lead	17	38
+dx	1960	FM Simple Piano	Piano	17	39
+dx	1961	FM B Piano	Piano	17	40
+dx	1962	FM B Piano [Chord]	Piano	17	41
+dx	1963	FM Clavi Piano	Piano	17	42
+dx	1964	Legend EP	Keyboard	17	43
+dx	1965	Legend EP [Chord]	Keyboard	17	44
+dx	1966	Wood EP	Keyboard	17	45
+dx	1967	Wood EP [Chord]	Keyboard	17	46
+dx	1968	Wood EP Tremolo	Keyboard	17	47
+dx	1969	Crystal EP	Keyboard	17	48
+dx	1970	FM Chorus Jazz EP	Keyboard	17	49
+dx	1971	FM Clear EP	Keyboard	17	50
+dx	1972	DigiChord	Keyboard	17	51
+dx	1973	Cheez Organ	Organ	17	52
+dx	1974	FM Rotate Organ	Organ	17	53
+dx	1975	FM Pipe A	Organ	17	54
+dx	1976	FM 5th Atmosphere	Pad	17	55
+dx	1977	FM Glass Dream	Pad	17	56
+dx	1978	FM Glass Dream [Chord]	Pad	17	57
+dx	1979	Motion Pad	Pad	17	58
+dx	1980	Begin Sweep	Pad	17	59
+dx	1981	Cloud Pad	Pad	17	60
+dx	1982	Sol Phase	Pad	17	61
+dx	1983	Flying Kode	Pad	17	62
+dx	1984	AlTi Pad	Pad	17	63
+dx	1985	Star Pad	Pad	17	64
+dx	1986	FM Warm Pad	Pad	17	65
+dx	1987	FM Warm Pad [Chord]	Pad	17	66
+dx	1988	FM Glass Harp	Pad	17	67
+dx	1989	FM Slow Phaser Pad	Pad	17	68
+dx	1990	FM Ambient Pad	Pad	17	69
+dx	1991	FM Strings Pad	Pad	17	70
+dx	1992	FM Strings	Strings	17	71
+dx	1993	FM Cold Strings	Strings	17	72
+dx	1994	FM Soft Brass	Brass	17	73
+dx	1995	FM Digital Brass	Brass	17	74
+dx	1996	FM Brass	Brass	17	75
+dx	1997	FM Hit Brass	Brass	17	76
+dx	1998	FM Hit Brass [Chord]	Brass	17	77
+dx	1999	FM Fun Brass	Brass	17	78
+dx	2000	FM Chorus Flute	Woodwind	17	79
+dx	2001	FM Sax	Woodwind	17	80
+dx	2002	FM Chorus Guitar	Guitar	17	81
+dx	2003	FM Chorus Guitar [Chord]	Guitar	17	82
+dx	2004	FM Wah Guitar	Guitar	17	83
+dx	2005	FM Dist Guitar	Guitar	17	84
+dx	2006	Ambi Pluck	Guitar	17	85
+dx	2007	FM Koto	World	17	86
+dx	2008	FM Shamisen	World	17	87
+dx	2009	FM Sitar	World	17	88
+dx	2010	FM Echo Mallet	Mallet	17	89
+dx	2011	Tin Perc	Mallet	17	90
+dx	2012	FM Marimba	Mallet	17	91
+dx	2013	FM Tubular Bells	Bell	17	92
+dx	2014	FM Tubular Bells [Chord]	Bell	17	93
+dx	2015	Future Bell	Bell	17	94
+dx	2016	FM Decay Bass [Arp]	Rhythmic	17	95
+dx	2017	FM Dark Bass [Arp]	Rhythmic	17	96
+dx	2018	Mo Dem Lead [Arp]	Rhythmic	17	97
+dx	2019	Bit Tune [Arp]	Rhythmic	17	98
+dx	2020	Uni Lead [Arp]	Rhythmic	17	99
+dx	2021	FM Simple Piano [Arp]	Rhythmic	17	100
+dx	2022	Legend EP [Arp]	Rhythmic	17	101
+dx	2023	Wood EP [Arp]	Rhythmic	17	102
+dx	2024	Star Pad [Arp]	Rhythmic	17	103
+dx	2025	FM Brass [Arp]	Rhythmic	17	104
+dx	2026	Ambi Pluck [Arp]	Rhythmic	17	105
+dx	2027	FM Echo Mallet [Arp]	Rhythmic	17	106
+dx	2028	Tin Perc [Arp]	Rhythmic	17	107
+dx	2029	FM Marimba [Arp]	Rhythmic	17	108
+dx	2030	D'n Beats	SFX	17	109
+dx	2031	Buzz Siren	SFX	17	110
+dx	2032	Chopper	SFX	17	111
+sampler	1	Female Count 1	Vocal Count		
+sampler	2	Female Count 2	Vocal Count		
+sampler	3	Female Count 3	Vocal Count		
+sampler	4	Female Count 4	Vocal Count		
+sampler	5	Female Count 5	Vocal Count		
+sampler	6	Female Count 6	Vocal Count		
+sampler	7	Female Count 7	Vocal Count		
+sampler	8	Female Count 8	Vocal Count		
+sampler	9	Male Count 1 A	Vocal Count		
+sampler	10	Male Count 2 A	Vocal Count		
+sampler	11	Male Count 3 A	Vocal Count		
+sampler	12	Male Count 4 A	Vocal Count		
+sampler	13	Male Count 5 A	Vocal Count		
+sampler	14	Male Count 6 A	Vocal Count		
+sampler	15	Male Count 7 A	Vocal Count		
+sampler	16	Male Count 8 A	Vocal Count		
+sampler	17	Male Count 1 B	Vocal Count		
+sampler	18	Male Count 2 B	Vocal Count		
+sampler	19	Male Count 3 B	Vocal Count		
+sampler	20	Male Count 4 B	Vocal Count		
+sampler	21	Male Count 5 B	Vocal Count		
+sampler	22	Male Count 6 B	Vocal Count		
+sampler	23	Male Count 7 B	Vocal Count		
+sampler	24	Male Count 8 B	Vocal Count		
+sampler	25	Female Vocal - Ha	Vocal Phrase / Chant		
+sampler	26	Female Vocal - Yo	Vocal Phrase / Chant		
+sampler	27	Female Vocal - Hey	Vocal Phrase / Chant		
+sampler	28	Female Vocal - Oh	Vocal Phrase / Chant		
+sampler	29	Female Vocal - Money	Vocal Phrase / Chant		
+sampler	30	Female Vocal - Go	Vocal Phrase / Chant		
+sampler	31	Male Vocal - Yo	Vocal Phrase / Chant		
+sampler	32	Male Vocal - Oh	Vocal Phrase / Chant		
+sampler	33	Male Vocal - Uh 1	Vocal Phrase / Chant		
+sampler	34	Male Vocal - Go	Vocal Phrase / Chant		
+sampler	35	Male Vocal- Whooh	Vocal Phrase / Chant		
+sampler	36	Male Vocal - Hey	Vocal Phrase / Chant		
+sampler	37	Male Vocal - OK	Vocal Phrase / Chant		
+sampler	38	Male Vocal - Say What	Vocal Phrase / Chant		
+sampler	39	Male Vocal - Big Up	Vocal Phrase / Chant		
+sampler	40	Male Vocal - Let's Go	Vocal Phrase / Chant		
+sampler	41	Male Vocal - Hey - Loud	Vocal Phrase / Chant		
+sampler	42	Male Vocal - Ooh - Loud	Vocal Phrase / Chant		
+sampler	43	Male Vocal - Wow - Loud	Vocal Phrase / Chant		
+sampler	44	Male Vocal - Bon	Vocal Phrase / Chant		
+sampler	45	Male Vocal - Get Funky	Vocal Phrase / Chant		
+sampler	46	Male Vocal - Ow	Vocal Phrase / Chant		
+sampler	47	Male Vocal - Uh 2	Vocal Phrase / Chant		
+sampler	48	Group Vocal - Ah uh	Vocal Phrase / Chant		
+sampler	49	Group Vocal - Hey	Vocal Phrase / Chant		
+sampler	50	Group Vocal - R U Ready?	Vocal Phrase / Chant		
+sampler	51	Group Vocal - Check It Out	Vocal Phrase / Chant		
+sampler	52	Group Vocal - Come On	Vocal Phrase / Chant		
+sampler	53	Group Vocal - Here We Go	Vocal Phrase / Chant		
+sampler	54	Group Vocal - Ho ho	Vocal Phrase / Chant		
+sampler	55	Group Vocal- Ho ho uh uh	Vocal Phrase / Chant		
+sampler	56	Group Vocal - Wussup	Vocal Phrase / Chant		
+sampler	57	Group Vocal - You You You	Vocal Phrase / Chant		
+sampler	58	Japanese Chant 1	Vocal Phrase / Chant		
+sampler	59	Japanese Chant 2	Vocal Phrase / Chant		
+sampler	60	Japanese Chant 3	Vocal Phrase / Chant		
+sampler	61	Japanese Chant 4	Vocal Phrase / Chant		
+sampler	62	Japanese Chant 5	Vocal Phrase / Chant		
+sampler	63	Japanese Chant 6	Vocal Phrase / Chant		
+sampler	64	Japanese Chant 7	Vocal Phrase / Chant		
+sampler	65	Japanese Chant 8	Vocal Phrase / Chant		
+sampler	66	Japanese Chant 9	Vocal Phrase / Chant		
+sampler	67	Japanese Chant 10	Vocal Phrase / Chant		
+sampler	68	Japanese Chant 11	Vocal Phrase / Chant		
+sampler	69	Japanese Chant 12	Vocal Phrase / Chant		
+sampler	70	Japanese Chant 13	Vocal Phrase / Chant		
+sampler	71	Japanese Chant 14	Vocal Phrase / Chant		
+sampler	72	Japanese Chant 15	Vocal Phrase / Chant		
+sampler	73	Japanese Chant 16	Vocal Phrase / Chant		
+sampler	74	Japanese Chant 17	Vocal Phrase / Chant		
+sampler	75	Japanese Chant 18	Vocal Phrase / Chant		
+sampler	76	Singing - Female - Ah 1	Singing Vocal		
+sampler	77	Singing - Female - Ah 2	Singing Vocal		
+sampler	78	Singing - Female - Ai	Singing Vocal		
+sampler	79	Singing - Female - La ah ah	Singing Vocal		
+sampler	80	Singing - Female - Woo la	Singing Vocal		
+sampler	81	Singing - Female - Aw oh	Singing Vocal		
+sampler	82	Singing - Female - Ha ah 1	Singing Vocal		
+sampler	83	Singing - Female - Haaaah	Singing Vocal		
+sampler	84	Singing - Male - Ah ah	Singing Vocal		
+sampler	85	Singing - Male - Oh oh woo	Singing Vocal		
+sampler	86	Singing - Male - La a a a	Singing Vocal		
+sampler	87	Singing - Male - Ah	Singing Vocal		
+sampler	88	Singing - Male - Hooo	Singing Vocal		
+sampler	89	Singing - Male - Hee	Singing Vocal		
+sampler	90	Singing - Male - Uu	Singing Vocal		
+sampler	91	Singing - Male - Everyday	Singing Vocal		
+sampler	92	Singing - Male - Every Night	Singing Vocal		
+sampler	93	Singing - Male - Yeeaaah	Singing Vocal		
+sampler	94	Singing - Male - Oh wo	Singing Vocal		
+sampler	95	Singing - Male - Oh wowo ah	Singing Vocal		
+sampler	96	Singing - Male - Yeah ah ah	Singing Vocal		
+sampler	97	Singing - Female - Ha ah 2	Singing Vocal		
+sampler	98	Singing - Female - La la la la la	Singing Vocal		
+sampler	99	High pitched vocal - Ah	Robotic Vocal / Effect		
+sampler	100	High pitched vocal - Top	Robotic Vocal / Effect		
+sampler	101	Vocoder Beat The Band	Robotic Vocal / Effect		
+sampler	102	Vocoder Love Is Blind	Robotic Vocal / Effect		
+sampler	103	Vocoder Freezing Cold	Robotic Vocal / Effect		
+sampler	104	Vocoder Destiny	Robotic Vocal / Effect		
+sampler	105	Vocoder Forbidden Dreams	Robotic Vocal / Effect		
+sampler	106	Vocoder Enjoying This	Robotic Vocal / Effect		
+sampler	107	Vocoder Desperation	Robotic Vocal / Effect		
+sampler	108	Vocoder Born Happy	Robotic Vocal / Effect		
+sampler	109	Vocoder Day Life	Robotic Vocal / Effect		
+sampler	110	Vocoder Reality	Robotic Vocal / Effect		
+sampler	111	Vocoder Dreamin Of U	Robotic Vocal / Effect		
+sampler	112	Vocoder Complicated	Robotic Vocal / Effect		
+sampler	113	Vocoder Mystery	Robotic Vocal / Effect		
+sampler	114	Vocoder Revolution	Robotic Vocal / Effect		
+sampler	115	Vocoder Sweeping	Robotic Vocal / Effect		
+sampler	116	Vocoder Yesterday	Robotic Vocal / Effect		
+sampler	117	Vocoder Close Eyes	Robotic Vocal / Effect		
+sampler	118	Vocoder Infinity	Robotic Vocal / Effect		
+sampler	119	Vocoder Deepwater	Robotic Vocal / Effect		
+sampler	120	Riser - Noise 1	Riser		
+sampler	121	Riser - Synth Lead & Noise 1	Riser		
+sampler	122	Riser - Synth Lead 1	Riser		
+sampler	123	Riser - Bubble 1	Riser		
+sampler	124	Riser - Phase Synth Lead 1	Riser		
+sampler	125	Riser - Phase Synth Lead 2	Riser		
+sampler	126	Riser - Panned Synth Lead 1	Riser		
+sampler	127	Riser - Panned Synth Lead 2	Riser		
+sampler	128	Riser - Noise 2	Riser		
+sampler	129	Riser - Bubble 2	Riser		
+sampler	130	Riser - Noise 3	Riser		
+sampler	131	Riser - Panned Noise 1	Riser		
+sampler	132	Riser - Panned Noise 2	Riser		
+sampler	133	Riser - Panned Noise 3	Riser		
+sampler	134	Riser - Panned Noise 4	Riser		
+sampler	135	Riser - Panned Noise 5	Riser		
+sampler	136	Riser - Panned Noise 6	Riser		
+sampler	137	Laser - Blast 2	Laser / Sci-Fi		
+sampler	138	Laser - Rapid Fire 1	Laser / Sci-Fi		
+sampler	139	Laser - Blast 3	Laser / Sci-Fi		
+sampler	140	Laser - Blast 4	Laser / Sci-Fi		
+sampler	141	Laser - Blast 5	Laser / Sci-Fi		
+sampler	142	Laser - Blast 6	Laser / Sci-Fi		
+sampler	143	Laser - Blast 7	Laser / Sci-Fi		
+sampler	144	Laser - Blast 8	Laser / Sci-Fi		
+sampler	145	Noisy Laser - Blast 1	Laser / Sci-Fi		
+sampler	146	Laser - Motion 1	Laser / Sci-Fi		
+sampler	147	Laser - Rapid Fire 2	Laser / Sci-Fi		
+sampler	148	Laser - Rapid Fire 3	Laser / Sci-Fi		
+sampler	149	Laser - Flyby 1	Laser / Sci-Fi		
+sampler	150	Laser - Echo 1	Laser / Sci-Fi		
+sampler	151	Laser - Echo 2	Laser / Sci-Fi		
+sampler	152	Laser - Echo 3	Laser / Sci-Fi		
+sampler	153	Laser - Fizzer 1	Laser / Sci-Fi		
+sampler	154	Laser - Vibration 1	Laser / Sci-Fi		
+sampler	155	Laser - Echo 4	Laser / Sci-Fi		
+sampler	156	Laser - Fleeting 1	Laser / Sci-Fi		
+sampler	157	Laser - Signal 1	Laser / Sci-Fi		
+sampler	158	Laser - Signal 2	Laser / Sci-Fi		
+sampler	159	Laser - Signal 3	Laser / Sci-Fi		
+sampler	160	Laser - Signal 4	Laser / Sci-Fi		
+sampler	161	Laser - Signal 5	Laser / Sci-Fi		
+sampler	162	Laser - Random Motion 1	Laser / Sci-Fi		
+sampler	163	Laser - Signal 6	Laser / Sci-Fi		
+sampler	164	Laser - Blast 9	Laser / Sci-Fi		
+sampler	165	Sci-Fi - Data Transmission 1	Laser / Sci-Fi		
+sampler	166	Sci-Fi - Data Transmission 2	Laser / Sci-Fi		
+sampler	167	Sci-Fi - Data Transmission 3	Laser / Sci-Fi		
+sampler	168	Laser - Falling 3	Laser / Sci-Fi		
+sampler	169	Laser - After Shock 1	Laser / Sci-Fi		
+sampler	170	Laser - Falling 4	Laser / Sci-Fi		
+sampler	171	Laser - Falling 5	Laser / Sci-Fi		
+sampler	172	Laser - Falling 6	Laser / Sci-Fi		
+sampler	173	Laser - Falling 7	Laser / Sci-Fi Noise /		
+sampler	174	Laser - Falling 8	Laser / Sci-Fi Noise /		
+sampler	175	Laser - Falling 9	Laser / Sci-Fi Noise /		
+sampler	176	Laser - Blast 10	Laser / Sci-Fi		
+sampler	177	Laser - Blast 11	Laser / Sci-Fi Distorted Sound		
+sampler	178	Laser - Blast 12	Laser / Sci-Fi Distorted Sound		
+sampler	179	Laser - Echo 5	Laser / Sci-Fi		
+sampler	180	Noisy Laser - Echo 1	Laser / Sci-Fi		
+sampler	181	Noisy Laser - Echo 2	Laser / Sci-Fi Noise /		
+sampler	182	Sci-Fi - Data Transmission 4	Laser / Sci-Fi Noise /		
+sampler	183	Laser - Falling 10	Laser / Sci-Fi Noise /		
+sampler	184	Laser - Falling 11	Laser / Sci-Fi Distorted Sound		
+sampler	185	Laser - Falling 12	Laser / Sci-Fi Distorted Sound		
+sampler	186	Laser - Signal 7	Laser / Sci-Fi		
+sampler	187	Sci-Fi - Rapid Fire 1	Laser / Sci-Fi		
+sampler	188	Sci-Fi - Detected 2	Laser / Sci-Fi Noise /		
+sampler	189	Sci-Fi - Access Denied 1	Laser / Sci-Fi Noise /		
+sampler	190	Sci-Fi - Error 1	Laser / Sci-Fi Noise /		
+sampler	191	Sci-Fi - Calculation 1	Laser / Sci-Fi		
+sampler	192	Sci-Fi - Connecting 1	Laser / Sci-Fi Distorted Sound		
+sampler	193	Sci-Fi - Deep Signal 1	Laser / Sci-Fi Distorted Sound		
+sampler	194	Sci-Fi - Deep Signal 2	Laser / Sci-Fi		
+sampler	195	Sci-Fi - Deep Dive 1	Laser / Sci-Fi Noise /		
+sampler	196	Sci-Fi - Deep Dive 2	Laser / Sci-Fi Noise /		
+sampler	197	Impact - Dark 1	Impact Noise /		
+sampler	198	Impact - Tom & Cymbal 1	Impact Noise /		
+sampler	199	Impact - Metal Hit 1	Impact Distorted Sound		
+sampler	200	Impact - Metal Hit 2	Impact Distorted Sound		
+sampler	201	Impact - Noise 1	Impact		
+sampler	202	Impact - Noise 2	Impact		
+sampler	203	Impact - Noise 3	Impact Noise /		
+sampler	204	Impact - Noise 4	Impact		
+sampler	205	Impact - Noise 5	Impact		
+sampler	206	Impact - Noise 6	Impact		
+sampler	207	Impact - Noise 7	Impact		
+sampler	208	Impact - Noise 8	Impact		
+sampler	209	Noise - Fade In 1 248	Ambient - Noise 3 Ambient / Soundscape		
+sampler	210	Noise - Fade In 2 249	Ambient - Noise 4 Ambient / Soundscape		
+sampler	211	Noise - Fade In 3	Ambient / Soundscape		
+sampler	212	Noise - Explosion 1	Ambient / Soundscape		
+sampler	213	Noise - Explosion 2	Ambient / Soundscape		
+sampler	214	Noise - Explosion 3	Ambient / Soundscape		
+sampler	215	Noise - Explosion 4 255	Samba Whistle 1 SFX		
+sampler	216	Distorted Hit 1	Laser / Sci-Fi Noise /		
+sampler	217	Distorted Hit 2	Laser / Sci-Fi Noise /		
+sampler	218	Distorted Hit 3	Laser / Sci-Fi Noise /		
+sampler	219	Distorted Hit 4	Laser / Sci-Fi		
+sampler	220	Distorted Hit 5	Laser / Sci-Fi Distorted Sound		
+sampler	221	Distorted Hit 6	Laser / Sci-Fi		
+sampler	222	Distorted Hit 7	Laser / Sci-Fi		
+sampler	223	Distorted Hit 8	Laser / Sci-Fi Noise /		
+sampler	224	Distorted Hit 9	Laser / Sci-Fi Noise /		
+sampler	225	Noise - Blast 1	Laser / Sci-Fi Noise /		
+sampler	226	Noise - Blast 2	Laser / Sci-Fi Distorted Sound		
+sampler	227	Noise - Blast 3	Laser / Sci-Fi		
+sampler	228	Noise - Blast 4	Laser / Sci-Fi		
+sampler	229	Noise - Alert 1	Laser / Sci-Fi Noise /		
+sampler	230	Noise - Signal 1	Laser / Sci-Fi Noise /		
+sampler	231	Noise - Signal 2	Laser / Sci-Fi Noise /		
+sampler	232	Noise - Signal 3	Laser / Sci-Fi		
+sampler	233	Noise - Signal 4	Laser / Sci-Fi Distorted Sound		
+sampler	234	Noise - Passing 1	Laser / Sci-Fi		
+sampler	235	Noise - Passing 2	Laser / Sci-Fi Noise /		
+sampler	236	Noise - Passing 3	Laser / Sci-Fi Noise /		
+sampler	237	Noise - Passing 4	Impact Noise /		
+sampler	238	Noise - Passing 5	Impact Noise /		
+sampler	239	Noise - Passing 6	Impact Distorted Sound		
+sampler	240	Noise - Take Off 1	Impact		
+sampler	241	Noise - Take Off 2	Impact		
+sampler	242	Granular Noise 1	Impact Noise /		
+sampler	243	Ambient - Noise 1	Ambient / Soundscape		
+sampler	244	Ambient - Noise 2	Ambient / Soundscape		
+sampler	245	Ambient - Unstable 1	Ambient / Soundscape		
+sampler	246	Ambient - Synth bass 1	Ambient / Soundscape		
+sampler	247	Ambient - Unstable 2	Ambient / Soundscape		
+sampler	250	Ambient - Strings & Noise 1	Ambient / Soundscape		
+sampler	251	Ambient - Strings & Noise 2	Ambient / Soundscape		
+sampler	252	Ambient - Strings 1	Ambient / Soundscape		
+sampler	253	Ambient - Pad & Noise 1	Ambient / Soundscape		
+sampler	254	Ambient - Pad & Noise 2	Ambient / Soundscape		
+sampler	256	Gunshot 3	SFX		
+sampler	257	Helicopter 2	SFX Hit / Stab / Musical		
+sampler	258	Police 1	SFX Hit / Stab / Musical		
+sampler	259	Can 1	SFX Hit / Stab / Musical		
+sampler	260	Cashier 1	SFX		
+sampler	261	Gear 1	SFX Instrument Sound		
+sampler	262	Train Whistle 1	SFX Instrument Sound		
+sampler	263	Train Crossing 1	SFX		
+sampler	264	Zipper 1	SFX		
+sampler	265	Tongue Clicking 1	SFX Hit / Stab / Musical		
+sampler	266	Heart Beat 1	SFX Hit / Stab / Musical		
+sampler	267	Water Drop 1	SFX Hit / Stab / Musical		
+sampler	268	Metal Hit 1	SFX Instrument Sound		
+sampler	269	Scratch 1	Scratch Instrument Sound		
+sampler	270	Scratch 2	Scratch		
+sampler	271	Scratch 3	Scratch		
+sampler	272	Scratch 4	Scratch Hit / Stab / Musical		
+sampler	273	Scratch 5	Scratch Hit / Stab / Musical		
+sampler	274	Scratch 6	Scratch Hit / Stab / Musical		
+sampler	275	Scratch 7	Scratch		
+sampler	276	Scratch 8	Scratch Instrument Sound		
+sampler	277	Scratch 9	Scratch Instrument Sound		
+sampler	278	Scratch 10	Scratch		
+sampler	279	Scratch 11	Scratch		
+sampler	280	Scratch 12	Scratch		
+sampler	281	Scratch 13	Scratch		
+sampler	282	Scratch 14	Scratch		
+sampler	283	Scratch 15	Scratch		
+sampler	284	Scratch 16	Scratch		
+sampler	285	Scratch 17	Scratch		
+sampler	286	Scratch 18	Scratch		
+sampler	287	Scratch 19	Scratch		
+sampler	288	Scratch 20	Scratch		
+sampler	289	Scratch 21	Scratch		
+sampler	290	Scratch 22	Scratch		
+sampler	291	Scratch 23	Scratch		
+sampler	292	Scratch 24	Scratch		
+sampler	293	Bird 1	Nature / Animals		
+sampler	294	Bird 2	Nature / Animals		
+sampler	295	Sheep 1	Nature / Animals		
+sampler	296	Lion 1	Nature / Animals		
+sampler	297	Thunder 1	Nature / Animals		
+sampler	298	Thunder 2	Nature / Animals		
+sampler	299	Rain 1	Nature / Animals		
+sampler	300	Rain 2	Nature / Animals		
+sampler	301	Brass Hit 1	SFX Hit / Stab / Musical		
+sampler	302	Brass Hit 2	SFX Hit / Stab / Musical		
+sampler	303	Brass Hit 3	SFX Hit / Stab / Musical		
+sampler	304	Synth Brass Hit 1	SFX		
+sampler	305	Synth Brass Hit 2	SFX Instrument Sound		
+sampler	306	Synth Brass Hit 3	SFX		
+sampler	307	Trumpet HIT 1	SFX		
+sampler	308	String Hit 1	SFX Hit / Stab / Musical		
+sampler	309	Synth Chord Hit 1	SFX Hit / Stab / Musical		
+sampler	310	Piano Chord Hit 1	SFX Hit / Stab / Musical		
+sampler	311	Piano Chord Hit 2	SFX Instrument Sound		
+sampler	312	Piano Chord Hit 3	Scratch		
+sampler	313	Piano Chord Hit 4	Scratch		
+sampler	314	Guitar Clean - Delay 1	Scratch Hit / Stab / Musical		
+sampler	315	Guitar Clean - Delay 2	Scratch Hit / Stab / Musical		
+sampler	316	Guitar Clean - Delay 3	Scratch Hit / Stab / Musical		
+sampler	317	Guitar Mute 1	Scratch		
+sampler	318	Guitar Mute 2	Scratch Instrument Sound		
+sampler	319	Donk Bass 1	Scratch		
+sampler	320	Bongo3 High 3	Percussion		
+sampler	321	Bongo3 Low 1	Percussion		
+sampler	322	Bongo4 High 2	Percussion		
+sampler	323	Bongo4 Mid 1	Percussion		
+sampler	324	Bongo4 Low 3	Percussion		
+sampler	325	Analog Conga 1	Percussion		
+sampler	326	Analog Conga 2	Percussion		
+sampler	327	Conga3 High Slap Open 1	Percussion		
+sampler	328	Conga3 High Open 1	Percussion		
+sampler	329	Conga3 High Slap Mute 1	Percussion		
+sampler	330	Conga3 Low Open 1	Percussion		
+sampler	331	Conga3 Low Mute 1	Percussion		
+sampler	332	Repique 1	Percussion		
+sampler	333	Repique Rim 1	Percussion		
+sampler	334	Timbale 3	Percussion		
+sampler	335	Tan-tan Body 1	Percussion		
+sampler	336	Tan-tan Close 1	Percussion		
+sampler	337	Tan-tan Open 1	Percussion		
+sampler	338	Tan-tan Slap 1	Percussion		
+sampler	339	Surdo Mute 3	Percussion		
+sampler	340	Surdo Open 2	Percussion		
+sampler	341	Surdo Stop 2	Percussion		
+sampler	342	High Tom - Standard 1	Percussion		
+sampler	343	Mid Tom - Standard 1	Percussion		
+sampler	344	Low Tom - Standard 1	Percussion		
+sampler	345	Low Tom - Standard 2	Percussion		
+sampler	346	Floor Tom - Standard 1	Percussion		
+sampler	347	Cajon Ghost 1	Percussion		
+sampler	348	Cajon Low 1	Percussion		
+sampler	349	Analog Cowbell 2	Percussion		
+sampler	350	RX11 Cowbell 1	Percussion		
+sampler	351	Acoustic Cowbell 1	Percussion		
+sampler	352	Acoustic Cowbell 2	Percussion		
+sampler	353	Electric Wood Block 1	Percussion		
+sampler	354	Electric Wood Block 2	Percussion		
+sampler	355	Analog Claves 1	Percussion		
+sampler	356	Castanet 1	Percussion		
+sampler	357	Agogo High 2	Percussion		
+sampler	358	Agogo Low 2	Percussion		
+sampler	359	Analog Hand Clap 1	Percussion		
+sampler	360	Open Rim Shot 1	Percussion		
+sampler	361	Punchy Analog Snare 1	Percussion		
+sampler	362	Analog Snare 1	Percussion		
+sampler	363	Distorted Analog Snare 1	Percussion		
+sampler	364	Standard Hand Clap 1	Percussion		
+sampler	365	Electronic Snare 1	Percussion		
+sampler	366	Shaker 16	Percussion		
+sampler	367	Shaker 17	Percussion		
+sampler	368	Shaker 18	Percussion		
+sampler	369	Cabasa 1	Percussion		
+sampler	370	Cabasa 2	Percussion		
+sampler	371	Cabasa 3	Percussion		
+sampler	372	Maracas 1	Percussion		
+sampler	373	Shaker 19	Percussion		
+sampler	374	Tambourine 10	Percussion		
+sampler	375	Guiro 1	Percussion		
+sampler	376	Vibraslap 2	Percussion		
+sampler	377	Reco-reco 2	Percussion		
+sampler	378	Analog Closed Hat 1	Percussion		
+sampler	379	Analog Closed Hat 2	Percussion		
+sampler	380	Electronic Closed Hat 1	Percussion		
+sampler	381	Analog Open Hat 1	Percussion		
+sampler	382	Analog Open Hat 2	Percussion		
+sampler	383	Electronic Open Hat 1	Percussion		
+sampler	384	Ride 1	Percussion		
+sampler	385	Ride 2	Percussion		
+sampler	386	Ride 3	Percussion		
+sampler	387	Ride Brush 1	Percussion		
+sampler	388	Analog Crash 1	Percussion		
+sampler	389	Analog Crash 2	Percussion		
+sampler	390	Analog Glass 1	Percussion		
+sampler	391	Recorded Sample 1	Recorded Sound		
+sampler	392	Recorded Sample 2	Recorded Sound		
