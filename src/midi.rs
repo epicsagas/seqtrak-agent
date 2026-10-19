@@ -12,10 +12,20 @@ pub struct PortPair {
 
 pub fn list_ports() -> PortPair {
     let outputs = MidiOutput::new("seqtrak-list")
-        .map(|o| o.ports().iter().map(|p| o.port_name(p).unwrap_or_default()).collect())
+        .map(|o| {
+            o.ports()
+                .iter()
+                .map(|p| o.port_name(p).unwrap_or_default())
+                .collect()
+        })
         .unwrap_or_default();
     let inputs = MidiInput::new("seqtrak-list")
-        .map(|i| i.ports().iter().map(|p| i.port_name(p).unwrap_or_default()).collect())
+        .map(|i| {
+            i.ports()
+                .iter()
+                .map(|p| i.port_name(p).unwrap_or_default())
+                .collect()
+        })
         .unwrap_or_default();
     PortPair { outputs, inputs }
 }
@@ -36,16 +46,30 @@ pub struct MidiEvent {
 impl MidiEvent {
     /// Hex string like "F0 43 10 ..." or "90 3C 64".
     pub fn hex(&self) -> String {
-        self.bytes.iter().map(|b| format!("{b:02X}")).collect::<Vec<_>>().join(" ")
+        self.bytes
+            .iter()
+            .map(|b| format!("{b:02X}"))
+            .collect::<Vec<_>>()
+            .join(" ")
     }
     pub fn label(&self) -> String {
         let b = &self.bytes;
         match b.first() {
             Some(0xF0) => "sysex".into(),
-            Some(st) if st & 0xF0 == 0x90 && b.get(2) != Some(&0) => format!("note_on ch{} note{} vel{}", (st & 0x0F) + 1, b[1], b.get(2).copied().unwrap_or(0)),
+            Some(st) if st & 0xF0 == 0x90 && b.get(2) != Some(&0) => format!(
+                "note_on ch{} note{} vel{}",
+                (st & 0x0F) + 1,
+                b[1],
+                b.get(2).copied().unwrap_or(0)
+            ),
             Some(st) if st & 0xF0 == 0x90 => format!("note_off ch{} note{}", (st & 0x0F) + 1, b[1]),
             Some(st) if st & 0xF0 == 0x80 => format!("note_off ch{} note{}", (st & 0x0F) + 1, b[1]),
-            Some(st) if st & 0xF0 == 0xB0 => format!("cc ch{} cc{} val{}", (st & 0x0F) + 1, b[1], b.get(2).copied().unwrap_or(0)),
+            Some(st) if st & 0xF0 == 0xB0 => format!(
+                "cc ch{} cc{} val{}",
+                (st & 0x0F) + 1,
+                b[1],
+                b.get(2).copied().unwrap_or(0)
+            ),
             Some(st) if st & 0xF0 == 0xC0 => format!("pc ch{} prog{}", (st & 0x0F) + 1, b[1]),
             Some(0xF8) => "clock".into(),
             Some(0xFA) => "start".into(),
@@ -70,9 +94,13 @@ fn port_index(names: Vec<String>, kind: &str) -> Result<usize, String> {
 pub fn open_out() -> Result<MidiOutputConnection, String> {
     let m = MidiOutput::new("seqtrak-seq").map_err(|e| e.to_string())?;
     let ports = m.ports();
-    let names: Vec<String> = ports.iter().map(|p| m.port_name(p).unwrap_or_default()).collect();
+    let names: Vec<String> = ports
+        .iter()
+        .map(|p| m.port_name(p).unwrap_or_default())
+        .collect();
     let idx = port_index(names, "output")?;
-    m.connect(&ports[idx], "seqtrak-seq").map_err(|e| e.to_string())
+    m.connect(&ports[idx], "seqtrak-seq")
+        .map_err(|e| e.to_string())
 }
 
 /// Open an input connection and block the calling thread, forwarding every raw
@@ -106,13 +134,21 @@ fn run_clock_port_hooked(
 ) -> Result<(), String> {
     let inm = MidiInput::new("seqtrak-clock").map_err(|e| e.to_string())?;
     let ports = inm.ports();
-    let names: Vec<String> = ports.iter().map(|p| inm.port_name(p).unwrap_or_default()).collect();
+    let names: Vec<String> = ports
+        .iter()
+        .map(|p| inm.port_name(p).unwrap_or_default())
+        .collect();
     let idx = port_index(names, "input")?;
     let (tx, rx) = mpsc::channel::<Vec<u8>>();
     let _conn = inm
-        .connect(&ports[idx], "seqtrak-clock", move |_stamp, bytes, ()| {
-            let _ = tx.send(bytes.to_vec());
-        }, ())
+        .connect(
+            &ports[idx],
+            "seqtrak-clock",
+            move |_stamp, bytes, ()| {
+                let _ = tx.send(bytes.to_vec());
+            },
+            (),
+        )
         .map_err(|e| e.to_string())?;
     if let Some(hook) = on_connect {
         hook();
@@ -159,19 +195,25 @@ impl Link {
     pub fn open(prefer: Option<usize>) -> Result<(Link, Vec<String>), String> {
         let outm = MidiOutput::new("seqtrak-out").map_err(|e| e.to_string())?;
         let out_ports = outm.ports();
-        let out_names: Vec<String> =
-            out_ports.iter().map(|p| outm.port_name(p).unwrap_or_default()).collect();
+        let out_names: Vec<String> = out_ports
+            .iter()
+            .map(|p| outm.port_name(p).unwrap_or_default())
+            .collect();
         let out_idx = prefer
             .or_else(|| {
-                out_names.iter().position(|n| n.to_ascii_lowercase().contains("seqtrak"))
+                out_names
+                    .iter()
+                    .position(|n| n.to_ascii_lowercase().contains("seqtrak"))
             })
             .or(if out_ports.len() == 1 { Some(0) } else { None })
             .ok_or_else(|| format!("no SEQTRAK output port found; ports: {out_names:?}"))?;
 
         let inm = MidiInput::new("seqtrak-in").map_err(|e| e.to_string())?;
         let in_ports = inm.ports();
-        let in_names: Vec<String> =
-            in_ports.iter().map(|p| inm.port_name(p).unwrap_or_default()).collect();
+        let in_names: Vec<String> = in_ports
+            .iter()
+            .map(|p| inm.port_name(p).unwrap_or_default())
+            .collect();
         let in_idx = in_names
             .iter()
             .position(|n| n.to_ascii_lowercase().contains("seqtrak"))
@@ -184,14 +226,26 @@ impl Link {
                 &in_ports[in_idx],
                 "seqtrak-monitor",
                 move |_stamp, bytes, ()| {
-                    let _ = tx.send(MidiEvent { bytes: bytes.to_vec(), at: Instant::now() });
+                    let _ = tx.send(MidiEvent {
+                        bytes: bytes.to_vec(),
+                        at: Instant::now(),
+                    });
                 },
                 (),
             )
             .map_err(|e| e.to_string())?;
 
-        let out = outm.connect(&out_ports[out_idx], "seqtrak-out").map_err(|e| e.to_string())?;
-        Ok((Link { out, rx, _in_conn: in_conn }, out_names))
+        let out = outm
+            .connect(&out_ports[out_idx], "seqtrak-out")
+            .map_err(|e| e.to_string())?;
+        Ok((
+            Link {
+                out,
+                rx,
+                _in_conn: in_conn,
+            },
+            out_names,
+        ))
     }
 
     pub fn send(&mut self, bytes: &[u8]) -> Result<(), String> {
@@ -204,7 +258,10 @@ impl Link {
         let deadline = Instant::now() + wait;
         let mut out = Vec::new();
         while let Some(remaining) = deadline.checked_duration_since(Instant::now()) {
-            match self.rx.recv_timeout(remaining.min(Duration::from_millis(50))) {
+            match self
+                .rx
+                .recv_timeout(remaining.min(Duration::from_millis(50)))
+            {
                 Ok(ev) => {
                     if !include_clock && matches!(ev.bytes.first(), Some(0xF8) | Some(0xFE)) {
                         continue;
@@ -255,7 +312,10 @@ impl Link {
 mod tests {
     #[test]
     fn hex_format() {
-        let ev = super::MidiEvent { bytes: vec![0x90, 0x3C, 0x64], at: std::time::Instant::now() };
+        let ev = super::MidiEvent {
+            bytes: vec![0x90, 0x3C, 0x64],
+            at: std::time::Instant::now(),
+        };
         assert_eq!(ev.hex(), "90 3C 64");
         assert_eq!(ev.label(), "note_on ch1 note60 vel100");
     }

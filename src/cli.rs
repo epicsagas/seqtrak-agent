@@ -246,7 +246,8 @@ pub fn run(cli: &Cli) -> Result<String, String> {
             Ok(if cli.json {
                 serde_json::json!({ "outputs": ports.outputs, "inputs": ports.inputs }).to_string()
             } else {
-                format!("outputs:\n{}", fmt_list(&ports.outputs)) + &format!("inputs:\n{}", fmt_list(&ports.inputs))
+                format!("outputs:\n{}", fmt_list(&ports.outputs))
+                    + &format!("inputs:\n{}", fmt_list(&ports.inputs))
             })
         }
         Command::Identity => {
@@ -259,14 +260,25 @@ pub fn run(cli: &Cli) -> Result<String, String> {
                 Some(ev) => match sysex::parse(&ev.bytes) {
                     Some(SeqtrakSysex::Identity { family, version }) => {
                         let ver = sysex::format_version(version);
-                        Ok(format!("identity family={:02X}{:02X}{:02X} version={ver} raw={}", family[0], family[1], family[2], ev.hex()))
+                        Ok(format!(
+                            "identity family={:02X}{:02X}{:02X} version={ver} raw={}",
+                            family[0],
+                            family[1],
+                            family[2],
+                            ev.hex()
+                        ))
                     }
                     _ => Ok(format!("sysex reply: {}", ev.hex())),
                 },
                 None => Err("no identity reply (is the SEQTRAK on?)".into()),
             }
         }
-        Command::Note { track, note, vel, dur } => {
+        Command::Note {
+            track,
+            note,
+            vel,
+            dur,
+        } => {
             let mut link = open(cli)?;
             let ch = track.ch();
             link.send(&[0x90 | ch, *note, *vel])?;
@@ -277,11 +289,21 @@ pub fn run(cli: &Cli) -> Result<String, String> {
         Command::Cc { track, cc, val } => {
             let mut link = open(cli)?;
             let ch = track.ch();
-            let num = model::cc_number(cc).ok_or_else(|| format!("unknown cc '{cc}'; names: see --help or use a number"))?;
+            let num = model::cc_number(cc)
+                .ok_or_else(|| format!("unknown cc '{cc}'; names: see --help or use a number"))?;
             link.send(&[0xB0 | ch, num, *val])?;
-            Ok(format!("cc ch{} {num}({}) val{val}", ch + 1, model::cc_name(num)))
+            Ok(format!(
+                "cc ch{} {num}({}) val{val}",
+                ch + 1,
+                model::cc_name(num)
+            ))
         }
-        Command::Pc { msb, lsb, prog, track } => {
+        Command::Pc {
+            msb,
+            lsb,
+            prog,
+            track,
+        } => {
             let mut link = open(cli)?;
             let ch = track.ch();
             link.send(&[0xB0 | ch, 0, *msb])?;
@@ -306,12 +328,24 @@ pub fn run(cli: &Cli) -> Result<String, String> {
             let msg = sysex::parameter_change(cli.device, addr, &bytes).to_bytes();
             link.send(&msg)?;
             let evs = link.recv_window(Duration::from_millis(500), false);
-            Ok(format!("param {:02X}:{:02X}:{:02X} <- {}{}",
-                addr[0], addr[1], addr[2],
-                bytes.iter().map(|b| format!("{b:02X}")).collect::<Vec<_>>().join(" "),
-                fmt_replies(&evs)))
+            Ok(format!(
+                "param {:02X}:{:02X}:{:02X} <- {}{}",
+                addr[0],
+                addr[1],
+                addr[2],
+                bytes
+                    .iter()
+                    .map(|b| format!("{b:02X}"))
+                    .collect::<Vec<_>>()
+                    .join(" "),
+                fmt_replies(&evs)
+            ))
         }
-        Command::Dump { address, out, timeout } => {
+        Command::Dump {
+            address,
+            out,
+            timeout,
+        } => {
             let mut link = open(cli)?;
             let addr = parse_addr(address)?;
             let req = sysex::dump_request(cli.device, addr).to_bytes();
@@ -329,8 +363,16 @@ pub fn run(cli: &Cli) -> Result<String, String> {
                 let hexs: String = data.iter().map(|b| format!("{b:02X} ")).collect();
                 std::fs::write(path, hexs.trim_end()).map_err(|e| format!("write failed: {e}"))?;
             }
-            Ok(format!("dump {:02X}:{:02X}:{:02X} -> {} bytes{}", addr[0], addr[1], addr[2], data.len(),
-                out.as_deref().map(|p| format!(" saved to {p}")).unwrap_or_default()))
+            Ok(format!(
+                "dump {:02X}:{:02X}:{:02X} -> {} bytes{}",
+                addr[0],
+                addr[1],
+                addr[2],
+                data.len(),
+                out.as_deref()
+                    .map(|p| format!(" saved to {p}"))
+                    .unwrap_or_default()
+            ))
         }
         Command::Monitor { timeout, clock } => {
             let link = open(cli)?;
@@ -350,7 +392,12 @@ pub fn run(cli: &Cli) -> Result<String, String> {
             }
             Ok(format!("monitor: {} events", lines.len()))
         }
-        Command::Transport { action, bpm, seconds } => {            let mut link = open(cli)?;
+        Command::Transport {
+            action,
+            bpm,
+            seconds,
+        } => {
+            let mut link = open(cli)?;
             match action {
                 TransportAction::Start => link.send(&[0xFA])?,
                 TransportAction::Stop => link.send(&[0xFC])?,
@@ -387,17 +434,42 @@ pub fn run(cli: &Cli) -> Result<String, String> {
             let mut link = open(cli)?;
             let addr = parse_addr(address)?;
             // Parameter request: F0 43 3n 7F 1C 0C ah am al F7
-            let req = [0xF0, 0x43, 0x30 | (cli.device & 0x0F), 0x7F, 0x1C, 0x0C, addr[0], addr[1], addr[2], 0xF7];
+            let req = [
+                0xF0,
+                0x43,
+                0x30 | (cli.device & 0x0F),
+                0x7F,
+                0x1C,
+                0x0C,
+                addr[0],
+                addr[1],
+                addr[2],
+                0xF7,
+            ];
             link.send(&req)?;
             let evs = link.recv_window(Duration::from_secs(2), false);
             for ev in &evs {
-                if let Some(SeqtrakSysex::ParameterChange { address: a, data, .. }) = sysex::parse(&ev.bytes)
-                    && a == addr {
-                        return Ok(format!("{:02X}:{:02X}:{:02X} = {}",
-                            a[0], a[1], a[2], data.iter().map(|b| format!("{b:02X}")).collect::<Vec<_>>().join(" ")));
-                    }
+                if let Some(SeqtrakSysex::ParameterChange {
+                    address: a, data, ..
+                }) = sysex::parse(&ev.bytes)
+                    && a == addr
+                {
+                    return Ok(format!(
+                        "{:02X}:{:02X}:{:02X} = {}",
+                        a[0],
+                        a[1],
+                        a[2],
+                        data.iter()
+                            .map(|b| format!("{b:02X}"))
+                            .collect::<Vec<_>>()
+                            .join(" ")
+                    ));
+                }
             }
-            Err(format!("no reply for {:02X}:{:02X}:{:02X}", addr[0], addr[1], addr[2]))
+            Err(format!(
+                "no reply for {:02X}:{:02X}:{:02X}",
+                addr[0], addr[1], addr[2]
+            ))
         }
         Command::Serve => {
             let rt = tokio::runtime::Runtime::new().map_err(|e| format!("tokio runtime: {e}"))?;
@@ -421,20 +493,46 @@ pub fn run(cli: &Cli) -> Result<String, String> {
                         continue;
                     }
                     sysex_count += 1;
-                    if let Some(SeqtrakSysex::ParameterChange { address: a, data, .. }) = sysex::parse(&ev.bytes) {
-                        pairs.push(format!("{:02X}:{:02X}:{:02X}\t{}",
-                            a[0], a[1], a[2], data.iter().map(|b| format!("{b:02X}")).collect::<Vec<_>>().join(" ")));
+                    if let Some(SeqtrakSysex::ParameterChange {
+                        address: a, data, ..
+                    }) = sysex::parse(&ev.bytes)
+                    {
+                        pairs.push(format!(
+                            "{:02X}:{:02X}:{:02X}\t{}",
+                            a[0],
+                            a[1],
+                            a[2],
+                            data.iter()
+                                .map(|b| format!("{b:02X}"))
+                                .collect::<Vec<_>>()
+                                .join(" ")
+                        ));
                     }
                 }
             }
-            Ok(format!("snapshot: {sysex_count} sysex, {} params\n{}", pairs.len(), pairs.join("\n")))
+            Ok(format!(
+                "snapshot: {sysex_count} sysex, {} params\n{}",
+                pairs.len(),
+                pairs.join("\n")
+            ))
         }
-        Command::RecSteps { track, steps, note, vel, bars, gate, keep_playing, pattern } => {
+        Command::RecSteps {
+            track,
+            steps,
+            note,
+            vel,
+            bars,
+            gate,
+            keep_playing,
+            pattern,
+        } => {
             let parsed: Result<Vec<usize>, _> = steps
                 .split(',')
                 .map(|s| s.trim().parse::<usize>().map(|n| n.saturating_sub(1)))
                 .collect();
-            let steps = parsed.map_err(|_| "bad --steps; use comma separated 1-based steps like 1,5,9,13".to_string())?;
+            let steps = parsed.map_err(|_| {
+                "bad --steps; use comma separated 1-based steps like 1,5,9,13".to_string()
+            })?;
             crate::recsteps::record_steps(
                 track.ch(),
                 &steps,
@@ -446,7 +544,21 @@ pub fn run(cli: &Cli) -> Result<String, String> {
                 *pattern,
             )
         }
-        Command::Seq { track, events, vel, bars, gate, keep_playing, follow, clock_offset, anchor_ch, anchor_note, anchor_step, loop_steps, pattern } => {
+        Command::Seq {
+            track,
+            events,
+            vel,
+            bars,
+            gate,
+            keep_playing,
+            follow,
+            clock_offset,
+            anchor_ch,
+            anchor_note,
+            anchor_step,
+            loop_steps,
+            pattern,
+        } => {
             let parsed: Result<Vec<(usize, u8)>, String> = events
                 .split(',')
                 .map(|s| {
@@ -458,7 +570,9 @@ pub fn run(cli: &Cli) -> Result<String, String> {
                         .parse::<usize>()
                         .map(|n| n.saturating_sub(1))
                         .map_err(|_| format!("bad step in `{s}`"))?;
-                    let note = p[1].parse::<u8>().map_err(|_| format!("bad note in `{s}`"))?;
+                    let note = p[1]
+                        .parse::<u8>()
+                        .map_err(|_| format!("bad note in `{s}`"))?;
                     Ok((step, note))
                 })
                 .collect();
@@ -490,26 +604,41 @@ fn open(cli: &Cli) -> Result<crate::midi::Link, String> {
 }
 
 fn fmt_list(v: &[String]) -> String {
-    v.iter().enumerate().map(|(i, n)| format!("  [{i}] {n}\n")).collect()
+    v.iter()
+        .enumerate()
+        .map(|(i, n)| format!("  [{i}] {n}\n"))
+        .collect()
 }
 
 fn fmt_replies(evs: &[crate::midi::MidiEvent]) -> String {
     if evs.is_empty() {
         String::new()
     } else {
-        format!(" replies:{}", evs.iter().map(|e| format!(" {}", e.hex())).collect::<String>())
+        format!(
+            " replies:{}",
+            evs.iter()
+                .map(|e| format!(" {}", e.hex()))
+                .collect::<String>()
+        )
     }
 }
 
 fn parse_hex(s: &str) -> Result<Vec<u8>, String> {
-    let cleaned: String = s.chars().filter(|c| !c.is_whitespace() && *c != ',').collect();
+    let cleaned: String = s
+        .chars()
+        .filter(|c| !c.is_whitespace() && *c != ',')
+        .collect();
     let cleaned = cleaned.strip_prefix("0x").unwrap_or(&cleaned);
     if !cleaned.len().is_multiple_of(2) {
-        return Err(format!("hex string '{s}' must have an even number of digits"));
+        return Err(format!(
+            "hex string '{s}' must have an even number of digits"
+        ));
     }
     (0..cleaned.len())
         .step_by(2)
-        .map(|i| u8::from_str_radix(&cleaned[i..i + 2], 16).map_err(|e| format!("bad hex '{s}': {e}")))
+        .map(|i| {
+            u8::from_str_radix(&cleaned[i..i + 2], 16).map_err(|e| format!("bad hex '{s}': {e}"))
+        })
         .collect()
 }
 

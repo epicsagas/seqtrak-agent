@@ -35,9 +35,26 @@ pub fn record_steps(
     keep_playing: bool,
     pattern: Option<usize>,
 ) -> Result<String, String> {
-    let notes: Vec<(usize, u8, u8)> =
-        steps.iter().copied().filter(|s| *s < bars * 16).map(|s| (s, note, vel)).collect();
-    seq(ch, notes, bars, gate, keep_playing, false, 0, 1, 60, 1, 48, pattern)
+    let notes: Vec<(usize, u8, u8)> = steps
+        .iter()
+        .copied()
+        .filter(|s| *s < bars * 16)
+        .map(|s| (s, note, vel))
+        .collect();
+    seq(
+        ch,
+        notes,
+        bars,
+        gate,
+        keep_playing,
+        false,
+        0,
+        1,
+        60,
+        1,
+        48,
+        pattern,
+    )
 }
 
 /// Fire arbitrary (step, note, velocity) events in ONE clock-synced sweep.
@@ -100,7 +117,11 @@ pub fn seq(
     }
     // Start mode: send Start only after the clock input is connected; opening
     // the port after Start loses the first clocks and notes land early.
-    let start_out = if follow { None } else { Some(midi::open_out()?) };
+    let start_out = if follow {
+        None
+    } else {
+        Some(midi::open_out()?)
+    };
     let sched = Arc::new(Sched {
         tick: AtomicUsize::new(0),
         sub: AtomicUsize::new(0),
@@ -124,7 +145,9 @@ pub fn seq(
         keep_playing: bool,
     ) -> bool {
         let t = s2.tick.fetch_add(1, Ordering::Relaxed);
-        if std::env::var_os("ST_DEBUG").is_some() { eprintln!("tick {t}"); }
+        if std::env::var_os("ST_DEBUG").is_some() {
+            eprintln!("tick {t}");
+        }
         let mut active = s2.active.lock().unwrap();
         active.retain(|(c, n, off)| {
             if *off <= t {
@@ -167,9 +190,12 @@ pub fn seq(
                     }
                     on_tick(&s2, &f2, &mut out, ch, gate, total, keep_playing)
                 }
-                Some(st) if *st == 0x90 | anchor_ch && !a2.load(Ordering::Relaxed)
-                    && (anchor_note == 0 || bytes.get(1) == Some(&anchor_note))
-                    && bytes.len() >= 3 && bytes[2] != 0 =>
+                Some(st)
+                    if *st == 0x90 | anchor_ch
+                        && !a2.load(Ordering::Relaxed)
+                        && (anchor_note == 0 || bytes.get(1) == Some(&anchor_note))
+                        && bytes.len() >= 3
+                        && bytes[2] != 0 =>
                 {
                     // follow anchor: a note the unit itself replays, uniquely
                     // identified by channel+pitch so a mid-loop port open
@@ -211,6 +237,12 @@ pub fn seq(
     }
     Ok(format!(
         "fired {n}/{planned} notes over {total} steps ({}); the unit records them while its REC is armed",
-        if follow { "followed the running transport" } else if keep_playing { "transport left running" } else { "transport stopped" }
+        if follow {
+            "followed the running transport"
+        } else if keep_playing {
+            "transport left running"
+        } else {
+            "transport stopped"
+        }
     ))
 }

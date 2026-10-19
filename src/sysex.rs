@@ -10,7 +10,11 @@ use crate::model::addr;
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum SeqtrakSysex {
     /// Parameter change sent to device.
-    ParameterChange { device: u8, address: [u8; 3], data: Vec<u8> },
+    ParameterChange {
+        device: u8,
+        address: [u8; 3],
+        data: Vec<u8>,
+    },
     /// Dump request sent to device.
     DumpRequest { device: u8, address: [u8; 3] },
     /// Bulk dump reply from device.
@@ -29,20 +33,43 @@ pub enum SeqtrakSysex {
 impl SeqtrakSysex {
     pub fn to_bytes(&self) -> Vec<u8> {
         match self {
-            SeqtrakSysex::ParameterChange { device, address, data } => {
-                let mut m = vec![0xF0, 0x43, 0x10 | (device & 0x0F), 0x7F, addr::GROUP_HI, addr::MODEL_ID];
+            SeqtrakSysex::ParameterChange {
+                device,
+                address,
+                data,
+            } => {
+                let mut m = vec![
+                    0xF0,
+                    0x43,
+                    0x10 | (device & 0x0F),
+                    0x7F,
+                    addr::GROUP_HI,
+                    addr::MODEL_ID,
+                ];
                 m.extend_from_slice(address);
                 m.extend(data);
                 m.push(0xF7);
                 m
             }
             SeqtrakSysex::DumpRequest { device, address } => {
-                let mut m = vec![0xF0, 0x43, 0x20 | (device & 0x0F), 0x7F, addr::GROUP_HI, addr::MODEL_ID];
+                let mut m = vec![
+                    0xF0,
+                    0x43,
+                    0x20 | (device & 0x0F),
+                    0x7F,
+                    addr::GROUP_HI,
+                    addr::MODEL_ID,
+                ];
                 m.extend_from_slice(address);
                 m.push(0xF7);
                 m
             }
-            SeqtrakSysex::BulkDump { device, byte_count, block, data } => {
+            SeqtrakSysex::BulkDump {
+                device,
+                byte_count,
+                block,
+                data,
+            } => {
                 let mut m = vec![0xF0, 0x43, device & 0x0F, 0x7F, addr::GROUP_HI];
                 m.extend_from_slice(&byte_count.to_be_bytes().map(|b| b & 0x7F));
                 m.push(addr::MODEL_ID);
@@ -78,7 +105,11 @@ pub fn checksum(bytes: &[u8]) -> u8 {
 
 /// Build a parameter change and verify checksum placement for bulk framing.
 pub fn parameter_change(device: u8, address: [u8; 3], data: &[u8]) -> SeqtrakSysex {
-    SeqtrakSysex::ParameterChange { device, address, data: data.to_vec() }
+    SeqtrakSysex::ParameterChange {
+        device,
+        address,
+        data: data.to_vec(),
+    }
 }
 
 pub fn dump_request(device: u8, address: [u8; 3]) -> SeqtrakSysex {
@@ -120,14 +151,22 @@ pub fn parse(raw: &[u8]) -> Option<SeqtrakSysex> {
         let byte_count = (((inner[4] & 0x7F) as u16) << 7) | (inner[5] & 0x7F) as u16;
         let block = [inner[7], inner[8], inner[9]];
         let data = inner[10..inner.len() - 1].to_vec(); // exclude trailing checksum
-        return Some(SeqtrakSysex::BulkDump { device, byte_count, block, data });
+        return Some(SeqtrakSysex::BulkDump {
+            device,
+            byte_count,
+            block,
+            data,
+        });
     }
 
     // Parameter change 1n / dump request 2n: 7F 1C 0C ah am al ...
     if inner[4] == addr::MODEL_ID {
         let kind = inner[1] & 0xF0;
         if kind == 0x20 && inner.len() == 8 {
-            return Some(SeqtrakSysex::DumpRequest { device, address: [inner[5], inner[6], inner[7]] });
+            return Some(SeqtrakSysex::DumpRequest {
+                device,
+                address: [inner[5], inner[6], inner[7]],
+            });
         }
         if kind == 0x10 && inner.len() > 8 {
             return Some(SeqtrakSysex::ParameterChange {
@@ -148,9 +187,18 @@ mod tests {
     fn parameter_change_roundtrip() {
         let msg = parameter_change(0, [0x30, 0x50, 0x00], &[0x40]);
         let bytes = msg.to_bytes();
-        assert_eq!(bytes, vec![0xF0, 0x43, 0x10, 0x7F, 0x1C, 0x0C, 0x30, 0x50, 0x00, 0x40, 0xF7]);
+        assert_eq!(
+            bytes,
+            vec![
+                0xF0, 0x43, 0x10, 0x7F, 0x1C, 0x0C, 0x30, 0x50, 0x00, 0x40, 0xF7
+            ]
+        );
         match parse(&bytes) {
-            Some(SeqtrakSysex::ParameterChange { device, address, data }) => {
+            Some(SeqtrakSysex::ParameterChange {
+                device,
+                address,
+                data,
+            }) => {
                 assert_eq!(device, 0);
                 assert_eq!(address, [0x30, 0x50, 0x00]);
                 assert_eq!(data, vec![0x40]);
@@ -163,7 +211,9 @@ mod tests {
     fn dump_request_parse() {
         let bytes = [0xF0, 0x43, 0x20, 0x7F, 0x1C, 0x0C, 0x11, 0x00, 0x00, 0xF7];
         match parse(&bytes) {
-            Some(SeqtrakSysex::DumpRequest { address, .. }) => assert_eq!(address, [0x11, 0x00, 0x00]),
+            Some(SeqtrakSysex::DumpRequest { address, .. }) => {
+                assert_eq!(address, [0x11, 0x00, 0x00])
+            }
             other => panic!("wrong parse: {other:?}"),
         }
     }
@@ -197,7 +247,12 @@ mod tests {
             0xF0, 0x43, 0x00, 0x7F, 0x1C, 0x00, 0x4C, 0x0C, 0x30, 0x42, 0x00, 0x02, 0x10, 0xF7,
         ];
         match parse(&raw) {
-            Some(SeqtrakSysex::BulkDump { byte_count, block, data, .. }) => {
+            Some(SeqtrakSysex::BulkDump {
+                byte_count,
+                block,
+                data,
+                ..
+            }) => {
                 assert_eq!(byte_count, 0x4C);
                 assert_eq!(block, [0x30, 0x42, 0x00]);
                 assert_eq!(data, vec![0x02]); // trailing 0x10 consumed as checksum
@@ -208,7 +263,10 @@ mod tests {
 
     #[test]
     fn identity_reply() {
-        let raw = [0xF0, 0x7E, 0x7F, 0x06, 0x02, 0x43, 0x00, 0x41, 0x00, 0x00, 0x20, 0x00, 0x00, 0x7F, 0xF7];
+        let raw = [
+            0xF0, 0x7E, 0x7F, 0x06, 0x02, 0x43, 0x00, 0x41, 0x00, 0x00, 0x20, 0x00, 0x00, 0x7F,
+            0xF7,
+        ];
         match parse(&raw) {
             Some(SeqtrakSysex::Identity { family, version }) => {
                 assert_eq!(&family[..3], &[0x43, 0x00, 0x41]);

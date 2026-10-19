@@ -10,7 +10,7 @@ use axum::response::IntoResponse;
 use axum::routing::{get, post};
 use axum::{Json, Router};
 use serde::Deserialize;
-use serde_json::{json, Value};
+use serde_json::{Value, json};
 
 use crate::midi::Link;
 use crate::model;
@@ -60,70 +60,71 @@ fn spawn_seq(seq: std::sync::Arc<Seq>) {
     std::thread::spawn(move || {
         let mut fails = 0usize;
         loop {
-        let mut out = match crate::midi::open_out() {
-            Ok(o) => o,
-            Err(e) => {
-                fails += 1;
-                eprintln!("st seq: waiting for device ({e})");
-                if fails.is_multiple_of(4) {
-                    crate::midi::midi_restart();
-                }
-                std::thread::sleep(Duration::from_secs(2));
-                continue;
-            }
-        };
-        fails = 0;
-        eprintln!("st seq: clock synced");
-        let s2 = seq.clone();
-        let _ = crate::midi::run_clock_port(
-            move |bytes| {
-            use std::sync::atomic::Ordering;
-            match bytes.first() {
-                Some(0xFA) | Some(0xFB) => {
-                    s2.step.store(0, Ordering::Relaxed);
-                    s2.sub.store(0, Ordering::Relaxed);
-                    s2.playing.store(true, Ordering::Relaxed);
-                    true
-                }
-                Some(0xFC) => {
-                    s2.playing.store(false, Ordering::Relaxed);
-                    let mut active = s2.active.lock().unwrap();
-                    for (ch, note) in active.drain(..) {
-                        let _ = out.send(&[0x80 | ch, note, 0x40]);
+            let mut out = match crate::midi::open_out() {
+                Ok(o) => o,
+                Err(e) => {
+                    fails += 1;
+                    eprintln!("st seq: waiting for device ({e})");
+                    if fails.is_multiple_of(4) {
+                        crate::midi::midi_restart();
                     }
-                    true
+                    std::thread::sleep(Duration::from_secs(2));
+                    continue;
                 }
-                Some(0xF8) if s2.playing.load(Ordering::Relaxed) => {
-                    if !s2.sub.fetch_add(1, Ordering::Relaxed).is_multiple_of(6) {
-                        return true;
-                    }
-                    let step = s2.step.load(Ordering::Relaxed);
-                    let mut active = s2.active.lock().unwrap();
-                    for (ch, note) in active.drain(..) {
-                        let _ = out.send(&[0x80 | ch, note, 0x40]);
-                    }
-                    let patterns = s2.patterns.lock().unwrap();
-                    for (i, pat) in patterns.iter().enumerate() {
-                        let v = pat[step];
-                        if v == 0 {
-                            continue;
+            };
+            fails = 0;
+            eprintln!("st seq: clock synced");
+            let s2 = seq.clone();
+            let _ = crate::midi::run_clock_port(
+                move |bytes| {
+                    use std::sync::atomic::Ordering;
+                    match bytes.first() {
+                        Some(0xFA) | Some(0xFB) => {
+                            s2.step.store(0, Ordering::Relaxed);
+                            s2.sub.store(0, Ordering::Relaxed);
+                            s2.playing.store(true, Ordering::Relaxed);
+                            true
                         }
-                        let ch = i as u8;
-                        let note = if i < 7 { 60 } else { v };
-                        let _ = out.send(&[0x90 | ch, note, 100]);
-                        active.push((ch, note));
+                        Some(0xFC) => {
+                            s2.playing.store(false, Ordering::Relaxed);
+                            let mut active = s2.active.lock().unwrap();
+                            for (ch, note) in active.drain(..) {
+                                let _ = out.send(&[0x80 | ch, note, 0x40]);
+                            }
+                            true
+                        }
+                        Some(0xF8) if s2.playing.load(Ordering::Relaxed) => {
+                            if !s2.sub.fetch_add(1, Ordering::Relaxed).is_multiple_of(6) {
+                                return true;
+                            }
+                            let step = s2.step.load(Ordering::Relaxed);
+                            let mut active = s2.active.lock().unwrap();
+                            for (ch, note) in active.drain(..) {
+                                let _ = out.send(&[0x80 | ch, note, 0x40]);
+                            }
+                            let patterns = s2.patterns.lock().unwrap();
+                            for (i, pat) in patterns.iter().enumerate() {
+                                let v = pat[step];
+                                if v == 0 {
+                                    continue;
+                                }
+                                let ch = i as u8;
+                                let note = if i < 7 { 60 } else { v };
+                                let _ = out.send(&[0x90 | ch, note, 100]);
+                                active.push((ch, note));
+                            }
+                            s2.step.store((step + 1) % 32, Ordering::Relaxed);
+                            true
+                        }
+                        _ => true,
                     }
-                    s2.step.store((step + 1) % 32, Ordering::Relaxed);
-                    true
-                }
-                _ => true,
-            }
-        },
-        None,
-    );
-        seq.playing.store(false, std::sync::atomic::Ordering::Relaxed);
-        eprintln!("st seq: clock lost, waiting for device");
-        std::thread::sleep(Duration::from_secs(2));
+                },
+                None,
+            );
+            seq.playing
+                .store(false, std::sync::atomic::Ordering::Relaxed);
+            eprintln!("st seq: clock lost, waiting for device");
+            std::thread::sleep(Duration::from_secs(2));
         }
     });
 }
@@ -181,7 +182,10 @@ async fn seq_post(State(state): State<Shared>, Json(req): Json<SeqReq>) -> impl 
             let idx = track_index(&req.track).map_err(bad_req)?;
             let step = usize::try_from(req.step).map_err(|_| bad_req("bad step".into()))?;
             if step >= 32 {
-                return Err((StatusCode::BAD_REQUEST, Json(json!({ "error": "step 0-31" }))));
+                return Err((
+                    StatusCode::BAD_REQUEST,
+                    Json(json!({ "error": "step 0-31" })),
+                ));
             }
             let v = if req.on {
                 if idx < 7 {
@@ -202,7 +206,9 @@ async fn seq_post(State(state): State<Shared>, Json(req): Json<SeqReq>) -> impl 
         // (the device records the same Note On itself when its own REC is up).
         "note" => {
             let idx = track_index(&req.track).map_err(bad_req)?;
-            let ch = model::track_channel(&req.track).ok_or("unknown track").map_err(|e| (StatusCode::BAD_REQUEST, Json(json!({ "error": e }))))?;
+            let ch = model::track_channel(&req.track)
+                .ok_or("unknown track")
+                .map_err(|e| (StatusCode::BAD_REQUEST, Json(json!({ "error": e }))))?;
             let note = if req.note > 0 { req.note } else { 60 };
             let recorded = seq.rec.load(Ordering::Relaxed) && seq.playing.load(Ordering::Relaxed);
             if recorded {
@@ -216,7 +222,10 @@ async fn seq_post(State(state): State<Shared>, Json(req): Json<SeqReq>) -> impl 
                 Ok(json!({ "recorded": recorded }))
             })
         }
-        other => Err((StatusCode::BAD_REQUEST, Json(json!({ "error": format!("unknown op {other}") })))),
+        other => Err((
+            StatusCode::BAD_REQUEST,
+            Json(json!({ "error": format!("unknown op {other}") })),
+        )),
     }
 }
 
@@ -224,9 +233,17 @@ fn with_link<T: serde::Serialize>(
     state: &Shared,
     f: impl FnOnce(&mut Link) -> Result<T, String>,
 ) -> Result<Json<Value>, (StatusCode, Json<Value>)> {
-    let mut guard = state.link.lock().map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({"error": "link poisoned"}))))?;
+    let mut guard = state.link.lock().map_err(|_| {
+        (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(json!({"error": "link poisoned"})),
+        )
+    })?;
     let link = guard.as_mut().ok_or_else(|| {
-        (StatusCode::SERVICE_UNAVAILABLE, Json(json!({"error": "seqtrak not connected"})))
+        (
+            StatusCode::SERVICE_UNAVAILABLE,
+            Json(json!({"error": "seqtrak not connected"})),
+        )
     })?;
     f(link)
         .map(|v| Json(serde_json::to_value(v).unwrap_or(Value::Null)))
@@ -243,7 +260,12 @@ where
 {
     tokio::task::spawn_blocking(move || with_link(&state, f))
         .await
-        .map_err(|e| (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({"error": e.to_string()}))))?
+        .map_err(|e| {
+            (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(json!({"error": e.to_string()})),
+            )
+        })?
 }
 
 #[derive(Deserialize)]
@@ -365,7 +387,8 @@ async fn note(State(state): State<Shared>, Json(req): Json<NoteReq>) -> impl Int
 
 async fn cc(State(state): State<Shared>, Json(req): Json<CcReq>) -> impl IntoResponse {
     with_link(&state, |link| {
-        let ch = model::track_channel(&req.track).ok_or_else(|| format!("unknown track {}", req.track))?;
+        let ch = model::track_channel(&req.track)
+            .ok_or_else(|| format!("unknown track {}", req.track))?;
         let num = model::cc_number(&req.cc).ok_or_else(|| format!("unknown cc {}", req.cc))?;
         link.send(&[0xB0 | ch, num, req.val])?;
         Ok(json!({ "sent": true }))
@@ -374,7 +397,12 @@ async fn cc(State(state): State<Shared>, Json(req): Json<CcReq>) -> impl IntoRes
 
 async fn pc(State(state): State<Shared>, Json(req): Json<PcReq>) -> impl IntoResponse {
     with_link(&state, |link| {
-        let ch = if req.track.is_empty() { 0 } else { model::track_channel(&req.track).ok_or_else(|| format!("unknown track {}", req.track))? };
+        let ch = if req.track.is_empty() {
+            0
+        } else {
+            model::track_channel(&req.track)
+                .ok_or_else(|| format!("unknown track {}", req.track))?
+        };
         link.send(&[0xB0 | ch, 0, req.msb])?;
         link.send(&[0xB0 | ch, 32, req.lsb])?;
         link.send(&[0xC0 | ch, req.prog])?;
@@ -394,7 +422,10 @@ async fn load(State(state): State<Shared>, Json(req): Json<LoadReq>) -> impl Int
     })
 }
 
-async fn transport(State(state): State<Shared>, Json(req): Json<TransportReq>) -> impl IntoResponse {
+async fn transport(
+    State(state): State<Shared>,
+    Json(req): Json<TransportReq>,
+) -> impl IntoResponse {
     with_link(&state, |link| {
         match req.action.as_str() {
             "start" => link.send(&[0xFA])?,
@@ -405,7 +436,10 @@ async fn transport(State(state): State<Shared>, Json(req): Json<TransportReq>) -
     })
 }
 
-async fn param_write(State(state): State<Shared>, Json(req): Json<ParamWriteReq>) -> impl IntoResponse {
+async fn param_write(
+    State(state): State<Shared>,
+    Json(req): Json<ParamWriteReq>,
+) -> impl IntoResponse {
     with_link(&state, |link| {
         let addr = parse_addr(&req.addr)?;
         let msg = sysex::parameter_change(0, addr, &req.bytes).to_bytes();
@@ -414,7 +448,10 @@ async fn param_write(State(state): State<Shared>, Json(req): Json<ParamWriteReq>
     })
 }
 
-async fn param_read(Query(q): Query<ParamReadReq>, State(state): State<Shared>) -> impl IntoResponse {
+async fn param_read(
+    Query(q): Query<ParamReadReq>,
+    State(state): State<Shared>,
+) -> impl IntoResponse {
     with_link_blocking(state, move |link| {
         let addr = parse_addr(&q.addr)?;
         let req = [0xF0, 0x43, 0x30, 0x7F, 0x1C, 0x0C, addr[0], addr[1], addr[2], 0xF7];
@@ -443,7 +480,10 @@ async fn snapshot(State(state): State<Shared>, Json(req): Json<SnapshotReq>) -> 
         let end = std::time::Instant::now() + Duration::from_secs(req.seconds);
         while std::time::Instant::now() < end {
             for ev in link.recv_window(Duration::from_millis(200), false) {
-                if let Some(sysex::SeqtrakSysex::ParameterChange { address: a, data, .. }) = sysex::parse(&ev.bytes) {
+                if let Some(sysex::SeqtrakSysex::ParameterChange {
+                    address: a, data, ..
+                }) = sysex::parse(&ev.bytes)
+                {
                     pairs.push(json!({
                         "addr": format!("{:02X}:{:02X}:{:02X}", a[0], a[1], a[2]),
                         "bytes": data,
@@ -488,14 +528,20 @@ pub fn gui_dir() -> std::path::PathBuf {
     }
     let cwd_dist = std::env::current_dir().unwrap_or_default().join("gui/dist");
     cands.push(cwd_dist.clone());
-    if let Some(exe_dir) = std::env::current_exe().ok().and_then(|p| p.parent().map(|d| d.to_path_buf())) {
+    if let Some(exe_dir) = std::env::current_exe()
+        .ok()
+        .and_then(|p| p.parent().map(|d| d.to_path_buf()))
+    {
         cands.push(exe_dir.join("gui"));
         cands.push(exe_dir.join("../share/seqtrak-agent/gui"));
     }
     if let Some(home) = std::env::var_os("HOME").or_else(|| std::env::var_os("USERPROFILE")) {
         cands.push(PathBuf::from(home).join(".local/share/seqtrak-agent/gui"));
     }
-    cands.into_iter().find(|d| d.join("index.html").is_file()).unwrap_or(cwd_dist)
+    cands
+        .into_iter()
+        .find(|d| d.join("index.html").is_file())
+        .unwrap_or(cwd_dist)
 }
 
 /// Run the server. Binds 127.0.0.1:8787, serves the web GUI (see `gui_dir`). Starts even without
@@ -508,8 +554,10 @@ pub async fn run() -> Result<(), String> {
             None
         }
     };
-    let state: Shared =
-        std::sync::Arc::new(AppState { link: Mutex::new(link), seq: std::sync::Arc::new(Seq::new()) });
+    let state: Shared = std::sync::Arc::new(AppState {
+        link: Mutex::new(link),
+        seq: std::sync::Arc::new(Seq::new()),
+    });
     spawn_seq(state.seq.clone());
 
     // Reconnect the main link whenever the device (re)appears.
@@ -555,12 +603,16 @@ pub async fn run() -> Result<(), String> {
         .route("/api/monitor", post(monitor))
         .route("/api/seq", get(seq_get).post(seq_post))
         .fallback_service(
-            tower_http::services::ServeDir::new(&static_dir)
-                .append_index_html_on_directories(true),
+            tower_http::services::ServeDir::new(&static_dir).append_index_html_on_directories(true),
         )
         .with_state(state);
 
-    let listener = tokio::net::TcpListener::bind("127.0.0.1:8787").await.map_err(|e| e.to_string())?;
-    eprintln!("st serve: http://127.0.0.1:8787 (static: {})", static_dir.display());
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:8787")
+        .await
+        .map_err(|e| e.to_string())?;
+    eprintln!(
+        "st serve: http://127.0.0.1:8787 (static: {})",
+        static_dir.display()
+    );
     axum::serve(listener, app).await.map_err(|e| e.to_string())
 }

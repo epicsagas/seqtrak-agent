@@ -24,7 +24,11 @@ pub fn track_channel(name: &str) -> Option<u8> {
         .map(|(_, ch)| *ch)
         .or_else(|| {
             // allow "1".."11" as 1-based channel numbers
-            lower.parse::<u8>().ok().filter(|c| (1..=11).contains(c)).map(|c| c - 1)
+            lower
+                .parse::<u8>()
+                .ok()
+                .filter(|c| (1..=11).contains(c))
+                .map(|c| c - 1)
         })
 }
 
@@ -120,14 +124,24 @@ pub mod addr {
 #[derive(Debug, Clone, Copy)]
 pub enum Bank {
     /// Project User 1-8 (LSB 0-7). Load executes on Program Change, channel ignored.
-    Project { user: u8 },
+    Project {
+        user: u8,
+    },
     /// Sound Preset 1-32 (LSB 0-31) / User 1-16 (LSB 32-47)
-    SoundPreset { lsb: u8 },
-    SoundUser { lsb: u8 },
+    SoundPreset {
+        lsb: u8,
+    },
+    SoundUser {
+        lsb: u8,
+    },
     /// Sampler Element Preset/User (LSB 0-11)
-    SamplerElement { lsb: u8 },
+    SamplerElement {
+        lsb: u8,
+    },
     /// DrumKit for drum track part 0-6 (MSB 32-38, LSB = 2p where p = part)
-    DrumKit { part: u8 },
+    DrumKit {
+        part: u8,
+    },
 }
 
 impl Bank {
