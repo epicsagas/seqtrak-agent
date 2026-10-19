@@ -24,6 +24,7 @@ struct Sched {
 /// Fire `notes` on 16th-grid steps while the unit plays. Sends start; stops
 /// transport at the end unless `keep_playing`. `gate` is the note length in
 /// 16th ticks. Returns once the window has played out.
+#[allow(clippy::too_many_arguments)]
 pub fn record_steps(
     ch: u8,
     steps: &[usize],
