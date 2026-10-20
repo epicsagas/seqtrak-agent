@@ -23,7 +23,7 @@
 
 ### 주요 SysEx 주소 (전체 표는 `.claude/skills/seqtrak/SKILL.md` 참고)
 - 시스템(`00 00 00`): 오프셋 `10` = SysEx 송신 스위치, `2D` = Clock Out, `2F` = 패턴 선택 감도.
-- 프로젝트 공통(`30 40 00`): SysEx 조회 시 항상 0을 반환하며 템포는 SysEx로 읽거나 쓸 수 없습니다.
+- 프로젝트 공통(`30 40 00`): 템포 `30:40:76`(2바이트 MSB/LSB), 스윙 `7C-7D`, 스케일 `7E`, 키 `7F`, 패턴 모드 `79`. 템포 읽기·쓰기는 실기 검증 완료.
 - 센드 및 마스터 이펙트: Send Reverb `30 41`, Send Delay `30 42`, Master FX 1-4 `30 43`-`30 46`, Master EQ `30 47`.
 - 오디오 입력 및 스케일: A/D `30 49`-`30 4B`, USB Audio `30 4C`, Scale `30 4D`.
 - 프로젝트 트랙(`30 5p 00`): `00` 볼륨, `01` 팬, `0F` 패턴 선택(0부터 5가 패턴 1부터 6에 대응), `16..` 패턴 길이.
@@ -46,7 +46,7 @@ src/recsteps.rs  클럭 동기식 스텝 녹음
 src/serve.rs     axum 웹 서버 및 GUI용 MIDI 클럭 스텝 시퀀서
 src/cli.rs       st 명령 (list, identity, note, cc, pc, sysex, param, dump,
                  monitor, transport, load, get, snapshot, serve, rec-steps)
-src/mcp.rs       st-mcp 표준 입출력 JSON-RPC 서버 (14개 도구)
+src/mcp.rs       st-mcp 표준 입출력 JSON-RPC 서버 (15개 도구)
 gui/             Svelte 5 + TS 웹 컨트롤러 (DEVICE 뷰, MIXER 뷰, HELP 매뉴얼)
 ```
 
@@ -65,6 +65,6 @@ gui/             Svelte 5 + TS 웹 컨트롤러 (DEVICE 뷰, MIXER 뷰, HELP 매
 
 ## 프로토콜상 한계 (문서화 완료)
 - 스텝 노트는 SysEx로 직접 쓸 수 없으며 장비 녹음기와 `st rec-steps` 조합으로 기록합니다.
-- 템포는 SysEx로 읽거나 쓸 수 없고, `REC` 활성화는 본체 물리 버튼으로만 가능합니다.
+- 템포는 SysEx(`30:40:76`)로 읽고 쓸 수 있습니다(실기 검증 완료). `REC` 활성화는 여전히 본체 물리 버튼으로만 가능합니다.
 - 프로젝트는 전원 종료나 프로젝트 전환 시 자동 저장됩니다(별도 수동 WRITE 버튼 없음).
-- Song Position Pointer와 송 모드는 장비에서 지원하지 않습니다.
+- Song Position Pointer는 장비에서 지원하지 않습니다. 송 모드(씬)는 존재하지만 SysEx 주소가 없어 본체/앱 전용입니다.

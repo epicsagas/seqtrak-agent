@@ -2,7 +2,7 @@
 
 English | [한국어](README.ko.md)
 
-Control the Yamaha SEQTRAK from the terminal, an AI agent, or a browser. This repository builds a Rust CLI (`st`), an MCP server (`st-mcp`, 14 tools), a Claude skill, and a web GUI (`st serve`) that mirrors the hardware panel. It includes a MIDI-clock step sequencer and a recording helper that writes step patterns directly into the unit's pattern memory.
+Control the Yamaha SEQTRAK from the terminal, an AI agent, or a browser. This repository builds a Rust CLI (`st`), an MCP server (`st-mcp`, 15 tools), a Claude skill, and a web GUI (`st serve`) that mirrors the hardware panel. It includes a MIDI-clock step sequencer and a recording helper that writes step patterns directly into the unit's pattern memory.
 
 Communication uses class-compliant USB MIDI: notes, control changes, bank and program changes, and Yamaha SysEx parameter changes and bulk dumps.
 
@@ -78,7 +78,7 @@ args = []
 
 ## What the MCP can do: from one note to a full arrangement
 
-The MCP server (`st-mcp`) exposes the same 14 tools as the `st` CLI, so an agent can start with a one-line smoke test and end with a multi-bar, multi-track arrangement without leaving the conversation. The examples below are real tool calls; the agent composes them into a plan and the unit records the result.
+The MCP server (`st-mcp`) exposes the same 15 tools as the `st` CLI, so an agent can start with a one-line smoke test and end with a multi-bar, multi-track arrangement without leaving the conversation. The examples below are real tool calls; the agent composes them into a plan and the unit records the result.
 
 ### You talk, the agent plays
 
@@ -92,7 +92,7 @@ In practice you never call the tools yourself. You describe an outcome in your o
 
 The [seqtrak skill](.claude/skills/seqtrak/SKILL.md) teaches the agent the device model, the verified SysEx address map, and the firmware quirks, so the natural-language path stays safe: the agent plans, you listen, and you keep what you like.
 
-### The 14 tools
+### The 15 tools
 
 | Tool | What it does |
 |------|--------------|
@@ -106,6 +106,7 @@ The [seqtrak skill](.claude/skills/seqtrak/SKILL.md) teaches the agent the devic
 | `st_param` | Write one SysEx parameter, checksum automatic |
 | `st_sysex` | Send a raw SysEx hex string |
 | `st_dump` | Bulk dump a memory block |
+| `st_bulk` | Send a bulk dump block back to the unit (restore; verified with the system block) |
 | `st_snapshot` | Load a project and capture its full parameter echo as TSV |
 | `st_monitor` | Listen to incoming MIDI for N seconds, clock flood filtered |
 | `st_transport` | Start or stop the sequencer |

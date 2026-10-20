@@ -87,7 +87,7 @@ command = "st-mcp"
 args = []
 ```
 
-- `st-mcp`는 작곡용 `st_rec_steps`를 포함해 총 14개 도구를 노출합니다.
+- `st-mcp`는 작곡용 `st_rec_steps`를 포함해 총 15개 도구를 노출합니다.
 - 셸에서 MCP 서버 응답을 바로 확인할 수 있습니다:
   ```bash
   printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | st-mcp
@@ -117,7 +117,7 @@ st rec-steps synth1 --steps 1,5,9,13 --note 60 --gate 2    # 마지막 테이크
 - 패턴 길이 변경(1부터 128스텝): `st param 30:5p:16 <MSB> <LSB>` (16스텝 = `00 10`).
 - 주요 CC 이름: `volume`, `pan`, `mute`, `solo`, `filter_cutoff`, `filter_resonance`, `eg_attack`, `eg_decay_release`, `reverb_send`, `delay_send`, `fx_master_1..3`, `fx_single_1..3`, `arp_template`, `arp_gate`, `arp_speed`, `drum_pitch`, `fm_algorithm`, `fm_mod_amount`, `fm_mod_frequency`, `fm_mod_feedback`.
 - 전체 블록 주소 지도: `.claude/skills/seqtrak/SKILL.md`의 "SysEx address map" 섹션 참고.
-- 프로젝트 템포는 SysEx로 읽거나 쓸 수 없습니다(Project Common 블록 조회 시 0 반환).
+- 프로젝트 템포: `st get` / `st param 30:40:76` (2바이트 MSB/LSB, `00 78` = 120 BPM). 읽기·쓰기 실기 검증 완료.
 
 ## 5. 웹 GUI 개발 (프로토타입)
 

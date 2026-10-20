@@ -87,7 +87,7 @@ command = "st-mcp"
 args = []
 ```
 
-- `st-mcp` exposes 14 tools, including `st_rec_steps` for recording patterns into the unit.
+- `st-mcp` exposes 15 tools, including `st_rec_steps` for recording patterns into the unit.
 - Smoke test the MCP server from the shell:
   ```bash
   printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | st-mcp
@@ -117,7 +117,7 @@ st rec-steps synth1 --steps 1,5,9,13 --note 60 --gate 2    # final take stops tr
 - Pattern length (1 to 128 steps): `st param 30:5p:16 <MSB> <LSB>` (16 steps = `00 10`).
 - Named CCs: `volume`, `pan`, `mute`, `solo`, `filter_cutoff`, `filter_resonance`, `eg_attack`, `eg_decay_release`, `reverb_send`, `delay_send`, `fx_master_1..3`, `fx_single_1..3`, `arp_template`, `arp_gate`, `arp_speed`, `drum_pitch`, `fm_algorithm`, `fm_mod_amount`, `fm_mod_frequency`, `fm_mod_feedback`.
 - Full SysEx block map: see "SysEx address map" in `.claude/skills/seqtrak/SKILL.md`.
-- Project tempo cannot be read or written over SysEx (Project Common reads return 0).
+- Project tempo: `st get` / `st param 30:40:76` (2-byte MSB/LSB, `00 78` = 120 BPM). Read and write verified on hardware.
 
 ## 5. Web GUI development (Prototype)
 

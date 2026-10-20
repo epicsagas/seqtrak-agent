@@ -23,7 +23,7 @@ Channels 1 to 7 are drums (`kick`, `snare`, `clap`, `hat1`, `hat2`, `perc1`, `pe
 
 ### Key SysEx addresses (full map in `.claude/skills/seqtrak/SKILL.md`)
 - System (`00 00 00`): offset `10` = SysEx TX switch, `2D` = Clock Out, `2F` = Pattern Select Sensitivity.
-- Project Common (`30 40 00`): reads return 0 over SysEx; tempo cannot be read or written via SysEx.
+- Project Common (`30 40 00`): tempo `30:40:76` (2-byte MSB/LSB), swing `7C-7D`, scale `7E`, key `7F`, pattern mode `79`; tempo read+write verified on hardware.
 - Send and Master FX: Send Reverb `30 41`, Send Delay `30 42`, Master FX 1 to 4 `30 43` to `30 46`, Master EQ `30 47`.
 - Audio and scale: A/D `30 49` to `30 4B`, USB Audio `30 4C`, Scale `30 4D`.
 - Project Track (`30 5p 00`): `00` volume, `01` pan, `0F` Pattern Select (0 to 5 for patterns 1 to 6), `16..` pattern lengths.
@@ -46,7 +46,7 @@ src/recsteps.rs  clock-synced step recording
 src/serve.rs     axum HTTP server and MIDI-clock step sequencer
 src/cli.rs       st commands (list, identity, note, cc, pc, sysex, param, dump,
                  monitor, transport, load, get, snapshot, serve, rec-steps)
-src/mcp.rs       st-mcp stdio JSON-RPC server (14 tools)
+src/mcp.rs       st-mcp stdio JSON-RPC server (15 tools)
 gui/             Svelte 5 + TS web controller (DEVICE view, MIXER view, HELP overlay)
 ```
 
@@ -65,6 +65,6 @@ gui/             Svelte 5 + TS web controller (DEVICE view, MIXER view, HELP ove
 
 ## Known protocol limits
 - Step notes cannot be written via SysEx; use `st rec-steps` with the unit's recorder armed.
-- Project tempo cannot be read or written over SysEx, and arming REC requires the physical panel button.
+- Project tempo is readable and writable over SysEx at `30:40:76` (verified on hardware); arming REC still requires the physical panel button.
 - Projects auto-save on power-off or project switch (no manual WRITE button exists).
-- Song Position Pointer and song mode are not supported by the hardware.
+- Song Position Pointer is not supported by the hardware; song mode (scenes) exists but has no SysEx addresses (panel/app only).

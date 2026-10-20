@@ -155,7 +155,7 @@ Sends a bulk dump block back to the unit. The input file is the payload hex writ
 
 ```bash
 st dump 11:00:00 -o backup.hex -t 15    # read a project
-st bulk 11:00:00 backup.hex             # send it back (unverified)
+st bulk 11:00:00 backup.hex             # send it back (verified: dump-write-redump identical)
 ```
 
 #### `st sysex`

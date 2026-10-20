@@ -155,7 +155,7 @@ st dump 11:00:00 -o project.hex -t 15   # 전체 벌크 덤프를 파일로 저�
 
 ```bash
 st dump 11:00:00 -o backup.hex -t 15    # 프로젝트 읽기
-st bulk 11:00:00 backup.hex             # 되돌려 보내기 (미검증)
+st bulk 11:00:00 backup.hex             # 되돌려 보내기 (검증됨: 덤프-재기입-재덤프 일치)
 ```
 
 #### `st sysex`
