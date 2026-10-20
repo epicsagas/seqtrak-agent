@@ -70,14 +70,14 @@ st bulk 11:00:00 dump.hex                # send a bulk block back (restore; UNVE
 st monitor --timeout 5                   # watch incoming MIDI
 st transport start|stop                  # sequencer (unit sync = External/Auto)
 ```
-- st bulk sends the payload hex file (data bytes only, as written by st dump -o) framed as a bulk dump the unit is documented to receive. byte_count = data+4 per spec. UNVERIFIED on hardware: test on a throwaway project first; verify by re-dumping and byte-comparing.
+- st bulk sends the payload hex file (data bytes only, as written by st dump -o) framed as a bulk dump the unit is documented to receive. byte_count = data+4 per spec. VERIFIED on hardware: system general 00:00:00 dump -> bulk write -> re-dump came back byte-identical.
 ## Project Common 30:40 (offsets; per Data List pp.123-124)
 - 00-57 Project Name (UTF-8, 7-bit encoded, 88 bytes)
 - 63 Sampler Element Mute (bit6-0 = elements 7-1)
 - 65 Pan (01-7F, 40 center), 66 Volume
 - 68 Solo Track (0 off, 1-11)
 - 75 ARP Synchro Quantize Value (5-300)
-- 76 Tempo MSB + 77 LSB (2-byte big-endian; write 00:78 = 120). Reads may return 0 over SysEx; writes are documented.
+- 76 Tempo MSB + 77 LSB (2-byte big-endian; 00:78 = 120). Read AND write verified on hardware (120 to 126 to 120 round-trip).
 - 7C-7D Swing Offset (2-byte signed, -58..+58; default 0100 = 0)
 - 79 Pattern Select Mode (0 = 3 patterns, 1 = 6)
 - 7A-7B Pattern Master Step (2-byte, 1-128)
@@ -140,6 +140,7 @@ Examples: `st param 00:00:2A 01` = MIDI sync Auto; `st param 00:00:25 01` = metr
 st serve runs the web controller on 127.0.0.1:8787 and hosts a GUI-side step sequencer synced to the unit's clock: GET /api/seq (state), POST /api/seq {op: step|rec|clear|note, track, step, on, note}. The GUI layer sounds over MIDI; the unit's own pattern memory is untouched by it. Use rec-steps/seq instead when the goal is writing into the unit.
 ## Gotchas
 - Device SysEx transmit ships OFF. If st get/dump return nothing: st param 00:00:10 01 once.
+- Direct st dump only works for System 00:00:00 (and Format Version 00:7F:00). Project/sound blocks refuse per-block requests (verified: 30:40/30:41/30:50/31:10 all return 0 bytes); request whole data through the Bulk Header addresses instead: 11:00:00 = project edit buffer, 11:01:nn = project user, 02:nn = sound edit buffer part, etc. (Parameter Change Table, Bulk Control.)
 - Bulk dump can be ignored while the unit is busy; st dump retries 3 times internally.
 - The unit only accepts program/bank for loading; there is no "current project" query, use st snapshot.
 - Projects auto-save on power-off or project switch (user guide 4.2); there is no manual WRITE key on the panel and no store-to-flash SysEx. Auto-save on st load N commits whatever is in the live buffer, including half-finished takes, so finish or repair a pattern before switching projects.

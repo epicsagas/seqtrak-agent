@@ -75,7 +75,7 @@ fn tools() -> Vec<Tool> {
         },
         Tool {
             name: "st_bulk",
-            description: "Send a bulk dump block back to the unit (project/sound restore). file = payload hex as written by st_dump out_file. UNVERIFIED on hardware; test on a throwaway project first.",
+            description: "Send a bulk dump block back to the unit (project/sound restore). file = payload hex as written by st_dump out_file. Verified on hardware with the system block (dump -> write -> re-dump identical).",
             schema: json!({"type": "object", "required": ["address", "file"], "properties": {
             "address": {"type": "string"}, "file": {"type": "string"}}}),
         },

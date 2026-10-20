@@ -151,7 +151,7 @@ st dump 11:00:00 -o project.hex -t 15   # full bulk dump to file
 
 #### `st bulk`
 
-Sends a bulk dump block back to the unit. The input file is the payload hex written by `st dump -o` (data bytes only); the command re-frames it as a bulk dump the unit is documented to receive. UNVERIFIED on hardware: test on a throwaway project first and verify with `st dump` + byte compare.
+Sends a bulk dump block back to the unit. The input file is the payload hex written by `st dump -o` (data bytes only); the command re-frames it as a bulk dump the unit is documented to receive. Verified on hardware with the system block: dump, write the same payload back, re-dump, and the bytes are identical.
 
 ```bash
 st dump 11:00:00 -o backup.hex -t 15    # read a project

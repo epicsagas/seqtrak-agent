@@ -121,9 +121,9 @@ pub enum Command {
         timeout: u64,
     },
     /// Send a bulk dump block back to the unit (project/sound restore).
-    /// Input: payload hex file as written by `st dump -o`. UNVERIFIED on
-    /// hardware: framing is per Data List "can be received regardless of
-    /// their order"; test on a throwaway project first.
+    /// Input: payload hex file as written by `st dump -o`. Verified on
+    /// hardware with the system block: dump -> bulk write -> re-dump
+    /// came back byte-identical.
     Bulk {
         address: String,
         /// Payload hex file (data bytes only, no header/checksum)
