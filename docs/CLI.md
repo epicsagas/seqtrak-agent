@@ -149,6 +149,15 @@ st dump 30:41:00                        # dump Send Reverb block
 st dump 11:00:00 -o project.hex -t 15   # full bulk dump to file
 ```
 
+#### `st bulk`
+
+Sends a bulk dump block back to the unit. The input file is the payload hex written by `st dump -o` (data bytes only); the command re-frames it as a bulk dump the unit is documented to receive. UNVERIFIED on hardware: test on a throwaway project first and verify with `st dump` + byte compare.
+
+```bash
+st dump 11:00:00 -o backup.hex -t 15    # read a project
+st bulk 11:00:00 backup.hex             # send it back (unverified)
+```
+
 #### `st sysex`
 
 Sends arbitrary raw SysEx hex bytes (`F0 ... F7`) and prints any SysEx reply received within `--wait` milliseconds (default: `500`).

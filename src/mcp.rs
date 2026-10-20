@@ -74,6 +74,12 @@ fn tools() -> Vec<Tool> {
             schema: json!({"type": "object", "required": ["hex"], "properties": {"hex": {"type": "string"}}}),
         },
         Tool {
+            name: "st_bulk",
+            description: "Send a bulk dump block back to the unit (project/sound restore). file = payload hex as written by st_dump out_file. UNVERIFIED on hardware; test on a throwaway project first.",
+            schema: json!({"type": "object", "required": ["address", "file"], "properties": {
+            "address": {"type": "string"}, "file": {"type": "string"}}}),
+        },
+        Tool {
             name: "st_monitor",
             description: "Listen to MIDI events from the device for N seconds (clock flood filtered). Returns labeled events.",
             schema: json!({"type": "object", "properties": {
@@ -188,6 +194,13 @@ fn run_tool(name: &str, args: &Value) -> Result<Value, String> {
         "st_sysex" => call(Command::Sysex {
             hex: args["hex"].as_str().ok_or("hex required")?.to_string(),
             wait: args.get("wait_ms").and_then(Value::as_u64).unwrap_or(500),
+        }),
+        "st_bulk" => call(Command::Bulk {
+            address: args["address"]
+                .as_str()
+                .ok_or("address required")?
+                .to_string(),
+            file: args["file"].as_str().ok_or("file required")?.to_string(),
         }),
         "st_monitor" => call(Command::Monitor {
             timeout: Some(args.get("seconds").and_then(Value::as_u64).unwrap_or(3)),
@@ -324,9 +337,10 @@ mod tests {
     #[test]
     fn mcp_tools_registered() {
         let names = tool_names();
-        assert_eq!(names.len(), 14);
+        assert_eq!(names.len(), 15);
         assert!(names.contains(&"st_rec_steps"));
         assert!(names.contains(&"st_pc"));
+        assert!(names.contains(&"st_bulk"));
     }
 
     #[test]

@@ -120,6 +120,15 @@ pub enum Command {
         #[arg(short = 't', long, default_value_t = 10)]
         timeout: u64,
     },
+    /// Send a bulk dump block back to the unit (project/sound restore).
+    /// Input: payload hex file as written by `st dump -o`. UNVERIFIED on
+    /// hardware: framing is per Data List "can be received regardless of
+    /// their order"; test on a throwaway project first.
+    Bulk {
+        address: String,
+        /// Payload hex file (data bytes only, no header/checksum)
+        file: String,
+    },
     /// Listen to incoming MIDI from the device
     Monitor {
         /// Exit after N seconds (omit: run until Ctrl-C)
@@ -372,6 +381,32 @@ pub fn run(cli: &Cli) -> Result<String, String> {
                 out.as_deref()
                     .map(|p| format!(" saved to {p}"))
                     .unwrap_or_default()
+            ))
+        }
+        Command::Bulk { address, file } => {
+            let mut link = open(cli)?;
+            let addr = parse_addr(address)?;
+            let text = std::fs::read_to_string(file).map_err(|e| format!("read failed: {e}"))?;
+            let data = parse_hex(&text)?;
+            if data.is_empty() {
+                return Err(format!("no payload hex in {file}"));
+            }
+            let msg = SeqtrakSysex::BulkDump {
+                device: cli.device,
+                // Spec: byte count runs from Model ID through data, checksum excluded.
+                byte_count: (data.len() + 4) as u16,
+                block: addr,
+                data,
+            };
+            link.send(&msg.to_bytes())?;
+            let evs = link.recv_window(Duration::from_millis(500), false);
+            Ok(format!(
+                "bulk {:02X}:{:02X}:{:02X} <- {} bytes{}",
+                addr[0],
+                addr[1],
+                addr[2],
+                msg.to_bytes().len(),
+                fmt_replies(&evs)
             ))
         }
         Command::Monitor { timeout, clock } => {
