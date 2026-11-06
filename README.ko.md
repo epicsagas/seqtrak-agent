@@ -24,6 +24,13 @@ curl -fsSL https://raw.githubusercontent.com/epicsagas/seqtrak-agent/main/instal
 irm https://raw.githubusercontent.com/epicsagas/seqtrak-agent/main/install.ps1 | iex
 ```
 
+### Homebrew (macOS 및 Linux)
+
+```bash
+brew tap epicsagas/tap
+brew install seqtrak-agent
+```
+
 ### 소스에서 직접 빌드
 
 ```bash

@@ -12,8 +12,10 @@ is not affiliated with, endorsed by, or sponsored by Yamaha Corporation.
 
 Protocol information (MIDI CC numbers, SysEx addresses and parameter ranges)
 is implemented for interoperability based on the publicly available Yamaha
-SEQTRAK Data List for OS V2.00 (YJ-D0, 01/2026). No part of that manual is
-redistributed in this repository.
+SEQTRAK Data List for OS V2.00 (YJ-D0, 01/2026). The docs/*.tsv files
+reproduce factual parameter values (wave, sound and effect tables) as plain
+data for interoperability. No manual text, images or layout are redistributed
+in this repository.
 
 Third-party components
 ----------------------
