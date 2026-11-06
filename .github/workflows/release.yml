@@ -117,3 +117,79 @@ jobs:
             artifacts/*
             install.sh
             install.ps1
+
+  homebrew-tap:
+    name: Update Homebrew tap
+    needs: release
+    runs-on: ubuntu-latest
+    if: ${{ github.repository_owner == 'epicsagas' }}
+    env:
+      HAS_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN != '' }}
+      HOMEBREW_TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v8
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Render Homebrew formula
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          cd artifacts
+          S_DARWIN_ARM=$(shasum -a 256 "seqtrak-agent-aarch64-apple-darwin.tar.gz" | cut -d' ' -f1)
+          S_DARWIN_INTEL=$(shasum -a 256 "seqtrak-agent-x86_64-apple-darwin.tar.gz" | cut -d' ' -f1)
+          S_LINUX_INTEL=$(shasum -a 256 "seqtrak-agent-x86_64-unknown-linux-gnu.tar.gz" | cut -d' ' -f1)
+          S_LINUX_ARM=$(shasum -a 256 "seqtrak-agent-aarch64-unknown-linux-gnu.tar.gz" | cut -d' ' -f1)
+          mkdir -p formula
+          cat > "formula/seqtrak-agent.rb" <<RUBY
+          class SeqtrakAgent < Formula
+            desc "Unofficial CLI, MCP server and web GUI for the Yamaha SEQTRAK"
+            homepage "https://github.com/epicsagas/seqtrak-agent"
+            version "${VERSION}"
+            license "Apache-2.0"
+
+            if OS.mac? && Hardware::CPU.arm?
+              url "https://github.com/epicsagas/seqtrak-agent/releases/download/v${VERSION}/seqtrak-agent-aarch64-apple-darwin.tar.gz"
+              sha256 "${S_DARWIN_ARM}"
+            elsif OS.mac? && Hardware::CPU.intel?
+              url "https://github.com/epicsagas/seqtrak-agent/releases/download/v${VERSION}/seqtrak-agent-x86_64-apple-darwin.tar.gz"
+              sha256 "${S_DARWIN_INTEL}"
+            elsif OS.linux? && Hardware::CPU.intel?
+              url "https://github.com/epicsagas/seqtrak-agent/releases/download/v${VERSION}/seqtrak-agent-x86_64-unknown-linux-gnu.tar.gz"
+              sha256 "${S_LINUX_INTEL}"
+            elsif OS.linux? && Hardware::CPU.arm?
+              url "https://github.com/epicsagas/seqtrak-agent/releases/download/v${VERSION}/seqtrak-agent-aarch64-unknown-linux-gnu.tar.gz"
+              sha256 "${S_LINUX_ARM}"
+            end
+
+            def install
+              bin.install "st", "st-mcp"
+              (pkgshare/"gui").install Dir["gui/*"]
+            end
+
+            test do
+              assert_match "st #{version}", shell_output("#{bin}/st --version")
+            end
+          end
+          RUBY
+          cat "formula/seqtrak-agent.rb"
+
+      - name: Push formula to tap
+        if: ${{ env.HAS_TOKEN == 'true' }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git clone "https://x-access-token:${HOMEBREW_TAP_TOKEN}@github.com/epicsagas/homebrew-tap.git" tap
+          cp formula/seqtrak-agent.rb tap/Formula/seqtrak-agent.rb
+          git -C tap add Formula/seqtrak-agent.rb
+          if git -C tap diff --cached --quiet; then
+            echo "Formula unchanged; nothing to push"
+            exit 0
+          fi
+          git -C tap commit -m "seqtrak-agent ${GITHUB_REF_NAME}"
+          git -C tap push
+
+      - name: Warn on missing token
+        if: ${{ env.HAS_TOKEN != 'true' }}
+        run: echo "::warning::HOMEBREW_TAP_TOKEN is not set; skipped Homebrew tap update"
