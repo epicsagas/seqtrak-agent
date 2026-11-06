@@ -8,7 +8,11 @@ use crate::model;
 use crate::sysex::{self, SeqtrakSysex};
 
 #[derive(Parser)]
-#[command(name = "st", version, about = "Control the Yamaha SEQTRAK over USB MIDI")]
+#[command(
+    name = "st",
+    version,
+    about = "Control the Yamaha SEQTRAK over USB MIDI"
+)]
 pub struct Cli {
     /// MIDI device number (0 unless changed on the unit)
     #[arg(long, default_value_t = 0)]
