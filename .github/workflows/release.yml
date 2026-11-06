@@ -181,7 +181,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git clone "https://x-access-token:${HOMEBREW_TAP_TOKEN}@github.com/epicsagas/homebrew-tap.git" tap
-          cp formula/seqtrak-agent.rb tap/Formula/seqtrak-agent.rb
+          cp artifacts/formula/seqtrak-agent.rb tap/Formula/seqtrak-agent.rb
           git -C tap add Formula/seqtrak-agent.rb
           if git -C tap diff --cached --quiet; then
             echo "Formula unchanged; nothing to push"
